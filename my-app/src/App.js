@@ -1,95 +1,46 @@
+import React, { useState, useRef } from "react";
+import Process from "./Process";
 
-import axios from "axios";
-import React from "react";
+function App() {
+    const [nickname, setNickname] = useState([])
+    const nicknameRef = useRef()
 
-const baseURL = "https://api.worldoftanks.eu/wot/account/list/?application_id=f1dd0d3153a024d45038753a127d9106&search=andreykaberg";
+    const [realm, setRealm] = useState([])
+    const realmRef = useRef()
 
-export default function App() {
-    const [data, setData] = React.useState(null);
+    function handleSetNickname() {
+        const nickname = nicknameRef.current.value
+        const realm = realmRef.current.value
 
-    React.useEffect(() => {
-        axios.get(baseURL).then((response) => {
-            setData(response.data);
-        });
-    }, []);
-
-    if (!data) return null;
+        if (nickname !== null || nickname !== "") {
+            setNickname(nickname)
+            setRealm(realm)
+            console.clear()
+            console.log("Nickname: ", nickname)
+            console.log("Realm: ", realm)
+            nicknameRef.current.value = null
+            realmRef.current.value = "eu"
+        }
+    }
 
     return (
-        <div>
-            <h2>Nickname: {data.data[0].nickname}</h2>
-            <p>Account ID: {data.data[0].account_id}</p>
-        </div>
+        <>
+            <Process nickname={nickname} realm={realm} />
+
+            <label>Nickname: </label>
+            <input type="text" ref={nicknameRef}></input><br/>
+
+            <label>Realm: </label>
+            <select type="dropdown" defaultValue="eu" ref={realmRef}>
+                <option value="ru">RU</option>
+                <option value="eu">EU</option>
+                <option value="na">NA</option>
+                <option value="asia">ASIA</option>
+            </select><br/>
+            
+            <button onClick={handleSetNickname}>Search</button>
+        </>
     )
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { useState, useEffect } from "react";
-
-// export default function App() {
-//     const [data, setData] = useState(null);
-//     const [loading, setLoading] = useState(true);
-//     const [error, setError] = useState(null);
-
-//     useEffect(() => {
-//         fetch('https://api.worldoftanks.eu/wot/account/list/?application_id=f1dd0d3153a024d45038753a127d9106&search=andreykaberg')
-        
-//         .then((response) => {
-//             return response.json();
-//         })
-
-//         .then((actualData) => {
-//             setData(actualData);
-//             setError(null);
-//             console.log(actualData);
-//         })
-
-//         .catch((err) => {
-//             setError(err.message);
-//             setData(null);
-//         })
-
-//         .finally(() => {
-//             setLoading(false);
-//         });
-//     }, []);
-
-//     return (
-//         <div className="App">
-//             <h1>API Posts</h1>
-//             {loading && <div>A moment please...</div>}
-//             {error && (
-//                 <div>{`There is a problem fetching the post data - ${error}`}</div>
-//             )}
-//             <ul>
-//                 {data &&
-//                     data.map(({ element, index }) => (
-//                         <li key={index}>
-//                             <h3>{element}</h3>
-//                         </li>
-//                     ))}
-//             </ul>
-//         </div>
-//     );
-// }
+export default App;

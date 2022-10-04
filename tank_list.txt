@@ -1,0 +1,3036 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 756,
+    "page_total": 8,
+    "total": 756,
+    "limit": 100,
+    "page": null
+  },
+  "data": {
+    "1": {
+      "name": "T-34",
+      "tank_id": 1
+    },
+    "33": {
+      "name": "T14",
+      "tank_id": 33
+    },
+    "49": {
+      "name": "Type 59",
+      "tank_id": 49
+    },
+    "81": {
+      "name": "Vickers Medium Mk. I",
+      "tank_id": 81
+    },
+    "113": {
+      "name": "Kolohousenka",
+      "tank_id": 113
+    },
+    "129": {
+      "name": "Strv fm/21",
+      "tank_id": 129
+    },
+    "145": {
+      "name": "Pudel",
+      "tank_id": 145
+    },
+    "161": {
+      "name": "Fiat 3000",
+      "tank_id": 161
+    },
+    "257": {
+      "name": "SU-85",
+      "tank_id": 257
+    },
+    "273": {
+      "name": "Hummel",
+      "tank_id": 273
+    },
+    "289": {
+      "name": "M3 Stuart",
+      "tank_id": 289
+    },
+    "305": {
+      "name": "Type 62",
+      "tank_id": 305
+    },
+    "321": {
+      "name": "D2",
+      "tank_id": 321
+    },
+    "337": {
+      "name": "Vickers Medium Mk. II",
+      "tank_id": 337
+    },
+    "353": {
+      "name": "Chi-Ni",
+      "tank_id": 353
+    },
+    "369": {
+      "name": "LT vz. 35",
+      "tank_id": 369
+    },
+    "385": {
+      "name": "Strv m/38",
+      "tank_id": 385
+    },
+    "401": {
+      "name": "TKS z n.k.m. 20 mm",
+      "tank_id": 401
+    },
+    "417": {
+      "name": "L6/40",
+      "tank_id": 417
+    },
+    "513": {
+      "name": "IS",
+      "tank_id": 513
+    },
+    "529": {
+      "name": "Tiger I",
+      "tank_id": 529
+    },
+    "545": {
+      "name": "T1 Cunningham",
+      "tank_id": 545
+    },
+    "561": {
+      "name": "Type 59 G",
+      "tank_id": 561
+    },
+    "577": {
+      "name": "Renault FT",
+      "tank_id": 577
+    },
+    "593": {
+      "name": "M2",
+      "tank_id": 593
+    },
+    "609": {
+      "name": "Renault Otsu",
+      "tank_id": 609
+    },
+    "625": {
+      "name": "LT vz. 38",
+      "tank_id": 625
+    },
+    "641": {
+      "name": "Strv m/40L",
+      "tank_id": 641
+    },
+    "673": {
+      "name": "M14/41",
+      "tank_id": 673
+    },
+    "769": {
+      "name": "BT-7",
+      "tank_id": 769
+    },
+    "785": {
+      "name": "Pz.Kpfw. 35 (t)",
+      "tank_id": 785
+    },
+    "801": {
+      "name": "M6",
+      "tank_id": 801
+    },
+    "817": {
+      "name": "WZ-111",
+      "tank_id": 817
+    },
+    "833": {
+      "name": "Renault FT 75 BS",
+      "tank_id": 833
+    },
+    "849": {
+      "name": "Matilda",
+      "tank_id": 849
+    },
+    "865": {
+      "name": "Type 95 Ha-Go",
+      "tank_id": 865
+    },
+    "881": {
+      "name": "ST vz. 39",
+      "tank_id": 881
+    },
+    "897": {
+      "name": "Lago",
+      "tank_id": 897
+    },
+    "913": {
+      "name": "50TP prototyp",
+      "tank_id": 913
+    },
+    "929": {
+      "name": "M15/42",
+      "tank_id": 929
+    },
+    "1025": {
+      "name": "BT-2",
+      "tank_id": 1025
+    },
+    "1041": {
+      "name": "StuG III Ausf. G",
+      "tank_id": 1041
+    },
+    "1057": {
+      "name": "M4A1 Sherman",
+      "tank_id": 1057
+    },
+    "1073": {
+      "name": "T-34-1",
+      "tank_id": 1073
+    },
+    "1089": {
+      "name": "B1",
+      "tank_id": 1089
+    },
+    "1105": {
+      "name": "Cromwell",
+      "tank_id": 1105
+    },
+    "1121": {
+      "name": "Type 5 Chi-Ri",
+      "tank_id": 1121
+    },
+    "1137": {
+      "name": "Škoda T 24",
+      "tank_id": 1137
+    },
+    "1153": {
+      "name": "Strv m/42",
+      "tank_id": 1153
+    },
+    "1169": {
+      "name": "4TP",
+      "tank_id": 1169
+    },
+    "1185": {
+      "name": "P26/40",
+      "tank_id": 1185
+    },
+    "1297": {
+      "name": "Panther",
+      "tank_id": 1297
+    },
+    "1313": {
+      "name": "M4A3E8 Sherman",
+      "tank_id": 1313
+    },
+    "1329": {
+      "name": "Renault NC-31",
+      "tank_id": 1329
+    },
+    "1345": {
+      "name": "Hotchkiss H35",
+      "tank_id": 1345
+    },
+    "1361": {
+      "name": "Stuart I-IV",
+      "tank_id": 1361
+    },
+    "1377": {
+      "name": "Type 3 Chi-Nu",
+      "tank_id": 1377
+    },
+    "1393": {
+      "name": "Škoda T 25",
+      "tank_id": 1393
+    },
+    "1409": {
+      "name": "Strv 74",
+      "tank_id": 1409
+    },
+    "1425": {
+      "name": "7TP",
+      "tank_id": 1425
+    },
+    "1441": {
+      "name": "P.43",
+      "tank_id": 1441
+    },
+    "1537": {
+      "name": "T-28",
+      "tank_id": 1537
+    },
+    "1553": {
+      "name": "Jagdpanzer IV",
+      "tank_id": 1553
+    },
+    "1569": {
+      "name": "T20",
+      "tank_id": 1569
+    },
+    "1585": {
+      "name": "T-34-2",
+      "tank_id": 1585
+    },
+    "1601": {
+      "name": "D1",
+      "tank_id": 1601
+    },
+    "1617": {
+      "name": "Grant",
+      "tank_id": 1617
+    },
+    "1633": {
+      "name": "Type 1 Chi-He",
+      "tank_id": 1633
+    },
+    "1649": {
+      "name": "Konštrukta T-34/100",
+      "tank_id": 1649
+    },
+    "1665": {
+      "name": "Leo",
+      "tank_id": 1665
+    },
+    "1681": {
+      "name": "10TP",
+      "tank_id": 1681
+    },
+    "1697": {
+      "name": "P.43 bis",
+      "tank_id": 1697
+    },
+    "1793": {
+      "name": "S-51",
+      "tank_id": 1793
+    },
+    "1809": {
+      "name": "Jagdpanzer 38(t) Hetzer",
+      "tank_id": 1809
+    },
+    "1825": {
+      "name": "M2 Light Tank",
+      "tank_id": 1825
+    },
+    "1841": {
+      "name": "WZ-120",
+      "tank_id": 1841
+    },
+    "1889": {
+      "name": "Type 4 Chi-To",
+      "tank_id": 1889
+    },
+    "1905": {
+      "name": "TVP VTU Koncept",
+      "tank_id": 1905
+    },
+    "1921": {
+      "name": "Emil I",
+      "tank_id": 1921
+    },
+    "1937": {
+      "name": "14TP",
+      "tank_id": 1937
+    },
+    "1953": {
+      "name": "P.43 ter",
+      "tank_id": 1953
+    },
+    "2049": {
+      "name": "A-20",
+      "tank_id": 2049
+    },
+    "2065": {
+      "name": "Pz.Kpfw. II",
+      "tank_id": 2065
+    },
+    "2081": {
+      "name": "T1 HMC",
+      "tank_id": 2081
+    },
+    "2097": {
+      "name": "WZ-111 model 1-4",
+      "tank_id": 2097
+    },
+    "2113": {
+      "name": "105 leFH18B2",
+      "tank_id": 2113
+    },
+    "2129": {
+      "name": "Crusader",
+      "tank_id": 2129
+    },
+    "2145": {
+      "name": "Type 97 Chi-Ha",
+      "tank_id": 2145
+    },
+    "2161": {
+      "name": "Škoda T 50",
+      "tank_id": 2161
+    },
+    "2177": {
+      "name": "Emil II",
+      "tank_id": 2177
+    },
+    "2193": {
+      "name": "25TP KSUST II",
+      "tank_id": 2193
+    },
+    "2209": {
+      "name": "P.44 Pantera",
+      "tank_id": 2209
+    },
+    "2305": {
+      "name": "SU-152",
+      "tank_id": 2305
+    },
+    "2321": {
+      "name": "VK 36.01 (H)",
+      "tank_id": 2321
+    },
+    "2353": {
+      "name": "Vickers Mk. E Type B",
+      "tank_id": 2353
+    },
+    "2369": {
+      "name": "FCM 36 Pak 40",
+      "tank_id": 2369
+    },
+    "2385": {
+      "name": "Vickers Medium Mk. III",
+      "tank_id": 2385
+    },
+    "2401": {
+      "name": "Type 98 Ke-Ni",
+      "tank_id": 2401
+    },
+    "2417": {
+      "name": "TVP T 50/51",
+      "tank_id": 2417
+    },
+    "2433": {
+      "name": "Kranvagn",
+      "tank_id": 2433
+    },
+    "2449": {
+      "name": "40TP Habicha",
+      "tank_id": 2449
+    },
+    "2465": {
+      "name": "Prototipo Standard B",
+      "tank_id": 2465
+    },
+    "2561": {
+      "name": "T-34-85",
+      "tank_id": 2561
+    },
+    "2577": {
+      "name": "VK 30.01 (H)",
+      "tank_id": 2577
+    },
+    "2593": {
+      "name": "T30",
+      "tank_id": 2593
+    },
+    "2625": {
+      "name": "ARL 44",
+      "tank_id": 2625
+    },
+    "2657": {
+      "name": "STA-1",
+      "tank_id": 2657
+    },
+    "2689": {
+      "name": "Pvlvv fm/42",
+      "tank_id": 2689
+    },
+    "2705": {
+      "name": "45TP Habicha",
+      "tank_id": 2705
+    },
+    "2721": {
+      "name": "Progetto M40 mod. 65",
+      "tank_id": 2721
+    },
+    "2817": {
+      "name": "KV-85",
+      "tank_id": 2817
+    },
+    "2833": {
+      "name": "Sturmpanzer I Bison",
+      "tank_id": 2833
+    },
+    "2849": {
+      "name": "T34",
+      "tank_id": 2849
+    },
+    "2865": {
+      "name": "110",
+      "tank_id": 2865
+    },
+    "2881": {
+      "name": "AMX 40",
+      "tank_id": 2881
+    },
+    "2897": {
+      "name": "Churchill I",
+      "tank_id": 2897
+    },
+    "2913": {
+      "name": "Type 5 Ke-Ho",
+      "tank_id": 2913
+    },
+    "2929": {
+      "name": "Vz. 55",
+      "tank_id": 2929
+    },
+    "2945": {
+      "name": "Ikv 72",
+      "tank_id": 2945
+    },
+    "2961": {
+      "name": "53TP Markowskiego",
+      "tank_id": 2961
+    },
+    "2977": {
+      "name": "Rinoceronte",
+      "tank_id": 2977
+    },
+    "3073": {
+      "name": "T-46",
+      "tank_id": 3073
+    },
+    "3089": {
+      "name": "Leichttraktor",
+      "tank_id": 3089
+    },
+    "3105": {
+      "name": "M3 Lee",
+      "tank_id": 3105
+    },
+    "3121": {
+      "name": "M5A1 Stuart",
+      "tank_id": 3121
+    },
+    "3137": {
+      "name": "AMX 50 100",
+      "tank_id": 3137
+    },
+    "3153": {
+      "name": "Black Prince",
+      "tank_id": 3153
+    },
+    "3169": {
+      "name": "Type 97 Te-Ke",
+      "tank_id": 3169
+    },
+    "3185": {
+      "name": "TNH T Vz. 51",
+      "tank_id": 3185
+    },
+    "3201": {
+      "name": "Sav m/43",
+      "tank_id": 3201
+    },
+    "3217": {
+      "name": "50TP Tyszkiewicza",
+      "tank_id": 3217
+    },
+    "3233": {
+      "name": "Carro d'assalto P.88",
+      "tank_id": 3233
+    },
+    "3329": {
+      "name": "MS-1",
+      "tank_id": 3329
+    },
+    "3345": {
+      "name": "Pz.Kpfw. 38 (t)",
+      "tank_id": 3345
+    },
+    "3361": {
+      "name": "T1 Heavy Tank",
+      "tank_id": 3361
+    },
+    "3377": {
+      "name": "WZ-131",
+      "tank_id": 3377
+    },
+    "3393": {
+      "name": "Lorraine 39L AM",
+      "tank_id": 3393
+    },
+    "3409": {
+      "name": "Sexton II",
+      "tank_id": 3409
+    },
+    "3425": {
+      "name": "Type 61",
+      "tank_id": 3425
+    },
+    "3441": {
+      "name": "TNH 105/1000",
+      "tank_id": 3441
+    },
+    "3457": {
+      "name": "Ikv 103",
+      "tank_id": 3457
+    },
+    "3473": {
+      "name": "60TP Lewandowskiego",
+      "tank_id": 3473
+    },
+    "3489": {
+      "name": "Progetto C50 mod. 66",
+      "tank_id": 3489
+    },
+    "3585": {
+      "name": "SU-100",
+      "tank_id": 3585
+    },
+    "3601": {
+      "name": "Panzerjäger I",
+      "tank_id": 3601
+    },
+    "3617": {
+      "name": "M7 Priest",
+      "tank_id": 3617
+    },
+    "3633": {
+      "name": "IS-2",
+      "tank_id": 3633
+    },
+    "3649": {
+      "name": "Bat.-Châtillon 25 t",
+      "tank_id": 3649
+    },
+    "3665": {
+      "name": "Sherman Firefly",
+      "tank_id": 3665
+    },
+    "3681": {
+      "name": "STB-1",
+      "tank_id": 3681
+    },
+    "3697": {
+      "name": "Vz. 44-1",
+      "tank_id": 3697
+    },
+    "3713": {
+      "name": "Ikv 65 Alt II",
+      "tank_id": 3713
+    },
+    "3729": {
+      "name": "DS PZInż",
+      "tank_id": 3729
+    },
+    "3745": {
+      "name": "Progetto CC55 mod. 54",
+      "tank_id": 3745
+    },
+    "3841": {
+      "name": "SU-18",
+      "tank_id": 3841
+    },
+    "3857": {
+      "name": "Jagdpanther",
+      "tank_id": 3857
+    },
+    "3873": {
+      "name": "T29",
+      "tank_id": 3873
+    },
+    "3889": {
+      "name": "WZ-132",
+      "tank_id": 3889
+    },
+    "3905": {
+      "name": "AMX 50 120",
+      "tank_id": 3905
+    },
+    "3921": {
+      "name": "Caernarvon",
+      "tank_id": 3921
+    },
+    "3937": {
+      "name": "Type 5 Heavy",
+      "tank_id": 3937
+    },
+    "3969": {
+      "name": "Ikv 90 Typ B",
+      "tank_id": 3969
+    },
+    "3985": {
+      "name": "B.U.G.I.",
+      "tank_id": 3985
+    },
+    "4097": {
+      "name": "SU-14-2",
+      "tank_id": 4097
+    },
+    "4113": {
+      "name": "VK 30.02 (D)",
+      "tank_id": 4113
+    },
+    "4129": {
+      "name": "M41 HMC",
+      "tank_id": 4129
+    },
+    "4145": {
+      "name": "121",
+      "tank_id": 4145
+    },
+    "4161": {
+      "name": "AMX 13 105 AM mle. 50",
+      "tank_id": 4161
+    },
+    "4193": {
+      "name": "Type 4 Heavy",
+      "tank_id": 4193
+    },
+    "4225": {
+      "name": "UDES 03",
+      "tank_id": 4225
+    },
+    "4241": {
+      "name": "CS-44",
+      "tank_id": 4241
+    },
+    "4257": {
+      "name": "Semovente M43 Bassotto",
+      "tank_id": 4257
+    },
+    "4353": {
+      "name": "T-44",
+      "tank_id": 4353
+    },
+    "4369": {
+      "name": "Pz.Kpfw. III Ausf. J",
+      "tank_id": 4369
+    },
+    "4385": {
+      "name": "T32",
+      "tank_id": 4385
+    },
+    "4401": {
+      "name": "Type 2597 Chi-Ha",
+      "tank_id": 4401
+    },
+    "4417": {
+      "name": "Renault G1",
+      "tank_id": 4417
+    },
+    "4433": {
+      "name": "Conqueror",
+      "tank_id": 4433
+    },
+    "4449": {
+      "name": "Type 95 Heavy",
+      "tank_id": 4449
+    },
+    "4481": {
+      "name": "Strv 103-0",
+      "tank_id": 4481
+    },
+    "4497": {
+      "name": "CS-53",
+      "tank_id": 4497
+    },
+    "4513": {
+      "name": "SMV CC-56",
+      "tank_id": 4513
+    },
+    "4609": {
+      "name": "T-26",
+      "tank_id": 4609
+    },
+    "4625": {
+      "name": "Sturmpanzer II",
+      "tank_id": 4625
+    },
+    "4641": {
+      "name": "M37",
+      "tank_id": 4641
+    },
+    "4657": {
+      "name": "Type T-34",
+      "tank_id": 4657
+    },
+    "4673": {
+      "name": "AMX 13 F3 AM",
+      "tank_id": 4673
+    },
+    "4689": {
+      "name": "Churchill VII",
+      "tank_id": 4689
+    },
+    "4705": {
+      "name": "Type 91 Heavy",
+      "tank_id": 4705
+    },
+    "4737": {
+      "name": "Strv 103B",
+      "tank_id": 4737
+    },
+    "4769": {
+      "name": "SMV CC-67",
+      "tank_id": 4769
+    },
+    "4865": {
+      "name": "SU-5",
+      "tank_id": 4865
+    },
+    "4881": {
+      "name": "Pz.Kpfw. III Ausf. E",
+      "tank_id": 4881
+    },
+    "4897": {
+      "name": "M2 Medium Tank",
+      "tank_id": 4897
+    },
+    "4913": {
+      "name": "59-16",
+      "tank_id": 4913
+    },
+    "4929": {
+      "name": "AMX 13 90",
+      "tank_id": 4929
+    },
+    "4945": {
+      "name": "Valentine",
+      "tank_id": 4945
+    },
+    "4961": {
+      "name": "O-Ho",
+      "tank_id": 4961
+    },
+    "4993": {
+      "name": "UDES 14 Alt 5",
+      "tank_id": 4993
+    },
+    "5121": {
+      "name": "AT-1",
+      "tank_id": 5121
+    },
+    "5137": {
+      "name": "Tiger II",
+      "tank_id": 5137
+    },
+    "5153": {
+      "name": "M5 Stuart",
+      "tank_id": 5153
+    },
+    "5169": {
+      "name": "Type 58",
+      "tank_id": 5169
+    },
+    "5185": {
+      "name": "AMX 13 75",
+      "tank_id": 5185
+    },
+    "5201": {
+      "name": "Cruiser Mk. I",
+      "tank_id": 5201
+    },
+    "5217": {
+      "name": "O-Ni",
+      "tank_id": 5217
+    },
+    "5249": {
+      "name": "UDES 16",
+      "tank_id": 5249
+    },
+    "5265": {
+      "name": "CS-63",
+      "tank_id": 5265
+    },
+    "5281": {
+      "name": "Controcarro 3 Minotauro",
+      "tank_id": 5281
+    },
+    "5377": {
+      "name": "IS-3",
+      "tank_id": 5377
+    },
+    "5393": {
+      "name": "VK 16.02 Leopard",
+      "tank_id": 5393
+    },
+    "5409": {
+      "name": "M7",
+      "tank_id": 5409
+    },
+    "5425": {
+      "name": "113",
+      "tank_id": 5425
+    },
+    "5457": {
+      "name": "Comet",
+      "tank_id": 5457
+    },
+    "5473": {
+      "name": "O-I",
+      "tank_id": 5473
+    },
+    "5505": {
+      "name": "UDES 15/16",
+      "tank_id": 5505
+    },
+    "5537": {
+      "name": "Controcarro 1 Mk. 2",
+      "tank_id": 5537
+    },
+    "5633": {
+      "name": "SU-8",
+      "tank_id": 5633
+    },
+    "5649": {
+      "name": "Grille",
+      "tank_id": 5649
+    },
+    "5665": {
+      "name": "T2 Medium Tank",
+      "tank_id": 5665
+    },
+    "5681": {
+      "name": "WZ-132A",
+      "tank_id": 5681
+    },
+    "5697": {
+      "name": "Bat.-Châtillon 25 t AP",
+      "tank_id": 5697
+    },
+    "5713": {
+      "name": "Centurion Mk. 7/1",
+      "tank_id": 5713
+    },
+    "5729": {
+      "name": "O-I Experimental",
+      "tank_id": 5729
+    },
+    "5793": {
+      "name": "Semovente M41",
+      "tank_id": 5793
+    },
+    "5889": {
+      "name": "KV-3",
+      "tank_id": 5889
+    },
+    "5905": {
+      "name": "Wespe",
+      "tank_id": 5905
+    },
+    "5921": {
+      "name": "M26 Pershing",
+      "tank_id": 5921
+    },
+    "5937": {
+      "name": "WZ-132-1",
+      "tank_id": 5937
+    },
+    "5953": {
+      "name": "AMX 38",
+      "tank_id": 5953
+    },
+    "5969": {
+      "name": "Centurion Mk. I",
+      "tank_id": 5969
+    },
+    "5985": {
+      "name": "Type 89 I-Go/Chi-Ro",
+      "tank_id": 5985
+    },
+    "6145": {
+      "name": "IS-4",
+      "tank_id": 6145
+    },
+    "6161": {
+      "name": "Pz.Kpfw. II Luchs",
+      "tank_id": 6161
+    },
+    "6177": {
+      "name": "T3 HMC",
+      "tank_id": 6177
+    },
+    "6193": {
+      "name": "WZ-111 model 5A",
+      "tank_id": 6193
+    },
+    "6209": {
+      "name": "AMX 50 B",
+      "tank_id": 6209
+    },
+    "6225": {
+      "name": "FV215b",
+      "tank_id": 6225
+    },
+    "6401": {
+      "name": "SU-76M",
+      "tank_id": 6401
+    },
+    "6417": {
+      "name": "Pz.Kpfw. III/IV",
+      "tank_id": 6417
+    },
+    "6433": {
+      "name": "T56 GMC",
+      "tank_id": 6433
+    },
+    "6449": {
+      "name": "T-26G FT",
+      "tank_id": 6449
+    },
+    "6465": {
+      "name": "AMX 12 t",
+      "tank_id": 6465
+    },
+    "6481": {
+      "name": "Covenanter",
+      "tank_id": 6481
+    },
+    "6657": {
+      "name": "T-43",
+      "tank_id": 6657
+    },
+    "6673": {
+      "name": "Marder II",
+      "tank_id": 6673
+    },
+    "6705": {
+      "name": "M3G FT",
+      "tank_id": 6705
+    },
+    "6721": {
+      "name": "BDR G1 B",
+      "tank_id": 6721
+    },
+    "6913": {
+      "name": "SU-85B",
+      "tank_id": 6913
+    },
+    "6929": {
+      "name": "Maus",
+      "tank_id": 6929
+    },
+    "6945": {
+      "name": "M10 Wolverine",
+      "tank_id": 6945
+    },
+    "6961": {
+      "name": "SU-76G FT",
+      "tank_id": 6961
+    },
+    "6977": {
+      "name": "AMX M4 mle. 45",
+      "tank_id": 6977
+    },
+    "6993": {
+      "name": "Cruiser Mk. II",
+      "tank_id": 6993
+    },
+    "7169": {
+      "name": "IS-7",
+      "tank_id": 7169
+    },
+    "7185": {
+      "name": "VK 30.01 (P)",
+      "tank_id": 7185
+    },
+    "7201": {
+      "name": "M36 Jackson",
+      "tank_id": 7201
+    },
+    "7217": {
+      "name": "60G FT",
+      "tank_id": 7217
+    },
+    "7233": {
+      "name": "Lorraine 155 mle. 50",
+      "tank_id": 7233
+    },
+    "7249": {
+      "name": "Centurion Action X",
+      "tank_id": 7249
+    },
+    "7425": {
+      "name": "ISU-152",
+      "tank_id": 7425
+    },
+    "7441": {
+      "name": "VK 45.02 (P) Ausf. B",
+      "tank_id": 7441
+    },
+    "7457": {
+      "name": "M40/M43",
+      "tank_id": 7457
+    },
+    "7473": {
+      "name": "WZ-131G FT",
+      "tank_id": 7473
+    },
+    "7489": {
+      "name": "Lorraine 155 mle. 51",
+      "tank_id": 7489
+    },
+    "7505": {
+      "name": "Cruiser Mk. IV",
+      "tank_id": 7505
+    },
+    "7681": {
+      "name": "SU-26",
+      "tank_id": 7681
+    },
+    "7697": {
+      "name": "Ferdinand",
+      "tank_id": 7697
+    },
+    "7713": {
+      "name": "T40",
+      "tank_id": 7713
+    },
+    "7729": {
+      "name": "T-34-2G FT",
+      "tank_id": 7729
+    },
+    "7745": {
+      "name": "Renault FT AC",
+      "tank_id": 7745
+    },
+    "7761": {
+      "name": "Cruiser Mk. III",
+      "tank_id": 7761
+    },
+    "7937": {
+      "name": "T-54",
+      "tank_id": 7937
+    },
+    "7953": {
+      "name": "Jagdtiger",
+      "tank_id": 7953
+    },
+    "7969": {
+      "name": "M12",
+      "tank_id": 7969
+    },
+    "7985": {
+      "name": "WZ-111-1G FT",
+      "tank_id": 7985
+    },
+    "8017": {
+      "name": "Valentine AT",
+      "tank_id": 8017
+    },
+    "8081": {
+      "name": "CS-59",
+      "tank_id": 8081
+    },
+    "8193": {
+      "name": "Object 704",
+      "tank_id": 8193
+    },
+    "8209": {
+      "name": "Pz.Kpfw. 38 (t) n.A.",
+      "tank_id": 8209
+    },
+    "8225": {
+      "name": "T28",
+      "tank_id": 8225
+    },
+    "8241": {
+      "name": "WZ-111G FT",
+      "tank_id": 8241
+    },
+    "8257": {
+      "name": "Renault UE 57",
+      "tank_id": 8257
+    },
+    "8273": {
+      "name": "Universal Carrier 2-pdr",
+      "tank_id": 8273
+    },
+    "8449": {
+      "name": "212A",
+      "tank_id": 8449
+    },
+    "8465": {
+      "name": "Panther II",
+      "tank_id": 8465
+    },
+    "8481": {
+      "name": "T92 HMC",
+      "tank_id": 8481
+    },
+    "8497": {
+      "name": "WZ-113G FT",
+      "tank_id": 8497
+    },
+    "8529": {
+      "name": "AT 15",
+      "tank_id": 8529
+    },
+    "8705": {
+      "name": "Object 261",
+      "tank_id": 8705
+    },
+    "8721": {
+      "name": "G.W. Tiger",
+      "tank_id": 8721
+    },
+    "8737": {
+      "name": "T95",
+      "tank_id": 8737
+    },
+    "8785": {
+      "name": "AT 2",
+      "tank_id": 8785
+    },
+    "8961": {
+      "name": "KV-13",
+      "tank_id": 8961
+    },
+    "8977": {
+      "name": "G.W. Panther",
+      "tank_id": 8977
+    },
+    "8993": {
+      "name": "M46 Patton",
+      "tank_id": 8993
+    },
+    "9041": {
+      "name": "Alecto",
+      "tank_id": 9041
+    },
+    "9217": {
+      "name": "IS-6",
+      "tank_id": 9217
+    },
+    "9233": {
+      "name": "G.W. E 100",
+      "tank_id": 9233
+    },
+    "9249": {
+      "name": "T25 AT",
+      "tank_id": 9249
+    },
+    "9297": {
+      "name": "FV215b (183)",
+      "tank_id": 9297
+    },
+    "9473": {
+      "name": "T-50",
+      "tank_id": 9473
+    },
+    "9489": {
+      "name": "E 100",
+      "tank_id": 9489
+    },
+    "9505": {
+      "name": "M103",
+      "tank_id": 9505
+    },
+    "9553": {
+      "name": "AT 8",
+      "tank_id": 9553
+    },
+    "9745": {
+      "name": "E 75",
+      "tank_id": 9745
+    },
+    "9761": {
+      "name": "M24 Chaffee",
+      "tank_id": 9761
+    },
+    "9793": {
+      "name": "Somua SAu 40",
+      "tank_id": 9793
+    },
+    "9809": {
+      "name": "Churchill Gun Carrier",
+      "tank_id": 9809
+    },
+    "9985": {
+      "name": "SU-101",
+      "tank_id": 9985
+    },
+    "10001": {
+      "name": "VK 28.01",
+      "tank_id": 10001
+    },
+    "10017": {
+      "name": "M4A3E2 Sherman Jumbo",
+      "tank_id": 10017
+    },
+    "10049": {
+      "name": "S35 CA",
+      "tank_id": 10049
+    },
+    "10065": {
+      "name": "AT 7",
+      "tank_id": 10065
+    },
+    "10241": {
+      "name": "SU-100M1",
+      "tank_id": 10241
+    },
+    "10257": {
+      "name": "E 50",
+      "tank_id": 10257
+    },
+    "10273": {
+      "name": "M8A1",
+      "tank_id": 10273
+    },
+    "10497": {
+      "name": "KV-2",
+      "tank_id": 10497
+    },
+    "10513": {
+      "name": "VK 45.02 (P) Ausf. A",
+      "tank_id": 10513
+    },
+    "10529": {
+      "name": "T67",
+      "tank_id": 10529
+    },
+    "10577": {
+      "name": "Loyd Gun Carriage",
+      "tank_id": 10577
+    },
+    "10753": {
+      "name": "ST-I",
+      "tank_id": 10753
+    },
+    "10769": {
+      "name": "Tiger (P)",
+      "tank_id": 10769
+    },
+    "10785": {
+      "name": "T110E5",
+      "tank_id": 10785
+    },
+    "10817": {
+      "name": "AMX AC mle. 46",
+      "tank_id": 10817
+    },
+    "10833": {
+      "name": "Birch Gun",
+      "tank_id": 10833
+    },
+    "11009": {
+      "name": "KV-4",
+      "tank_id": 11009
+    },
+    "11025": {
+      "name": "Sturer Emil",
+      "tank_id": 11025
+    },
+    "11041": {
+      "name": "T25/2",
+      "tank_id": 11041
+    },
+    "11073": {
+      "name": "AMX 50 Foch",
+      "tank_id": 11073
+    },
+    "11089": {
+      "name": "Bishop",
+      "tank_id": 11089
+    },
+    "11265": {
+      "name": "T-150",
+      "tank_id": 11265
+    },
+    "11281": {
+      "name": "Marder 38T",
+      "tank_id": 11281
+    },
+    "11297": {
+      "name": "T28 Prototype",
+      "tank_id": 11297
+    },
+    "11345": {
+      "name": "Crusader 5.5-in. SP",
+      "tank_id": 11345
+    },
+    "11521": {
+      "name": "T-10",
+      "tank_id": 11521
+    },
+    "11537": {
+      "name": "Jagdpanther II",
+      "tank_id": 11537
+    },
+    "11553": {
+      "name": "M18 Hellcat",
+      "tank_id": 11553
+    },
+    "11585": {
+      "name": "ARL V39",
+      "tank_id": 11585
+    },
+    "11601": {
+      "name": "FV3805",
+      "tank_id": 11601
+    },
+    "11777": {
+      "name": "KV-1",
+      "tank_id": 11777
+    },
+    "11793": {
+      "name": "Nashorn",
+      "tank_id": 11793
+    },
+    "11809": {
+      "name": "T23E3",
+      "tank_id": 11809
+    },
+    "11841": {
+      "name": "Bat.-Châtillon 155 58",
+      "tank_id": 11841
+    },
+    "11857": {
+      "name": "FV304",
+      "tank_id": 11857
+    },
+    "12049": {
+      "name": "Jagdpanzer E 100",
+      "tank_id": 12049
+    },
+    "12097": {
+      "name": "AMX AC mle. 48",
+      "tank_id": 12097
+    },
+    "12113": {
+      "name": "FV207",
+      "tank_id": 12113
+    },
+    "12289": {
+      "name": "A-43",
+      "tank_id": 12289
+    },
+    "12305": {
+      "name": "E 50 Ausf. M",
+      "tank_id": 12305
+    },
+    "12369": {
+      "name": "Conqueror Gun Carriage",
+      "tank_id": 12369
+    },
+    "12545": {
+      "name": "A-44",
+      "tank_id": 12545
+    },
+    "12561": {
+      "name": "Pz.Kpfw. I Ausf. C",
+      "tank_id": 12561
+    },
+    "12577": {
+      "name": "M4 Improved",
+      "tank_id": 12577
+    },
+    "12817": {
+      "name": "Pz.Kpfw. I",
+      "tank_id": 12817
+    },
+    "12881": {
+      "name": "Sherman III",
+      "tank_id": 12881
+    },
+    "13073": {
+      "name": "Pz.Kpfw. II Ausf. G",
+      "tank_id": 13073
+    },
+    "13089": {
+      "name": "T110E4",
+      "tank_id": 13089
+    },
+    "13121": {
+      "name": "Somua S35",
+      "tank_id": 13121
+    },
+    "13137": {
+      "name": "FV4004 Conway",
+      "tank_id": 13137
+    },
+    "13313": {
+      "name": "Object 416",
+      "tank_id": 13313
+    },
+    "13329": {
+      "name": "Durchbruchswagen 2",
+      "tank_id": 13329
+    },
+    "13345": {
+      "name": "T26E4 SuperPershing",
+      "tank_id": 13345
+    },
+    "13393": {
+      "name": "Archer",
+      "tank_id": 13393
+    },
+    "13569": {
+      "name": "Object 268",
+      "tank_id": 13569
+    },
+    "13585": {
+      "name": "VK 20.01 (D)",
+      "tank_id": 13585
+    },
+    "13825": {
+      "name": "T-62A",
+      "tank_id": 13825
+    },
+    "13841": {
+      "name": "Indien-Panzer",
+      "tank_id": 13841
+    },
+    "13857": {
+      "name": "T110E3",
+      "tank_id": 13857
+    },
+    "13889": {
+      "name": "AMX 50 Foch (155)",
+      "tank_id": 13889
+    },
+    "13905": {
+      "name": "FV4005 Stage II",
+      "tank_id": 13905
+    },
+    "14097": {
+      "name": "VK 30.01 (D)",
+      "tank_id": 14097
+    },
+    "14113": {
+      "name": "M48A5 Patton",
+      "tank_id": 14113
+    },
+    "14145": {
+      "name": "AMX ELC bis",
+      "tank_id": 14145
+    },
+    "14161": {
+      "name": "Challenger",
+      "tank_id": 14161
+    },
+    "14353": {
+      "name": "Aufklärungspanzer Panther",
+      "tank_id": 14353
+    },
+    "14401": {
+      "name": "Bat.-Châtillon 155 55",
+      "tank_id": 14401
+    },
+    "14417": {
+      "name": "Achilles",
+      "tank_id": 14417
+    },
+    "14609": {
+      "name": "Leopard 1",
+      "tank_id": 14609
+    },
+    "14625": {
+      "name": "T69",
+      "tank_id": 14625
+    },
+    "14657": {
+      "name": "AMX 105 AM mle. 47",
+      "tank_id": 14657
+    },
+    "14673": {
+      "name": "Charioteer",
+      "tank_id": 14673
+    },
+    "14865": {
+      "name": "Leopard Prototyp A",
+      "tank_id": 14865
+    },
+    "14881": {
+      "name": "T57 Heavy Tank",
+      "tank_id": 14881
+    },
+    "14913": {
+      "name": "SARL 42",
+      "tank_id": 14913
+    },
+    "15105": {
+      "name": "T-70",
+      "tank_id": 15105
+    },
+    "15121": {
+      "name": "G.Pz. Mk. VI (e)",
+      "tank_id": 15121
+    },
+    "15137": {
+      "name": "T21",
+      "tank_id": 15137
+    },
+    "15169": {
+      "name": "FCM 36",
+      "tank_id": 15169
+    },
+    "15361": {
+      "name": "T-60",
+      "tank_id": 15361
+    },
+    "15377": {
+      "name": "G.W. Tiger (P)",
+      "tank_id": 15377
+    },
+    "15393": {
+      "name": "T54E1",
+      "tank_id": 15393
+    },
+    "15425": {
+      "name": "AMX 30 B",
+      "tank_id": 15425
+    },
+    "15441": {
+      "name": "Chieftain/T95",
+      "tank_id": 15441
+    },
+    "15617": {
+      "name": "Object 907",
+      "tank_id": 15617
+    },
+    "15633": {
+      "name": "Pz.Sfl. IVb",
+      "tank_id": 15633
+    },
+    "15649": {
+      "name": "T71 DA",
+      "tank_id": 15649
+    },
+    "15681": {
+      "name": "AMX 30 1er prototype",
+      "tank_id": 15681
+    },
+    "15697": {
+      "name": "Super Conqueror",
+      "tank_id": 15697
+    },
+    "15873": {
+      "name": "T-80",
+      "tank_id": 15873
+    },
+    "15889": {
+      "name": "VK 30.02 (M)",
+      "tank_id": 15889
+    },
+    "15905": {
+      "name": "M60",
+      "tank_id": 15905
+    },
+    "15937": {
+      "name": "Renault R35",
+      "tank_id": 15937
+    },
+    "15953": {
+      "name": "FV217 Badger",
+      "tank_id": 15953
+    },
+    "16129": {
+      "name": "SU-14-1",
+      "tank_id": 16129
+    },
+    "16145": {
+      "name": "Pz.Sfl. IVc",
+      "tank_id": 16145
+    },
+    "16161": {
+      "name": "M53/M55",
+      "tank_id": 16161
+    },
+    "16209": {
+      "name": "Cavalier",
+      "tank_id": 16209
+    },
+    "16385": {
+      "name": "SU-122A",
+      "tank_id": 16385
+    },
+    "16401": {
+      "name": "Waffenträger auf Pz. IV",
+      "tank_id": 16401
+    },
+    "16417": {
+      "name": "M44",
+      "tank_id": 16417
+    },
+    "16449": {
+      "name": "AMX 65 t",
+      "tank_id": 16449
+    },
+    "16641": {
+      "name": "MT-25",
+      "tank_id": 16641
+    },
+    "16657": {
+      "name": "Rhm.-Borsig Waffenträger",
+      "tank_id": 16657
+    },
+    "16673": {
+      "name": "T37",
+      "tank_id": 16673
+    },
+    "16705": {
+      "name": "AMX M4 mle. 51",
+      "tank_id": 16705
+    },
+    "16897": {
+      "name": "Object 140",
+      "tank_id": 16897
+    },
+    "16913": {
+      "name": "Waffenträger auf E 100",
+      "tank_id": 16913
+    },
+    "16961": {
+      "name": "AMX M4 mle. 54",
+      "tank_id": 16961
+    },
+    "17169": {
+      "name": "Pz.Kpfw. IV Ausf. A",
+      "tank_id": 17169
+    },
+    "17217": {
+      "name": "AMX 13 105",
+      "tank_id": 17217
+    },
+    "17425": {
+      "name": "Pz.Kpfw. IV Ausf. D",
+      "tank_id": 17425
+    },
+    "17473": {
+      "name": "Bat.-Châtillon 12 t",
+      "tank_id": 17473
+    },
+    "17665": {
+      "name": "Object 430 Version II",
+      "tank_id": 17665
+    },
+    "17729": {
+      "name": "AMX 50 Foch B",
+      "tank_id": 17729
+    },
+    "17937": {
+      "name": "StuG III Ausf. B",
+      "tank_id": 17937
+    },
+    "17953": {
+      "name": "M41 Walker Bulldog",
+      "tank_id": 17953
+    },
+    "17985": {
+      "name": "Panhard AMD 178B",
+      "tank_id": 17985
+    },
+    "18177": {
+      "name": "T-54 ltwt.",
+      "tank_id": 18177
+    },
+    "18193": {
+      "name": "Pz.Kpfw. IV Ausf. H",
+      "tank_id": 18193
+    },
+    "18209": {
+      "name": "T49",
+      "tank_id": 18209
+    },
+    "18241": {
+      "name": "Hotchkiss EBR",
+      "tank_id": 18241
+    },
+    "18433": {
+      "name": "LTTB",
+      "tank_id": 18433
+    },
+    "18449": {
+      "name": "Spähpanzer Ru 251",
+      "tank_id": 18449
+    },
+    "18465": {
+      "name": "T18 HMC",
+      "tank_id": 18465
+    },
+    "18497": {
+      "name": "Panhard AML Lynx 6x6",
+      "tank_id": 18497
+    },
+    "18689": {
+      "name": "KV-1S",
+      "tank_id": 18689
+    },
+    "18705": {
+      "name": "Mäuschen",
+      "tank_id": 18705
+    },
+    "18721": {
+      "name": "T82 HMC",
+      "tank_id": 18721
+    },
+    "18753": {
+      "name": "Panhard EBR 90",
+      "tank_id": 18753
+    },
+    "18961": {
+      "name": "Spähpanzer SP I C",
+      "tank_id": 18961
+    },
+    "19009": {
+      "name": "Panhard EBR 105",
+      "tank_id": 19009
+    },
+    "19201": {
+      "name": "T-100 LT",
+      "tank_id": 19201
+    },
+    "19217": {
+      "name": "Grille 15",
+      "tank_id": 19217
+    },
+    "19457": {
+      "name": "LTG",
+      "tank_id": 19457
+    },
+    "19473": {
+      "name": "Pz.Kpfw. VII",
+      "tank_id": 19473
+    },
+    "19489": {
+      "name": "XM551 Sheridan",
+      "tank_id": 19489
+    },
+    "19713": {
+      "name": "Object 257",
+      "tank_id": 19713
+    },
+    "19729": {
+      "name": "VK 100.01 (P)",
+      "tank_id": 19729
+    },
+    "19745": {
+      "name": "T71 CMCD",
+      "tank_id": 19745
+    },
+    "19969": {
+      "name": "Object 430U",
+      "tank_id": 19969
+    },
+    "19985": {
+      "name": "Rheinmetall Panzerwagen",
+      "tank_id": 19985
+    },
+    "20225": {
+      "name": "Object 268 Version 4",
+      "tank_id": 20225
+    },
+    "20241": {
+      "name": "HWK 12",
+      "tank_id": 20241
+    },
+    "20257": {
+      "name": "T6 Medium",
+      "tank_id": 20257
+    },
+    "20481": {
+      "name": "IS-M",
+      "tank_id": 20481
+    },
+    "20513": {
+      "name": "Pawlack Tank",
+      "tank_id": 20513
+    },
+    "20737": {
+      "name": "Object 705",
+      "tank_id": 20737
+    },
+    "20769": {
+      "name": "M-II-Y",
+      "tank_id": 20769
+    },
+    "20993": {
+      "name": "Object 705A",
+      "tank_id": 20993
+    },
+    "21025": {
+      "name": "M-III-Y",
+      "tank_id": 21025
+    },
+    "21249": {
+      "name": "Object 263",
+      "tank_id": 21249
+    },
+    "21281": {
+      "name": "M-VI-Y",
+      "tank_id": 21281
+    },
+    "21505": {
+      "name": "Object 430",
+      "tank_id": 21505
+    },
+    "21537": {
+      "name": "M-V-Y",
+      "tank_id": 21537
+    },
+    "21761": {
+      "name": "K-91",
+      "tank_id": 21761
+    },
+    "22017": {
+      "name": "Object 277",
+      "tank_id": 22017
+    },
+    "22273": {
+      "name": "ST-II",
+      "tank_id": 22273
+    },
+    "22529": {
+      "name": "IS-3-II",
+      "tank_id": 22529
+    },
+    "22785": {
+      "name": "IS-2-II",
+      "tank_id": 22785
+    },
+    "23041": {
+      "name": "BT-5",
+      "tank_id": 23041
+    },
+    "25617": {
+      "name": "VK 28.01 mit 10,5 cm L/28",
+      "tank_id": 25617
+    },
+    "31233": {
+      "name": "IS-2 shielded",
+      "tank_id": 31233
+    },
+    "31745": {
+      "name": "ISU-152K",
+      "tank_id": 31745
+    },
+    "32001": {
+      "name": "Object 780",
+      "tank_id": 32001
+    },
+    "32065": {
+      "name": "AltProto AMX 30",
+      "tank_id": 32065
+    },
+    "32257": {
+      "name": "Object 274a",
+      "tank_id": 32257
+    },
+    "32769": {
+      "name": "K-91-PT",
+      "tank_id": 32769
+    },
+    "33025": {
+      "name": "KV-1 shielded",
+      "tank_id": 33025
+    },
+    "33281": {
+      "name": "T-34 with L-11",
+      "tank_id": 33281
+    },
+    "33537": {
+      "name": "Object 259A",
+      "tank_id": 33537
+    },
+    "34049": {
+      "name": "Object 140 CL",
+      "tank_id": 34049
+    },
+    "34081": {
+      "name": "AMBT",
+      "tank_id": 34081
+    },
+    "34305": {
+      "name": "M4-85",
+      "tank_id": 34305
+    },
+    "34561": {
+      "name": "K-2",
+      "tank_id": 34561
+    },
+    "34593": {
+      "name": "Convert. Medium Tank T3",
+      "tank_id": 34593
+    },
+    "35105": {
+      "name": "ASTRON Rex 105 mm",
+      "tank_id": 35105
+    },
+    "35361": {
+      "name": "T110E5 CL",
+      "tank_id": 35361
+    },
+    "38145": {
+      "name": "T-44-122A",
+      "tank_id": 38145
+    },
+    "38401": {
+      "name": "T-44-100 Igrovoy",
+      "tank_id": 38401
+    },
+    "43073": {
+      "name": "Lorraine 50 t",
+      "tank_id": 43073
+    },
+    "43281": {
+      "name": "Pz.Kpfw. 35 R",
+      "tank_id": 43281
+    },
+    "43329": {
+      "name": "AM 39 Gendron-Somua",
+      "tank_id": 43329
+    },
+    "43521": {
+      "name": "IS-6 FL",
+      "tank_id": 43521
+    },
+    "43537": {
+      "name": "Pz.Kpfw. M 15",
+      "tank_id": 43537
+    },
+    "43553": {
+      "name": "M-IV-Y",
+      "tank_id": 43553
+    },
+    "43585": {
+      "name": "Panhard EBR 75 (FL 10)",
+      "tank_id": 43585
+    },
+    "43777": {
+      "name": "T-54 first prototype FL",
+      "tank_id": 43777
+    },
+    "43841": {
+      "name": "AMR 35",
+      "tank_id": 43841
+    },
+    "44033": {
+      "name": "T-44 FL",
+      "tank_id": 44033
+    },
+    "44289": {
+      "name": "Object 703 Version II",
+      "tank_id": 44289
+    },
+    "44545": {
+      "name": "Object 777 Version II",
+      "tank_id": 44545
+    },
+    "44801": {
+      "name": "T-116",
+      "tank_id": 44801
+    },
+    "45057": {
+      "name": "SU-130PM",
+      "tank_id": 45057
+    },
+    "45313": {
+      "name": "T-50-2",
+      "tank_id": 45313
+    },
+    "45569": {
+      "name": "LT-432",
+      "tank_id": 45569
+    },
+    "45585": {
+      "name": "Pz.Kpfw. IV Ausf. H Ankou",
+      "tank_id": 45585
+    },
+    "45841": {
+      "name": "Kampfpanzer 07 RH",
+      "tank_id": 45841
+    },
+    "46097": {
+      "name": "Pz.Sfl. IC",
+      "tank_id": 46097
+    },
+    "46353": {
+      "name": "Kunze Panzer",
+      "tank_id": 46353
+    },
+    "46593": {
+      "name": "IS-2M",
+      "tank_id": 46593
+    },
+    "46609": {
+      "name": "M48A2 Räumpanzer",
+      "tank_id": 46609
+    },
+    "46849": {
+      "name": "Object 279 early",
+      "tank_id": 46849
+    },
+    "46865": {
+      "name": "E 75 TS",
+      "tank_id": 46865
+    },
+    "47105": {
+      "name": "T-34 shielded",
+      "tank_id": 47105
+    },
+    "47121": {
+      "name": "Kampfpanzer 50 t",
+      "tank_id": 47121
+    },
+    "47361": {
+      "name": "STG Guard",
+      "tank_id": 47361
+    },
+    "47377": {
+      "name": "HWK 30",
+      "tank_id": 47377
+    },
+    "47617": {
+      "name": "STG",
+      "tank_id": 47617
+    },
+    "47633": {
+      "name": "MKA",
+      "tank_id": 47633
+    },
+    "47873": {
+      "name": "T-29",
+      "tank_id": 47873
+    },
+    "48129": {
+      "name": "Loza's M4-A2 Sherman",
+      "tank_id": 48129
+    },
+    "48145": {
+      "name": "VK 168.01 Mauerbrecher",
+      "tank_id": 48145
+    },
+    "48385": {
+      "name": "T-103",
+      "tank_id": 48385
+    },
+    "48401": {
+      "name": "Kanonenjagdpanzer 105",
+      "tank_id": 48401
+    },
+    "48641": {
+      "name": "Object 252U Defender",
+      "tank_id": 48641
+    },
+    "48913": {
+      "name": "VK 168.01 (P)",
+      "tank_id": 48913
+    },
+    "49169": {
+      "name": "Tiger 131",
+      "tank_id": 49169
+    },
+    "49409": {
+      "name": "IS-6 B",
+      "tank_id": 49409
+    },
+    "49665": {
+      "name": "Object 252U",
+      "tank_id": 49665
+    },
+    "49921": {
+      "name": "KV-122",
+      "tank_id": 49921
+    },
+    "49937": {
+      "name": "Schwarzpanzer 58",
+      "tank_id": 49937
+    },
+    "50193": {
+      "name": "Rheinmetall Skorpion G",
+      "tank_id": 50193
+    },
+    "50337": {
+      "name": "SMV CC-64 Vipera",
+      "tank_id": 50337
+    },
+    "50689": {
+      "name": "Object 268 Version V",
+      "tank_id": 50689
+    },
+    "50721": {
+      "name": "T42",
+      "tank_id": 50721
+    },
+    "50817": {
+      "name": "Lago M38",
+      "tank_id": 50817
+    },
+    "50849": {
+      "name": "Carro da Combattimento 45 t",
+      "tank_id": 50849
+    },
+    "50945": {
+      "name": "T-45",
+      "tank_id": 50945
+    },
+    "50961": {
+      "name": "leKpz M 41 90 mm GF",
+      "tank_id": 50961
+    },
+    "50977": {
+      "name": "M24E2 Super Chaffee",
+      "tank_id": 50977
+    },
+    "51057": {
+      "name": "Škoda T 56",
+      "tank_id": 51057
+    },
+    "51089": {
+      "name": "CS-52 LIS",
+      "tank_id": 51089
+    },
+    "51105": {
+      "name": "Bisonte C45",
+      "tank_id": 51105
+    },
+    "51201": {
+      "name": "KV-220-2 Beta Test",
+      "tank_id": 51201
+    },
+    "51233": {
+      "name": "T77",
+      "tank_id": 51233
+    },
+    "51281": {
+      "name": "Matilda LVT",
+      "tank_id": 51281
+    },
+    "51313": {
+      "name": "Škoda T 45",
+      "tank_id": 51313
+    },
+    "51345": {
+      "name": "T-34-85 Rudy",
+      "tank_id": 51345
+    },
+    "51361": {
+      "name": "Progetto M35 mod. 46",
+      "tank_id": 51361
+    },
+    "51457": {
+      "name": "Matilda IV",
+      "tank_id": 51457
+    },
+    "51473": {
+      "name": "Pz.Kpfw. V/IV",
+      "tank_id": 51473
+    },
+    "51489": {
+      "name": "T2 Light Tank",
+      "tank_id": 51489
+    },
+    "51537": {
+      "name": "Caliban",
+      "tank_id": 51537
+    },
+    "51553": {
+      "name": "Type 3 Chi-Nu Kai",
+      "tank_id": 51553
+    },
+    "51569": {
+      "name": "Škoda T 40",
+      "tank_id": 51569
+    },
+    "51585": {
+      "name": "Strv m/42-57 Alt A.2",
+      "tank_id": 51585
+    },
+    "51713": {
+      "name": "Churchill III",
+      "tank_id": 51713
+    },
+    "51729": {
+      "name": "Pz.Kpfw. II Ausf. J",
+      "tank_id": 51729
+    },
+    "51745": {
+      "name": "Ram II",
+      "tank_id": 51745
+    },
+    "51825": {
+      "name": "Škoda T 27",
+      "tank_id": 51825
+    },
+    "51841": {
+      "name": "L-60",
+      "tank_id": 51841
+    },
+    "51985": {
+      "name": "Pz.Kpfw. S35 739 (f)",
+      "tank_id": 51985
+    },
+    "52001": {
+      "name": "MTLS-1G14",
+      "tank_id": 52001
+    },
+    "52049": {
+      "name": "Charlemagne",
+      "tank_id": 52049
+    },
+    "52065": {
+      "name": "STA-2",
+      "tank_id": 52065
+    },
+    "52081": {
+      "name": "Vz. 55 Gothic Warrior",
+      "tank_id": 52081
+    },
+    "52097": {
+      "name": "Strv S1",
+      "tank_id": 52097
+    },
+    "52225": {
+      "name": "BT-SV",
+      "tank_id": 52225
+    },
+    "52241": {
+      "name": "Pz.Kpfw. B2 740 (f)",
+      "tank_id": 52241
+    },
+    "52257": {
+      "name": "M4A2E4 Sherman",
+      "tank_id": 52257
+    },
+    "52305": {
+      "name": "GSOR 1008",
+      "tank_id": 52305
+    },
+    "52321": {
+      "name": "Heavy Tank No. VI",
+      "tank_id": 52321
+    },
+    "52353": {
+      "name": "Strv 81",
+      "tank_id": 52353
+    },
+    "52481": {
+      "name": "Valentine II",
+      "tank_id": 52481
+    },
+    "52497": {
+      "name": "Pz.Kpfw. 38H 735 (f)",
+      "tank_id": 52497
+    },
+    "52513": {
+      "name": "M6A2E1",
+      "tank_id": 52513
+    },
+    "52561": {
+      "name": "Tortoise",
+      "tank_id": 52561
+    },
+    "52609": {
+      "name": "Primo Victoria",
+      "tank_id": 52609
+    },
+    "52737": {
+      "name": "M3 Light",
+      "tank_id": 52737
+    },
+    "52769": {
+      "name": "M22 Locust",
+      "tank_id": 52769
+    },
+    "52817": {
+      "name": "AC 1 Sentinel",
+      "tank_id": 52817
+    },
+    "52865": {
+      "name": "EMIL 1951",
+      "tank_id": 52865
+    },
+    "52993": {
+      "name": "A-32",
+      "tank_id": 52993
+    },
+    "53121": {
+      "name": "Lansen C",
+      "tank_id": 53121
+    },
+    "53249": {
+      "name": "KV-5",
+      "tank_id": 53249
+    },
+    "53329": {
+      "name": "Conqueror FL",
+      "tank_id": 53329
+    },
+    "53505": {
+      "name": "T-127",
+      "tank_id": 53505
+    },
+    "53537": {
+      "name": "T1E6",
+      "tank_id": 53537
+    },
+    "53585": {
+      "name": "Matilda Black Prince",
+      "tank_id": 53585
+    },
+    "53633": {
+      "name": "Strv S1 FL",
+      "tank_id": 53633
+    },
+    "53761": {
+      "name": "SU-85I",
+      "tank_id": 53761
+    },
+    "53793": {
+      "name": "T95E2",
+      "tank_id": 53793
+    },
+    "53841": {
+      "name": "TOG II*",
+      "tank_id": 53841
+    },
+    "54017": {
+      "name": "KV-220-2",
+      "tank_id": 54017
+    },
+    "54033": {
+      "name": "Pz.Kpfw. V/IV Alpha",
+      "tank_id": 54033
+    },
+    "54097": {
+      "name": "AT 15A",
+      "tank_id": 54097
+    },
+    "54145": {
+      "name": "Strv K",
+      "tank_id": 54145
+    },
+    "54273": {
+      "name": "SU-76I",
+      "tank_id": 54273
+    },
+    "54289": {
+      "name": "Löwe",
+      "tank_id": 54289
+    },
+    "54353": {
+      "name": "Excelsior",
+      "tank_id": 54353
+    },
+    "54401": {
+      "name": "Strv 103-0 FL",
+      "tank_id": 54401
+    },
+    "54529": {
+      "name": "Tetrarch",
+      "tank_id": 54529
+    },
+    "54545": {
+      "name": "Pz.Kpfw. T 25",
+      "tank_id": 54545
+    },
+    "54609": {
+      "name": "Sexton I",
+      "tank_id": 54609
+    },
+    "54657": {
+      "name": "Bofors Tornvagn",
+      "tank_id": 54657
+    },
+    "54785": {
+      "name": "SU-100Y",
+      "tank_id": 54785
+    },
+    "54801": {
+      "name": "Pz.Kpfw. T 15",
+      "tank_id": 54801
+    },
+    "54865": {
+      "name": "Light Mk. VIC",
+      "tank_id": 54865
+    },
+    "55057": {
+      "name": "Pz.Kpfw. IV hydrostat.",
+      "tank_id": 55057
+    },
+    "55073": {
+      "name": "T7 Combat Car",
+      "tank_id": 55073
+    },
+    "55121": {
+      "name": "FV201 (A45)",
+      "tank_id": 55121
+    },
+    "55297": {
+      "name": "SU-122-44",
+      "tank_id": 55297
+    },
+    "55313": {
+      "name": "8,8 cm Pak 43 Jagdtiger",
+      "tank_id": 55313
+    },
+    "55377": {
+      "name": "A46",
+      "tank_id": 55377
+    },
+    "55569": {
+      "name": "E 25",
+      "tank_id": 55569
+    },
+    "55633": {
+      "name": "FV4202",
+      "tank_id": 55633
+    },
+    "55825": {
+      "name": "Ferdinand FL",
+      "tank_id": 55825
+    },
+    "55841": {
+      "name": "T95E6",
+      "tank_id": 55841
+    },
+    "55889": {
+      "name": "Cromwell B",
+      "tank_id": 55889
+    },
+    "56065": {
+      "name": "IS-3A Peregrine",
+      "tank_id": 56065
+    },
+    "56081": {
+      "name": "VK 75.01 (K)",
+      "tank_id": 56081
+    },
+    "56097": {
+      "name": "M4A3E8 Fury",
+      "tank_id": 56097
+    },
+    "56145": {
+      "name": "AC 4 Experimental",
+      "tank_id": 56145
+    },
+    "56337": {
+      "name": "Jagdtiger FL",
+      "tank_id": 56337
+    },
+    "56353": {
+      "name": "M56 Scorpion",
+      "tank_id": 56353
+    },
+    "56369": {
+      "name": "WZ-111 model 1-4 FL",
+      "tank_id": 56369
+    },
+    "56577": {
+      "name": "LTP",
+      "tank_id": 56577
+    },
+    "56593": {
+      "name": "E 50 FL",
+      "tank_id": 56593
+    },
+    "56609": {
+      "name": "T28 Concept",
+      "tank_id": 56609
+    },
+    "56657": {
+      "name": "Caernarvon Action X",
+      "tank_id": 56657
+    },
+    "56849": {
+      "name": "Panzer 58 FL",
+      "tank_id": 56849
+    },
+    "56913": {
+      "name": "Centurion Mk. 5/1 RAAC",
+      "tank_id": 56913
+    },
+    "57105": {
+      "name": "Dicker Max",
+      "tank_id": 57105
+    },
+    "57121": {
+      "name": "M46 Patton KR",
+      "tank_id": 57121
+    },
+    "57169": {
+      "name": "Sherman VC Firefly",
+      "tank_id": 57169
+    },
+    "57361": {
+      "name": "Pz.Kpfw. IV Schmalturm",
+      "tank_id": 57361
+    },
+    "57377": {
+      "name": "T25 Pilot Number 1",
+      "tank_id": 57377
+    },
+    "57425": {
+      "name": "Chimera",
+      "tank_id": 57425
+    },
+    "57601": {
+      "name": "T-54 FL",
+      "tank_id": 57601
+    },
+    "57617": {
+      "name": "Panther/M10",
+      "tank_id": 57617
+    },
+    "57633": {
+      "name": "T71 CMCD P",
+      "tank_id": 57633
+    },
+    "57681": {
+      "name": "Excalibur",
+      "tank_id": 57681
+    },
+    "57889": {
+      "name": "T92",
+      "tank_id": 57889
+    },
+    "57937": {
+      "name": "T95/FV4201 Chieftain",
+      "tank_id": 57937
+    },
+    "58113": {
+      "name": "T-34-85M",
+      "tank_id": 58113
+    },
+    "58145": {
+      "name": "T30 FL",
+      "tank_id": 58145
+    },
+    "58193": {
+      "name": "FV4202 FL",
+      "tank_id": 58193
+    },
+    "58369": {
+      "name": "Object 260",
+      "tank_id": 58369
+    },
+    "58401": {
+      "name": "M46 Patton FL",
+      "tank_id": 58401
+    },
+    "58449": {
+      "name": "FV1066 Senlac",
+      "tank_id": 58449
+    },
+    "58625": {
+      "name": "ISU-130",
+      "tank_id": 58625
+    },
+    "58641": {
+      "name": "VK 72.01 (K)",
+      "tank_id": 58641
+    },
+    "58657": {
+      "name": "Chrysler K GF",
+      "tank_id": 58657
+    },
+    "58705": {
+      "name": "GSOR3301 AVR FS",
+      "tank_id": 58705
+    },
+    "58881": {
+      "name": "IS-5 (Object 730)",
+      "tank_id": 58881
+    },
+    "58897": {
+      "name": "Tiger II FL",
+      "tank_id": 58897
+    },
+    "58913": {
+      "name": "T26E5",
+      "tank_id": 58913
+    },
+    "58961": {
+      "name": "Manticore",
+      "tank_id": 58961
+    },
+    "59137": {
+      "name": "IS-2",
+      "tank_id": 59137
+    },
+    "59169": {
+      "name": "T26E5 Patriot",
+      "tank_id": 59169
+    },
+    "59217": {
+      "name": "A43 BP prototype",
+      "tank_id": 59217
+    },
+    "59393": {
+      "name": "T-34-85 Rudy",
+      "tank_id": 59393
+    },
+    "59409": {
+      "name": "VK 65.01 (H)",
+      "tank_id": 59409
+    },
+    "59425": {
+      "name": "T34 B",
+      "tank_id": 59425
+    },
+    "59473": {
+      "name": "LHMTV",
+      "tank_id": 59473
+    },
+    "59649": {
+      "name": "ISU-122S",
+      "tank_id": 59649
+    },
+    "59665": {
+      "name": "Großtraktor - Krupp",
+      "tank_id": 59665
+    },
+    "59681": {
+      "name": "M4A3E8 Thunderbolt VII",
+      "tank_id": 59681
+    },
+    "59697": {
+      "name": "WZ-132 FL",
+      "tank_id": 59697
+    },
+    "59713": {
+      "name": "AMX AC mle. 48 FL",
+      "tank_id": 59713
+    },
+    "59729": {
+      "name": "GSR 3301 Setter",
+      "tank_id": 59729
+    },
+    "59905": {
+      "name": "T-54 first prototype",
+      "tank_id": 59905
+    },
+    "59937": {
+      "name": "T26E3 Eagle 7",
+      "tank_id": 59937
+    },
+    "59969": {
+      "name": "ELC EVEN 90 FL",
+      "tank_id": 59969
+    },
+    "59985": {
+      "name": "Turtle Mk. I",
+      "tank_id": 59985
+    },
+    "60161": {
+      "name": "Object 244",
+      "tank_id": 60161
+    },
+    "60177": {
+      "name": "Panther mit 8,8 cm L/71",
+      "tank_id": 60177
+    },
+    "60193": {
+      "name": "Chrysler K",
+      "tank_id": 60193
+    },
+    "60225": {
+      "name": "Bat.-Châtillon Bourrasque",
+      "tank_id": 60225
+    },
+    "60241": {
+      "name": "Valiant",
+      "tank_id": 60241
+    },
+    "60417": {
+      "name": "IS-3A",
+      "tank_id": 60417
+    },
+    "60433": {
+      "name": "Pz.Kpfw. II Ausf. D",
+      "tank_id": 60433
+    },
+    "60449": {
+      "name": "TS-5",
+      "tank_id": 60449
+    },
+    "60465": {
+      "name": "WZ-114",
+      "tank_id": 60465
+    },
+    "60481": {
+      "name": "Char Futur 4",
+      "tank_id": 60481
+    },
+    "60497": {
+      "name": "Cobra",
+      "tank_id": 60497
+    },
+    "60529": {
+      "name": "ShPTK-TVP 100",
+      "tank_id": 60529
+    },
+    "60689": {
+      "name": "StuG IV",
+      "tank_id": 60689
+    },
+    "60705": {
+      "name": "T34 FL",
+      "tank_id": 60705
+    },
+    "60721": {
+      "name": "WZ-113-II",
+      "tank_id": 60721
+    },
+    "60737": {
+      "name": "Bretagne Panther",
+      "tank_id": 60737
+    },
+    "60753": {
+      "name": "Gonsalo",
+      "tank_id": 60753
+    },
+    "60929": {
+      "name": "BT-7 artillery",
+      "tank_id": 60929
+    },
+    "60945": {
+      "name": "T 55A",
+      "tank_id": 60945
+    },
+    "60961": {
+      "name": "T26E4 SuperPershing FL",
+      "tank_id": 60961
+    },
+    "60977": {
+      "name": "114 SP2",
+      "tank_id": 60977
+    },
+    "60993": {
+      "name": "M4A1 FL 10",
+      "tank_id": 60993
+    },
+    "61217": {
+      "name": "T78",
+      "tank_id": 61217
+    },
+    "61249": {
+      "name": "M10 RBFM",
+      "tank_id": 61249
+    },
+    "61441": {
+      "name": "T-28E with F-30",
+      "tank_id": 61441
+    },
+    "61457": {
+      "name": "Pz.Kpfw. III Ausf. K",
+      "tank_id": 61457
+    },
+    "61473": {
+      "name": "King Tiger (Captured)",
+      "tank_id": 61473
+    },
+    "61489": {
+      "name": "WZ-120-1G FT FL",
+      "tank_id": 61489
+    },
+    "61505": {
+      "name": "ELC EVEN 90",
+      "tank_id": 61505
+    },
+    "61697": {
+      "name": "T-22 medium",
+      "tank_id": 61697
+    },
+    "61713": {
+      "name": "Krupp-Steyr Waffenträger",
+      "tank_id": 61713
+    },
+    "61729": {
+      "name": "AE Phase I",
+      "tank_id": 61729
+    },
+    "61745": {
+      "name": "112 FL",
+      "tank_id": 61745
+    },
+    "61761": {
+      "name": "AMX Canon d'assaut 105",
+      "tank_id": 61761
+    },
+    "61953": {
+      "name": "T-44-100",
+      "tank_id": 61953
+    },
+    "61969": {
+      "name": "Kanonenjagdpanzer",
+      "tank_id": 61969
+    },
+    "61985": {
+      "name": "M54 Renegade",
+      "tank_id": 61985
+    },
+    "62001": {
+      "name": "M41D",
+      "tank_id": 62001
+    },
+    "62017": {
+      "name": "AMX M4 mle. 49 Liberté",
+      "tank_id": 62017
+    },
+    "62209": {
+      "name": "KV-4 KTTS",
+      "tank_id": 62209
+    },
+    "62241": {
+      "name": "TL-1 LPC",
+      "tank_id": 62241
+    },
+    "62257": {
+      "name": "WZ-111 Qilin",
+      "tank_id": 62257
+    },
+    "62273": {
+      "name": "Somua SM",
+      "tank_id": 62273
+    },
+    "62481": {
+      "name": "Rheinmetall Skorpion",
+      "tank_id": 62481
+    },
+    "62497": {
+      "name": "Super Hellcat",
+      "tank_id": 62497
+    },
+    "62513": {
+      "name": "113 Beijing Opera",
+      "tank_id": 62513
+    },
+    "62529": {
+      "name": "Lorraine 40 t",
+      "tank_id": 62529
+    },
+    "62721": {
+      "name": "Kirovets-1",
+      "tank_id": 62721
+    },
+    "62753": {
+      "name": "Concept 1B",
+      "tank_id": 62753
+    },
+    "62785": {
+      "name": "AMX M4 mle. 49",
+      "tank_id": 62785
+    },
+    "62993": {
+      "name": "VK 45.03",
+      "tank_id": 62993
+    },
+    "63009": {
+      "name": "T26E5 FL",
+      "tank_id": 63009
+    },
+    "63025": {
+      "name": "WZ-120G FT",
+      "tank_id": 63025
+    },
+    "63041": {
+      "name": "M4A1 Revalorisé",
+      "tank_id": 63041
+    },
+    "63233": {
+      "name": "KV-4 Kreslavskiy",
+      "tank_id": 63233
+    },
+    "63249": {
+      "name": "Turán III prototípus",
+      "tank_id": 63249
+    },
+    "63265": {
+      "name": "T32 FL",
+      "tank_id": 63265
+    },
+    "63281": {
+      "name": "WZ-120-1G FT",
+      "tank_id": 63281
+    },
+    "63297": {
+      "name": "AMX 13 57 GF",
+      "tank_id": 63297
+    },
+    "63505": {
+      "name": "43 M. Toldi III",
+      "tank_id": 63505
+    },
+    "63537": {
+      "name": "121B",
+      "tank_id": 63537
+    },
+    "63553": {
+      "name": "AMX Chasseur de chars",
+      "tank_id": 63553
+    },
+    "63761": {
+      "name": "Panzer 58",
+      "tank_id": 63761
+    },
+    "63793": {
+      "name": "59-Patton",
+      "tank_id": 63793
+    },
+    "63809": {
+      "name": "AMX 13 57",
+      "tank_id": 63809
+    },
+    "64001": {
+      "name": "Udarniy",
+      "tank_id": 64001
+    },
+    "64017": {
+      "name": "leKpz M 41 90 mm",
+      "tank_id": 64017
+    },
+    "64033": {
+      "name": "M41 Walker Bulldog FL",
+      "tank_id": 64033
+    },
+    "64049": {
+      "name": "T-34-3",
+      "tank_id": 64049
+    },
+    "64065": {
+      "name": "FCM 50 t",
+      "tank_id": 64065
+    },
+    "64273": {
+      "name": "Panzer 58 Mutz",
+      "tank_id": 64273
+    },
+    "64321": {
+      "name": "AMX M4 mle. 51 FL",
+      "tank_id": 64321
+    },
+    "64561": {
+      "name": "112",
+      "tank_id": 64561
+    },
+    "64577": {
+      "name": "M4A1 Revalorisé FL",
+      "tank_id": 64577
+    },
+    "64769": {
+      "name": "KV-2 (R)",
+      "tank_id": 64769
+    },
+    "64817": {
+      "name": "Type 64",
+      "tank_id": 64817
+    },
+    "65073": {
+      "name": "WZ-111 Alpine Tiger",
+      "tank_id": 65073
+    },
+    "65297": {
+      "name": "Löwe FL",
+      "tank_id": 65297
+    },
+    "65329": {
+      "name": "122 TM",
+      "tank_id": 65329
+    },
+    "65345": {
+      "name": "AMX M4 mle. 49 FL",
+      "tank_id": 65345
+    }
+  }
+}
