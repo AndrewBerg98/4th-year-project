@@ -1,18 +1,23 @@
 import React, { useState, useRef } from "react";
 import Process from "./Process";
+import APIRequest from "./APIRequest";
+
 
 function App() {
-    const [nickname, setNickname] = useState([])
+    const [nickname, setNickname] = useState()
     const nicknameRef = useRef()
 
-    const [realm, setRealm] = useState([])
+    const [realm, setRealm] = useState()
     const realmRef = useRef()
+
+    const url = "https://api.worldoftanks." + realm + "/wot/account/list/?application_id=f1dd0d3153a024d45038753a127d9106&search=" + nickname
 
     function handleSetNickname() {
         const nickname = nicknameRef.current.value
         const realm = realmRef.current.value
 
-        if (nickname !== null || nickname !== "") {
+        // eslint-disable-next-line
+        if (nicknameRef.current.value != "") {
             setNickname(nickname)
             setRealm(realm)
             console.clear()
@@ -26,6 +31,7 @@ function App() {
     return (
         <>
             <Process nickname={nickname} realm={realm} />
+            <APIRequest nickname={nickname} url={url} />
 
             <label>Nickname: </label>
             <input type="text" ref={nicknameRef}></input><br/>
