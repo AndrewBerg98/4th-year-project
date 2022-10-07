@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import Process from "./Process";
+// import Process from "./Process";
 import APIRequest from "./APIRequest";
 
 
@@ -20,17 +20,18 @@ function App() {
         if (nicknameRef.current.value != "") {
             setNickname(nickname)
             setRealm(realm)
-            console.clear()
-            console.log("Nickname: ", nickname)
-            console.log("Realm: ", realm)
-            nicknameRef.current.value = null
+            // console.clear()
+            // console.log("Nickname: ", nickname)
+            // console.log("Realm: ", realm)
+            // console.log("URL: ", url)
+            nicknameRef.current.value = null // QOL: clears entered text in input field
             realmRef.current.value = "eu"
         }
     }
 
     return (
         <>
-            <Process nickname={nickname} realm={realm} />
+            {/* <Process nickname={nickname} realm={realm} /> */}
             <APIRequest nickname={nickname} url={url} />
 
             <label>Nickname: </label>
