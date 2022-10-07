@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 // import Process from "./Process";
-import APIRequest from "./APIRequest";
-
+import GetPlayer from "./GetPlayer";
 
 function App() {
     const [nickname, setNickname] = useState()
@@ -31,8 +30,6 @@ function App() {
     return (
         <>
             {/* <Process nickname={nickname} realm={realm} /> */}
-            <APIRequest nickname={nickname} url={url} />
-
             <div id="topNav">
                 <label>Nickname: </label>
                 <input type="text" ref={nicknameRef}></input><br/>
@@ -47,6 +44,8 @@ function App() {
                 
                 <button onClick={handleSetNickname}>Search</button>
             </div>
+
+            <GetPlayer nickname={nickname} url={url} />
         </>
     )
 }

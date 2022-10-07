@@ -10,7 +10,7 @@ import axios from "axios";
 
 */
 
-function APIRequest({nickname, url}) {
+function GetPlayer({nickname, url}) {
     const [data, setData] = useState(null)
 
     useEffect(() => {
@@ -27,14 +27,14 @@ function APIRequest({nickname, url}) {
 
         if (data.meta.count === 0) {
             return (
-                <div>
+                <div id="NoPlayer">
                     <p>User Does Not Exists!</p>
                 </div>
             )
         }
 
         return (
-            <div>
+            <div id="GetPlayer">
                 <p>Status: {data.status}</p>
                 <p>Nickname: {data.data[0].nickname}</p>
                 <p>Account ID: {data.data[0].account_id}</p>
@@ -43,4 +43,4 @@ function APIRequest({nickname, url}) {
     }
 }
 
-export default APIRequest;
+export default GetPlayer;
