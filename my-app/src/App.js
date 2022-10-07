@@ -16,14 +16,13 @@ function App() {
         const nickname = nicknameRef.current.value
         const realm = realmRef.current.value
 
-        // eslint-disable-next-line
-        if (nicknameRef.current.value != "") {
+        if (nicknameRef.current.value !== "") {
             setNickname(nickname)
             setRealm(realm)
-            // console.clear()
-            // console.log("Nickname: ", nickname)
-            // console.log("Realm: ", realm)
-            // console.log("URL: ", url)
+            console.clear()
+            console.log("Nickname: ", nickname)
+            console.log("Realm: ", realm)
+            console.log("URL: ", url)
             nicknameRef.current.value = null // QOL: clears entered text in input field
             realmRef.current.value = "eu"
         }
@@ -34,18 +33,20 @@ function App() {
             {/* <Process nickname={nickname} realm={realm} /> */}
             <APIRequest nickname={nickname} url={url} />
 
-            <label>Nickname: </label>
-            <input type="text" ref={nicknameRef}></input><br/>
+            <div id="topNav">
+                <label>Nickname: </label>
+                <input type="text" ref={nicknameRef}></input><br/>
 
-            <label>Realm: </label>
-            <select type="dropdown" defaultValue="eu" ref={realmRef}>
-                <option value="ru">RU</option>
-                <option value="eu">EU</option>
-                <option value="na">NA</option>
-                <option value="asia">ASIA</option>
-            </select><br/>
-            
-            <button onClick={handleSetNickname}>Search</button>
+                <label>Realm: </label>
+                <select type="dropdown" defaultValue="eu" ref={realmRef}>
+                    <option value="ru">RU</option>
+                    <option value="eu">EU</option>
+                    <option value="na">NA</option>
+                    <option value="asia">ASIA</option>
+                </select><br/>
+                
+                <button onClick={handleSetNickname}>Search</button>
+            </div>
         </>
     )
 }

@@ -12,25 +12,20 @@ import axios from "axios";
 
 function APIRequest({nickname, url}) {
     const [data, setData] = useState(null)
-    // console.log("Nickname: ", nickname)
 
     useEffect(() => {
-        // eslint-disable-next-line        
-        if (nickname != undefined) {
+        if (nickname !== undefined) {
             console.log("Running AXIOS")
-            axios.get(url).then(response => {
+            axios.get("playerList.json").then(response => {
                 setData(response.data)
             })
         }
-    // eslint-disable-next-line
-    }, [nickname]); // [] prevents looping: https://stackoverflow.com/questions/67750003/useeffect-infinite-loop-with-axios
+    }, [nickname, url]); // [] prevents looping: https://stackoverflow.com/questions/67750003/useeffect-infinite-loop-with-axios
 
-    // eslint-disable-next-line      
-    if (nickname != undefined && data != null) {
+    if (nickname !== undefined && data !== null) {
         console.log("Returning Data")
 
-        // eslint-disable-next-line   
-        if (data.meta.count == 0) {
+        if (data.meta.count === 0) {
             return (
                 <div>
                     <p>User Does Not Exists!</p>
