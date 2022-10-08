@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-// import Process from "./Process";
 import GetPlayer from "./GetPlayer";
 
 function App() {
@@ -29,7 +28,6 @@ function App() {
 
     return (
         <>
-            {/* <Process nickname={nickname} realm={realm} /> */}
             <div id="topNav">
                 <label>Nickname: </label>
                 <input type="text" placeholder="Case Sensitive" ref={nicknameRef}></input><br/>
