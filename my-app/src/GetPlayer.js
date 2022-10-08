@@ -24,22 +24,33 @@ function GetPlayer({nickname, url}) {
 
     if (nickname !== undefined && data !== null) {
         console.log("Returning Data")
+        var match = false;
 
-        if (data.meta.count === 0) {
+        if (data.meta.count !== 0) {
+            for (var i = 0; i < data.meta.count; i++) {
+                if (nickname === data.data[i].nickname) {
+                    match = true;
+                    return (
+                        <div id="GetPlayer">
+                            <p>Nickname: {data.data[i].nickname}</p>
+                            <p>Account ID: {data.data[i].account_id}</p>
+                        </div>
+                    )
+                }
+
+                else {
+                    match = false;
+                }
+            }
+        }
+
+        if (match === false) {
             return (
                 <div id="NoPlayer">
-                    <p>User Does Not Exists!</p>
+                    <p>User does not exists!</p>
                 </div>
             )
         }
-
-        return (
-            <div id="GetPlayer">
-                <p>Status: {data.status}</p>
-                <p>Nickname: {data.data[0].nickname}</p>
-                <p>Account ID: {data.data[0].account_id}</p>
-            </div>
-        )
     }
 }
 

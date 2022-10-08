@@ -32,7 +32,7 @@ function App() {
             {/* <Process nickname={nickname} realm={realm} /> */}
             <div id="topNav">
                 <label>Nickname: </label>
-                <input type="text" ref={nicknameRef}></input><br/>
+                <input type="text" placeholder="Case Sensitive" ref={nicknameRef}></input><br/>
 
                 <label>Realm: </label>
                 <select type="dropdown" defaultValue="eu" ref={realmRef}>
