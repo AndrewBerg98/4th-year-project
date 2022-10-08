@@ -1,1 +1,0 @@
-https://api.worldoftanks.eu/wot/account/list/?application_id=f1dd0d3153a024d45038753a127d9106&search=andreykaberg
