@@ -16,7 +16,7 @@ function GetPlayer({nickname, realm, urlPlayerList}) {
 
     useEffect(() => {
         if (nickname !== undefined) {
-            console.log("Running AXIOS")
+            console.log("Retrieving Player List")
             axios.get("playerList.json").then(response => {
                 setData(response.data)
             })
@@ -31,10 +31,36 @@ function GetPlayer({nickname, realm, urlPlayerList}) {
                 if (nickname === data.data[i].nickname) {
                     match = true
                     return (
-                        <div id="GetPlayer">
-                            <p>Nickname: {data.data[i].nickname}</p>
-                            <p>Account ID: {data.data[i].account_id}</p>
-                            <GetPersonalData nickname={data.data[i].nickname} id={data.data[i].account_id} realm={realm} />
+                        <div id="playerAccount">
+                            { /* Resolved <tr> cannot be child of <table>: https://stackoverflow.com/questions/61498491/how-to-fix-validatedomnesting-td-cannot-appear-as-a-child-of-tbody-an */ }
+                            <table id="getPlayer">
+                                <thead>
+                                    <tr>
+                                        <th colSpan="2">
+                                            Account
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td id="tableLeft">
+                                            <table>
+                                                <thead>
+                                                    <tr><td>Nickname</td></tr>
+                                                    <tr><td>Account ID</td></tr>
+                                                </thead>
+                                            </table>
+                                        </td>
+                                        <td id="tableRight">
+                                            <table>
+                                                <thead>
+                                                    <tr><td>{data.data[i].nickname}</td></tr>
+                                                    <tr><td>{data.data[i].account_id}</td></tr>
+                                                </thead>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <GetPersonalData nickname={data.data[i].nickname} id={data.data[i].account_id} realm={realm} />
+                            </table>
                         </div>
                     )
                 }
@@ -47,7 +73,7 @@ function GetPlayer({nickname, realm, urlPlayerList}) {
 
         if (match === false) {
             return (
-                <div id="NoPlayer">
+                <div id="noPlayer">
                     <p>User does not exists!</p>
                 </div>
             )

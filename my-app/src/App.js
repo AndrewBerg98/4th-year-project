@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react"
 import GetPlayer from "./GetPlayer"
+import "./Styles/App.css"
 
 function App() {
     const [nickname, setNickname] = useState()
@@ -17,7 +18,7 @@ function App() {
         if (nicknameRef.current.value !== "") {
             setNickname(nickname)
             setRealm(realm)
-            console.clear()
+            // console.clear()
             console.log("Nickname: ", nickname)
             console.log("Realm: ", realm)
             console.log("URL: ", urlPlayerList)
@@ -30,17 +31,17 @@ function App() {
         <>
             <div id="topNav">
                 <label>Nickname: </label>
-                <input type="text" placeholder="Case Sensitive" ref={nicknameRef}></input><br/>
+                <input type="text" id="nicknameInput" placeholder="Username (case-sensitive)" ref={nicknameRef}></input>
 
                 <label>Realm: </label>
-                <select type="dropdown" defaultValue="eu" ref={realmRef}>
+                <select type="dropdown" id="realmSelect" defaultValue="eu" ref={realmRef}>
                     <option value="ru">RU</option>
                     <option value="eu">EU</option>
                     <option value="na">NA</option>
                     <option value="asia">ASIA</option>
-                </select><br/>
+                </select>
                 
-                <button onClick={handleSetNickname}>Search</button>
+                <button id="searchSubmit" onClick={handleSetNickname}>Search</button>
             </div>
 
             <GetPlayer nickname={nickname} realm={realm} urlPlayerList={urlPlayerList} />
