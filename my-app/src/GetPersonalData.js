@@ -41,21 +41,18 @@ function GetPersonalData({nickname, id, realm}) {
                                 <td id="tableLeft">
                                     <table>
                                         <thead>
-                                            <tr id="createdAt"><td>Created At</td></tr>
                                             <tr id="lastBattle"><td>Last Battle</td></tr>
                                             <tr id="logoutAt"><td>Logout At</td></tr>
+                                            <tr id="createdAt"><td>Created At</td></tr>
+                                            <tr id="updatedAt"><td>Updated At</td></tr>
+                                            <tr id="globalRating"><td>Global Rating</td></tr>
+                                            <tr id="clanID"><td>Clan ID</td></tr>
                                         </thead>
                                     </table>
                                 </td>
                                 <td id="tableRight">
                                     <table>
                                         <thead>
-                                            <tr id="createdAtValue">
-                                                <td>
-                                                    <p>{new Date(data.data[id].created_at * 1000).toLocaleString("en-IE", dateOptions)}</p>
-                                                    <p>{new Date(data.data[id].created_at * 1000).toLocaleTimeString("en-IE")}</p>
-                                                </td>
-                                            </tr>
                                             <tr id="lastBattleValue">
                                                 <td>
                                                     <p>{new Date(data.data[id].last_battle_time * 1000).toLocaleString("en-IE", dateOptions)}</p>
@@ -66,6 +63,28 @@ function GetPersonalData({nickname, id, realm}) {
                                                 <td>
                                                     <p>{new Date(data.data[id].logout_at * 1000).toLocaleString("en-IE", dateOptions)}</p>
                                                     <p>{new Date(data.data[id].logout_at * 1000).toLocaleTimeString("en-IE")}</p>
+                                                </td>
+                                            </tr>
+                                            <tr id="createdAtValue">
+                                                <td>
+                                                    <p>{new Date(data.data[id].created_at * 1000).toLocaleString("en-IE", dateOptions)}</p>
+                                                    <p>{new Date(data.data[id].created_at * 1000).toLocaleTimeString("en-IE")}</p>
+                                                </td>
+                                            </tr>
+                                            <tr id="updatedAtValue">
+                                                <td>
+                                                    <p>{new Date(data.data[id].updated_at * 1000).toLocaleString("en-IE", dateOptions)}</p>
+                                                    <p>{new Date(data.data[id].updated_at * 1000).toLocaleTimeString("en-IE")}</p>
+                                                </td>
+                                            </tr>
+                                            <tr id="globalRatingValue">
+                                                <td>
+                                                    <p>{data.data[id].global_rating}</p>
+                                                </td>
+                                            </tr>
+                                            <tr id="clanIDValue">
+                                                <td>
+                                                    <p>{data.data[id].clan_id}</p>
                                                 </td>
                                             </tr>
                                         </thead>
@@ -83,7 +102,7 @@ function GetPersonalData({nickname, id, realm}) {
         }
 
         if (match === false) {
-            console.log("No Personal Data Exists for the User")
+            console.log("No Personal Data Exists for that User")
         }
     }
 }

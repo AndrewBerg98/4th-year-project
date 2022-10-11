@@ -2,15 +2,6 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import GetPersonalData from "./GetPersonalData"
 
-/*
-
-    BUG LIST:
-
-    1. Component renders -> "nickname" is submitted -> Axios API request runs -> API data does NOT return -> component re-runs again but only returns data problem, nothing else.
-       Not really a big issue as the API only runs once, I think?, but is it inefficent to go back to render properly? or is this intended?
-
-*/
-
 function GetPlayer({nickname, realm, urlPlayerList}) {
     const [data, setData] = useState(null)
 

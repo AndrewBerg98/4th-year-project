@@ -101,10 +101,16 @@ body {
     background: rgb(80, 80, 80);
 }
 
+table {
+    border: 0px;
+    border-collapse: collapse /* Removes border and gaps: https://stackoverflow.com/questions/2039438/removing-unwanted-table-cell-borders-with-css */
+}
+
 #tableLeft table {
     width: 110px;
     background-color: rgb(44, 44, 44);
     color: white;
+    border: 0;
 }
 
 #tableLeft td {
@@ -115,7 +121,7 @@ body {
     font-size: 14px;
 }
 
-#tableLeft > table > thead > tr:nth-child(2) {
+#tableLeft > table > thead > tr:nth-child(even) {
     background-color: rgb(55, 55, 55);
 }
 
@@ -133,10 +139,7 @@ body {
     font-size: 14px;
 }
 
-#tableRight > table > thead > tr:nth-child(2) {
+#tableRight > table > thead > tr:nth-child(even) {
     background-color: rgb(109, 109, 109);
 }
 
-/* #createdAtValue, #lastBattleValue, #logoutAtValue {
-    font-size: 12px;
-} */
