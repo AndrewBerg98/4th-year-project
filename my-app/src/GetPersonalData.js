@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
-import GetPlayer from "./GetPlayer"
 
 function GetPersonalData({nickname, id, realm}) {
     const urlGetPersonalData = "https://api.worldoftanks." + realm + "/wot/account/info/?application_id=f1dd0d3153a024d45038753a127d9106&account_id=" + id
@@ -13,14 +12,14 @@ function GetPersonalData({nickname, id, realm}) {
                 setData(response.data)
             })
         }
-    }, [id, realm])
+    }, [id, realm, urlGetPersonalData])
 
     if (id !== undefined && data !== null) {
         var match = false;
 
         if (data.meta.count !== 0) {
             console.clear()
-            
+
             for (var i = 0; i < 1; i++) {
                 if (id === data.data[id].account_id && match === false) {
                     match = true
@@ -34,7 +33,7 @@ function GetPersonalData({nickname, id, realm}) {
         }
 
         if (match === false) {
-            console.log("Player Does Not Exist")
+            console.log("No Personal Data Exists for the User")
         }
     }
 }

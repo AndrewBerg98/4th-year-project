@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react"
 import GetPlayer from "./GetPlayer"
-import GetPersonalData from "./GetPersonalData"
 
 function App() {
     const [nickname, setNickname] = useState()
@@ -10,7 +9,6 @@ function App() {
     const realmRef = useRef()
 
     const urlPlayerList = "https://api.worldoftanks." + realm + "/wot/account/list/?application_id=f1dd0d3153a024d45038753a127d9106&search=" + nickname
-    // const urlGetPersonalData = "https://api.worldoftanks." + realm + "/wot/account/info/?application_id=f1dd0d3153a024d45038753a127d9106&account_id=" + id
 
     function handleSetNickname() {
         const nickname = nicknameRef.current.value
