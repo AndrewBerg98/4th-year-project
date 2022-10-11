@@ -18,6 +18,18 @@ body {
     user-select: none; /* Prevents blue highlight when selecting: https://css-tricks.com/almanac/properties/u/user-select/ */
 }
 
+#logo {
+    margin-right: auto;
+    margin-left: 12px;
+    font-size: 18px;
+    background-color: rgb(77, 77, 77);
+    box-sizing: border-box;
+    padding: 8px 12px 8px 12px;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
 #topNav > label {
     display: none;
     color: white;
@@ -87,7 +99,7 @@ body {
     margin: 32px;
 }
 
-#getPlayer {
+#getPlayerTable {
     border-radius: 0px;
     background-color: rgb(96, 96, 96);
     user-select: none;
@@ -95,10 +107,15 @@ body {
     border-spacing: 0px;
 }
 
-#getPlayer > thead > tr > th {
-    padding-top: 8px;
-    padding-bottom: 8px;
+#getPersonalData > #title > th > button {
+    width: 360px;
+    height: 38px;
     background: rgb(80, 80, 80);
+    cursor: pointer;
+    color: rgb(200, 200, 200);
+    border: 0px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 table {

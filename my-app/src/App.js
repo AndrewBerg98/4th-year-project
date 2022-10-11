@@ -27,9 +27,15 @@ function App() {
         }
     }
 
+    function logoClicked() {
+        document.location.reload()
+    }
+
     return (
         <>
             <div id="topNav">
+                <button id="logo" onClick={logoClicked}>WOTPlayer</button>
+                
                 <label>Nickname: </label>
                 <input type="text" id="nicknameInput" placeholder="Username (case-sensitive)" ref={nicknameRef}></input>
 
