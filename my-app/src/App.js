@@ -1,5 +1,6 @@
-import React, { useState, useRef } from "react";
-import GetPlayer from "./GetPlayer";
+import React, { useState, useRef } from "react"
+import GetPlayer from "./GetPlayer"
+import GetPersonalData from "./GetPersonalData"
 
 function App() {
     const [nickname, setNickname] = useState()
@@ -8,7 +9,8 @@ function App() {
     const [realm, setRealm] = useState()
     const realmRef = useRef()
 
-    const url = "https://api.worldoftanks." + realm + "/wot/account/list/?application_id=f1dd0d3153a024d45038753a127d9106&search=" + nickname
+    const urlPlayerList = "https://api.worldoftanks." + realm + "/wot/account/list/?application_id=f1dd0d3153a024d45038753a127d9106&search=" + nickname
+    // const urlGetPersonalData = "https://api.worldoftanks." + realm + "/wot/account/info/?application_id=f1dd0d3153a024d45038753a127d9106&account_id=" + id
 
     function handleSetNickname() {
         const nickname = nicknameRef.current.value
@@ -20,7 +22,7 @@ function App() {
             console.clear()
             console.log("Nickname: ", nickname)
             console.log("Realm: ", realm)
-            console.log("URL: ", url)
+            console.log("URL: ", urlPlayerList)
             nicknameRef.current.value = null // QOL: clears entered text in input field
             realmRef.current.value = "eu"
         }
@@ -43,9 +45,9 @@ function App() {
                 <button onClick={handleSetNickname}>Search</button>
             </div>
 
-            <GetPlayer nickname={nickname} url={url} />
+            <GetPlayer nickname={nickname} realm={realm} urlPlayerList={urlPlayerList} />
         </>
     )
 }
 
-export default App;
+export default App

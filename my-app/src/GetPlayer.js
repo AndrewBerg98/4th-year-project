@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react"
+import axios from "axios"
+import GetPersonalData from "./GetPersonalData"
 
 /*
 
@@ -10,7 +11,7 @@ import axios from "axios";
 
 */
 
-function GetPlayer({nickname, url}) {
+function GetPlayer({nickname, realm, urlPlayerList}) {
     const [data, setData] = useState(null)
 
     useEffect(() => {
@@ -20,20 +21,20 @@ function GetPlayer({nickname, url}) {
                 setData(response.data)
             })
         }
-    }, [nickname, url]); // [] prevents looping: https://stackoverflow.com/questions/67750003/useeffect-infinite-loop-with-axios
+    }, [nickname, urlPlayerList]); // [] prevents looping: https://stackoverflow.com/questions/67750003/useeffect-infinite-loop-with-axios
 
     if (nickname !== undefined && data !== null) {
-        console.log("Returning Data")
         var match = false;
 
         if (data.meta.count !== 0) {
             for (var i = 0; i < data.meta.count; i++) {
                 if (nickname === data.data[i].nickname) {
-                    match = true;
+                    match = true
                     return (
                         <div id="GetPlayer">
                             <p>Nickname: {data.data[i].nickname}</p>
                             <p>Account ID: {data.data[i].account_id}</p>
+                            <GetPersonalData nickname={data.data[i].nickname} id={data.data[i].account_id} realm={realm} />
                         </div>
                     )
                 }
@@ -54,4 +55,4 @@ function GetPlayer({nickname, url}) {
     }
 }
 
-export default GetPlayer;
+export default GetPlayer
