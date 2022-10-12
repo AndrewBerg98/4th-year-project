@@ -34,20 +34,20 @@ function App() {
     return (
         <>
             <div id="topNav">
-                <button id="logo" onClick={logoClicked}>WOTPlayer</button>
+                <button type="button" id="logo" onClick={logoClicked}>WOTPlayer</button>
                 
-                <label>Nickname: </label>
+                <label htmlFor="nicknameInput">Nickname: </label>
                 <input type="text" id="nicknameInput" placeholder="Username (case-sensitive)" ref={nicknameRef}></input>
 
-                <label>Realm: </label>
-                <select type="dropdown" id="realmSelect" defaultValue="eu" ref={realmRef}>
+                <label htmlFor="realmSelect">Realm: </label>
+                <select type="dropdown" id="realmSelect" defaultValue="eu" ref={realmRef}> {/* Resolved select has not name attribute: https://dequeuniversity.com/rules/axe/4.0/select-name */}
                     <option value="ru">RU</option>
                     <option value="eu">EU</option>
                     <option value="na">NA</option>
                     <option value="asia">ASIA</option>
                 </select>
                 
-                <button id="searchSubmit" onClick={handleSetNickname}>Search</button>
+                <button type="button" id="searchSubmit" onClick={handleSetNickname}>Search</button>
             </div>
 
             <GetPlayer nickname={nickname} realm={realm} urlPlayerList={urlPlayerList} />

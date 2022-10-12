@@ -160,3 +160,18 @@ table {
     background-color: rgb(109, 109, 109);
 }
 
+@media only screen and (max-width: 550px) {
+    #logo {
+        display: none;
+    }
+
+    #nicknameInput {
+        width: 100%;
+        margin-left:4px;
+    }
+
+    #searchSubmit {
+        width: 94px;
+        margin: 0px 6px 0px 12px;
+    }
+}
