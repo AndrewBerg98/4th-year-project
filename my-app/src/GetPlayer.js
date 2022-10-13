@@ -15,7 +15,7 @@ function GetPlayer({nickname, realm, urlPlayerList}) {
     }, [nickname, urlPlayerList]); // [] prevents looping: https://stackoverflow.com/questions/67750003/useeffect-infinite-loop-with-axios
 
     if (nickname !== undefined && data !== null) {
-        var match = false;
+        var match = false
 
         if (data.meta.count !== 0) {
             for (var i = 0; i < data.meta.count; i++) {
@@ -33,7 +33,7 @@ function GetPlayer({nickname, realm, urlPlayerList}) {
         }
 
         if (match === false) {
-            alert("User does not Exists!");
+            console.log("User does not Exists!") // Duplication error due to nature of React / way the code is structured?
             
             return (
                 <div id="noPlayer">
