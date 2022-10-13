@@ -1,0 +1,107 @@
+#playerAccount {
+    width: 360px;
+    font-family: Verdana;
+    margin: 32px;
+}
+
+#getPlayerTable {
+    border-radius: 0px;
+    background-color: rgb(96, 96, 96);
+    user-select: none;
+    border-collapse: separate; /* Adding spacing between tr: https://stackoverflow.com/questions/10690299/how-to-add-a-margin-to-a-table-row-tr */
+    border-spacing: 0px;
+}
+
+#getPersonalData > #title > th > button {
+    width: 100%;
+    height: 38px;
+    background: rgb(80, 80, 80);
+    cursor: pointer;
+    color: rgb(200, 200, 200);
+    border: 0px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#getPlayerTable {
+    width: 360px;
+    border: 0px;
+    border-collapse: collapse /* Removes border and gaps: https://stackoverflow.com/questions/2039438/removing-unwanted-table-cell-borders-with-css */
+}
+
+#content {
+    width: 100%;
+}
+
+#tableLeft {
+    width: 40%;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    border: 0;
+}
+
+#tableLeft > table {
+    width: inherit;
+    border-collapse: separate;
+    border-spacing:0;
+}
+
+#tableLeft > table > thead > tr:nth-child(even) {
+    background-color: rgb(55, 55, 55);
+}
+
+#tableLeft td, #tableRight td {
+    padding: 4px 8px 4px 8px;
+    height: 40px;
+    font-size: 14px;
+}
+
+#tableRight {
+    background-color: rgb(96, 96, 96);
+    color: black;
+}
+
+#tableRight > table {
+    width: 240px;
+    border-collapse: separate;
+    border-spacing:0;
+}
+
+#tableRight > table > thead > tr:nth-child(even) {
+    background-color: rgb(109, 109, 109);
+}
+
+@media only screen and (max-width: 550px) {
+    #logo {
+        display: none;
+    }
+
+    #nicknameInput {
+        width: 100%;
+        margin-left:4px;
+    }
+
+    #searchSubmit {
+        width: 94px;
+        margin: 0px 6px 0px 12px;
+    }
+}
+
+@media only screen and (max-width: 428px) {
+    #playerAccount {
+        margin: 0px;
+    }
+
+    #getPersonalData > #title > th > button {
+        width: 100%;
+    }
+
+    #playerAccount, #getPlayerTable, #getPersonalData {
+        width: 100%;
+    }
+
+    #tableRight, #tableRight > table{
+        width: 240px;
+        overflow: hidden;
+    }
+}

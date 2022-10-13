@@ -19,7 +19,7 @@ function GetPersonalData({nickname, id, realm}) {
 
     function hideAccountDetails() {
         if (document.getElementById("content").style.display === "none") {
-            document.getElementById("content").style.display = "block"
+            document.getElementById("content").style.display = "contents"
         }
 
         else {
@@ -48,29 +48,29 @@ function GetPersonalData({nickname, id, realm}) {
                     return (
                         <div id="playerAccount">
                             { /* Resolved <tr> cannot be child of <table>: https://stackoverflow.com/questions/61498491/how-to-fix-validatedomnesting-td-cannot-appear-as-a-child-of-tbody-an */ }
-                            <table id="getPlayerTable">
-                                <thead id="getPersonalData">
+                            <table id="personalDataTable">
+                                <thead>
                                     <tr id="title">
                                         <th colSpan="2">
                                             <button onClick={hideAccountDetails}>Account Details</button>
                                         </th>
                                     </tr>
                                     <tr id="content">
-                                        <td id="tableLeft">
+                                        <td id="sectionLeft">
                                             <table>
                                                 <thead>
                                                     <tr id="nickName"><td>Nickname</td></tr>
                                                     <tr id="accountID"><td>Account ID</td></tr>
                                                     <tr id="lastBattle"><td>Last Battle</td></tr>
-                                                    <tr id="logoutAt"><td>Logout At</td></tr>
-                                                    <tr id="createdAt"><td>Created At</td></tr>
-                                                    <tr id="updatedAt"><td>Updated At</td></tr>
+                                                    <tr id="logoutAt"><td>Logged Out</td></tr>
+                                                    <tr id="createdAt"><td>Registration Date</td></tr>
+                                                    <tr id="updatedAt"><td>Profile Updated</td></tr>
                                                     <tr id="globalRating"><td>Global Rating</td></tr>
                                                     <tr id="clanID"><td>Clan ID</td></tr>
                                                 </thead>
                                             </table>
                                         </td>
-                                        <td id="tableRight">
+                                        <td id="sectionRight">
                                             <table>
                                                 <thead>
                                                     <tr id="nickNameValue">
@@ -81,26 +81,26 @@ function GetPersonalData({nickname, id, realm}) {
                                                     </tr>
                                                     <tr id="lastBattleValue">
                                                         <td>
-                                                            <p>{new Date(data.data[id].last_battle_time * 1000).toLocaleString("en-IE", dateOptions)}</p>
-                                                            <p>{new Date(data.data[id].last_battle_time * 1000).toLocaleTimeString("en-IE")}</p>
+                                                            <p>{new Date(data.data[id].last_battle_time * 1000).toLocaleString("en-IE", dateOptions)}<br/>
+                                                            {new Date(data.data[id].last_battle_time * 1000).toLocaleTimeString("en-IE")}</p>
                                                         </td>
                                                     </tr>
                                                     <tr id="logoutAtValue">
                                                         <td>
-                                                            <p>{new Date(data.data[id].logout_at * 1000).toLocaleString("en-IE", dateOptions)}</p>
-                                                            <p>{new Date(data.data[id].logout_at * 1000).toLocaleTimeString("en-IE")}</p>
+                                                            <p>{new Date(data.data[id].logout_at * 1000).toLocaleString("en-IE", dateOptions)}<br/>
+                                                            {new Date(data.data[id].logout_at * 1000).toLocaleTimeString("en-IE")}</p>
                                                         </td>
                                                     </tr>
                                                     <tr id="createdAtValue">
                                                         <td>
-                                                            <p>{new Date(data.data[id].created_at * 1000).toLocaleString("en-IE", dateOptions)}</p>
-                                                            <p>{new Date(data.data[id].created_at * 1000).toLocaleTimeString("en-IE")}</p>
+                                                            <p>{new Date(data.data[id].created_at * 1000).toLocaleString("en-IE", dateOptions)}<br/>
+                                                            {new Date(data.data[id].created_at * 1000).toLocaleTimeString("en-IE")}</p>
                                                         </td>
                                                     </tr>
                                                     <tr id="updatedAtValue">
                                                         <td>
-                                                            <p>{new Date(data.data[id].updated_at * 1000).toLocaleString("en-IE", dateOptions)}</p>
-                                                            <p>{new Date(data.data[id].updated_at * 1000).toLocaleTimeString("en-IE")}</p>
+                                                            <p>{new Date(data.data[id].updated_at * 1000).toLocaleString("en-IE", dateOptions)}<br/>
+                                                            {new Date(data.data[id].updated_at * 1000).toLocaleTimeString("en-IE")}</p>
                                                         </td>
                                                     </tr>
                                                     <tr id="globalRatingValue">
