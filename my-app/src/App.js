@@ -23,6 +23,7 @@ function App() {
             console.log("Realm: ", realm)
             console.log("URL: ", urlPlayerList)
             nicknameRef.current.value = null // QOL: clears entered text in input field
+            nicknameRef.current.placeholder = nickname
             realmRef.current.value = "eu"
         }
     }

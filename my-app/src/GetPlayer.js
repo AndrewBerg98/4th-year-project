@@ -8,7 +8,7 @@ function GetPlayer({nickname, realm, urlPlayerList}) {
     useEffect(() => {
         if (nickname !== undefined) {
             console.log("Retrieving Player List")
-            axios.get(urlPlayerList).then(response => {
+            axios.get("playerList.json").then(response => {
                 setData(response.data)
             })
         }

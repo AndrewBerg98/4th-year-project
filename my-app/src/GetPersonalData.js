@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import GetMainData from "./GetMainData"
+import GetRandomData from "./GetRandomData"
 
 function GetPersonalData({nickname, id, realm}) {
     const extra = "&extra="
@@ -17,37 +19,51 @@ function GetPersonalData({nickname, id, realm}) {
         day: "numeric"
     }
 
-    function hideMainDetails() {
-        if (document.getElementById("personalDataTable").style.display === "none") {
-            document.getElementById("personalDataTable").style.display = "table"
+    function toggleMainDetails() {
+        if (document.getElementById("mainDataTable").style.display === "none") {
+            document.getElementById("mainDataTable").style.display = "table"
             document.getElementById("mainDetails").style.backgroundColor = "rgb(2, 80, 196)"
+            document.getElementById("mainDetails").setAttribute("class", "Active") // How to add another id with JavaScript: https://www.delftstack.com/howto/javascript/add-id-to-element-using-javascript/#:~:text=element%20using%20JavaScript.-,Use%20setAttribute()%20Function%20to%20Add%20id%20to%20an%20Element,setAttribute()%20takes%20two%20parameters.
+        
         }
 
-        else if (document.getElementById("personalDataTable").style.display === "table") {
-            document.getElementById("personalDataTable").style.display = "none"
+        else if (document.getElementById("mainDataTable").style.display === "table") {
+            document.getElementById("mainDataTable").style.display = "none"
             document.getElementById("mainDetails").style.backgroundColor = "rgb(82, 82, 82)"
+            document.getElementById("mainDetails").setAttribute("class", "Inactive")
         }
 
         else {
-            document.getElementById("personalDataTable").style.display = "table"
+            document.getElementById("mainDataTable").style.display = "table"
             document.getElementById("mainDetails").style.backgroundColor = "rgb(2, 80, 196)"
+            document.getElementById("mainDetails").setAttribute("class", "Active")
         }
     }
 
-    function hideAccountDetails() {
-        if (document.getElementById("content").style.display === "none") {
-            document.getElementById("content").style.display = "contents"
+    function toggleRandomDetails() {
+        if (document.getElementById("randomDataTable").style.display === "none") {
+            document.getElementById("randomDataTable").style.display = "table"
+            document.getElementById("randomDetails").style.backgroundColor = "rgb(2, 80, 196)"
+            document.getElementById("randomDetails").setAttribute("class", "Active")
+        }
+
+        else if (document.getElementById("randomDataTable").style.display === "table") {
+            document.getElementById("randomDataTable").style.display = "none"
+            document.getElementById("randomDetails").style.backgroundColor = "rgb(82, 82, 82)"
+            document.getElementById("randomDetails").setAttribute("class", "Inactive")
         }
 
         else {
-            document.getElementById("content").style.display = "none"
+            document.getElementById("randomDataTable").style.display = "table"
+            document.getElementById("randomDetails").style.backgroundColor = "rgb(2, 80, 196)"
+            document.getElementById("randomDetails").setAttribute("class", "Active")
         }
     }
 
     useEffect(() => {
         if(id !== undefined) {
             console.log("Retrieving Player's Personal Data")
-            axios.get(urlGetPersonalData).then(response => {
+            axios.get("playerPersonalData.json").then(response => {
                 setData(response.data)
             })
         }
@@ -66,86 +82,19 @@ function GetPersonalData({nickname, id, realm}) {
                     return (
                         <>
                             <div id="subMenu">
-                                <button id="mainDetails" onClick={hideMainDetails}>Main</button>
-                                <button id="allDetails">All</button>
-                                <button id="regularTeamDetails">Regular Team</button>
-                                <button id="companyDetails">Company</button>
-                                <button id="randomDetails">Random</button>
-                                <button id="strongholdDetails">Stronghold</button>
-                                <button id="historialDetails">Historical</button>
-                                <button id="teamDetails">Team</button>
+                                <button id="mainDetails" class="Inactive" onClick={toggleMainDetails}>Main</button>
+                                <button id="allDetails" class="Inactive">All</button>
+                                <button id="regularTeamDetails" class="Inactive">Regular Team</button>
+                                <button id="companyDetails" class="Inactive">Company</button>
+                                <button id="randomDetails" class="Inactive" onClick={toggleRandomDetails}>Random</button>
+                                <button id="strongholdDetails" class="Inactive">Stronghold</button>
+                                <button id="historialDetails" class="Inactive">Historical</button>
+                                <button id="teamDetails" class="Inactive">Team</button>
                             </div>
 
                             <div id="playerAccount">
-                                { /* Resolved <tr> cannot be child of <table>: https://stackoverflow.com/questions/61498491/how-to-fix-validatedomnesting-td-cannot-appear-as-a-child-of-tbody-an */ }
-                                <table id="personalDataTable">
-                                    <thead>
-                                        <tr id="title">
-                                            <th colSpan="2">
-                                                <button onClick={hideAccountDetails}>Account Details</button>
-                                            </th>
-                                        </tr>
-                                        <tr id="content">
-                                            <td id="sectionLeft">
-                                                <table>
-                                                    <thead>
-                                                        <tr id="nickName"><td>Nickname</td></tr>
-                                                        <tr id="accountID"><td>Account ID</td></tr>
-                                                        <tr id="lastBattle"><td>Last Battle</td></tr>
-                                                        <tr id="logoutAt"><td>Logged Out</td></tr>
-                                                        <tr id="createdAt"><td>Registration Date</td></tr>
-                                                        <tr id="updatedAt"><td>Profile Updated</td></tr>
-                                                        <tr id="globalRating"><td>Global Rating</td></tr>
-                                                        <tr id="clanID"><td>Clan ID</td></tr>
-                                                    </thead>
-                                                </table>
-                                            </td>
-                                            <td id="sectionRight">
-                                                <table>
-                                                    <thead>
-                                                        <tr id="nickNameValue">
-                                                            <td><p>{data.data[id].nickname}</p></td>
-                                                        </tr>
-                                                        <tr id="accountIDValue">
-                                                            <td><p>{data.data[id].account_id}</p></td>
-                                                        </tr>
-                                                        <tr id="lastBattleValue">
-                                                            <td>
-                                                                <p>{new Date(data.data[id].last_battle_time * 1000).toLocaleString("en-IE", dateOptions)}<br/>
-                                                                {new Date(data.data[id].last_battle_time * 1000).toLocaleTimeString("en-IE")}</p>
-                                                            </td>
-                                                        </tr>
-                                                        <tr id="logoutAtValue">
-                                                            <td>
-                                                                <p>{new Date(data.data[id].logout_at * 1000).toLocaleString("en-IE", dateOptions)}<br/>
-                                                                {new Date(data.data[id].logout_at * 1000).toLocaleTimeString("en-IE")}</p>
-                                                            </td>
-                                                        </tr>
-                                                        <tr id="createdAtValue">
-                                                            <td>
-                                                                <p>{new Date(data.data[id].created_at * 1000).toLocaleString("en-IE", dateOptions)}<br/>
-                                                                {new Date(data.data[id].created_at * 1000).toLocaleTimeString("en-IE")}</p>
-                                                            </td>
-                                                        </tr>
-                                                        <tr id="updatedAtValue">
-                                                            <td>
-                                                                <p>{new Date(data.data[id].updated_at * 1000).toLocaleString("en-IE", dateOptions)}<br/>
-                                                                {new Date(data.data[id].updated_at * 1000).toLocaleTimeString("en-IE")}</p>
-                                                            </td>
-                                                        </tr>
-                                                        <tr id="globalRatingValue">
-                                                            <td><p>{data.data[id].global_rating}</p></td>
-                                                        </tr>
-                                                        <tr id="clanIDValue">
-                                                            {/* Showed how to add expressions between tags: https://github.com/AOEpeople/geb-spock-reports/issues/9 */}
-                                                            <td><p>{data.data[id].clan_id === null ? "X" : data.data[id].clan_id}</p></td>
-                                                        </tr>
-                                                    </thead>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </thead>
-                                </table>
+                                <GetMainData data={data} id={id} dateOptions={dateOptions} />
+                                <GetRandomData data={data} id={id} />
                             </div>
                         </>
                     )

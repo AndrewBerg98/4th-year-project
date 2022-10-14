@@ -1,0 +1,92 @@
+#randomTitle button {
+    width: 100%;
+    height: 38px;
+    background: rgb(80, 80, 80);
+    cursor: pointer;
+    color: rgb(230, 230, 230);
+    border: none;
+    font-size: 18px;
+    font-family: Verdana;
+}
+
+#randomTitle button:hover {
+    background: rgb(60, 60, 60);
+}
+
+#randomDataTable {
+    width: 360px;
+    margin: 16px auto;
+    border: none;
+    border-collapse: collapse; /* Removes border and gaps: https://stackoverflow.com/questions/2039438/removing-unwanted-table-cell-borders-with-css */
+    user-select: none;
+    font-family: Verdana;
+    font-size: 13px;
+    border-radius: 12px;
+    display: none;
+}
+
+#randomContent {
+    display: contents;
+}
+
+#randomSectionLeft {
+    width: 40%;
+}
+
+#randomSectionLeft table {
+    width: 100%;
+    background-color: rgb(44, 44, 44);
+    color: rgb(230, 230, 230);
+    border: none;
+    border-collapse: collapse;
+}
+
+#randomSectionLeft tr:nth-child(even) {
+    background-color: rgb(55, 55, 55);
+}
+
+#randomSectionLeft td {
+    box-sizing: border-box;
+    padding: 0px 8px 0px 8px;
+}
+
+#randomSectionLeft tr, #randomSectionRight tr, #randomSectionRight p {
+    height: 32px;
+}
+
+#randomSectionRight {
+    width: 60%;
+}
+
+#randomSectionRight table {
+    width: 100%;
+    background-color: rgb(96, 96, 96);
+    color: rgb(230, 230, 230);
+    border: none;
+    border-collapse: collapse;
+}
+
+#randomSectionRight tr:nth-child(even) {
+    background-color: rgb(109, 109, 109);
+}
+
+#randomSectionRight p {
+    box-sizing: border-box;
+    padding: 0px 8px 0px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: middle;
+    line-height: 1.45;
+}
+
+@media only screen and (max-width: 370px) {
+    #randomDataTable {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0px;
+    }
+
+    #nicknameInput, #realmSelect, #searchSubmit, #randomTitle button, #randomSectionLeft, #randomSectionRight {
+        font-size: 3.5vw;
+    }
+}
