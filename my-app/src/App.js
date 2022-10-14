@@ -9,7 +9,7 @@ function App() {
     const [realm, setRealm] = useState()
     const realmRef = useRef()
 
-    const urlPlayerList = "https://api.worldoftanks." + realm + "/wot/account/list/?application_id=f1dd0d3153a024d45038753a127d9106&search=" + nickname
+    const urlPlayerList = "https://api.worldoftanks." + realm + "/wot/account/list/?application_id=" + process.env.REACT_APP_APIKEY + "&search=" + nickname
 
     function handleSetNickname() {
         const nickname = nicknameRef.current.value

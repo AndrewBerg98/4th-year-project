@@ -8,7 +8,7 @@ function GetPlayer({nickname, realm, urlPlayerList}) {
     useEffect(() => {
         if (nickname !== undefined) {
             console.log("Retrieving Player List")
-            axios.get("playerList.json").then(response => {
+            axios.get(urlPlayerList).then(response => {
                 setData(response.data)
             })
         }
@@ -45,7 +45,7 @@ function GetPlayer({nickname, realm, urlPlayerList}) {
             }
         }
 
-        if (match === false) {
+        else if (match === false) {
             console.log("User does not Exists!") // Duplication error due to nature of React / way the code is structured?
             
             return (

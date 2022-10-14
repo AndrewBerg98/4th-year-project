@@ -6,7 +6,7 @@ function GetPersonalData({nickname, id, realm}) {
     // eslint-disable-next-line
     const and = "%2C+"
     const statRandom = "statistics.random"
-    const urlGetPersonalData = "https://api.worldoftanks." + realm + "/wot/account/info/?application_id=f1dd0d3153a024d45038753a127d9106&account_id=" + id + extra + statRandom
+    const urlGetPersonalData = "https://api.worldoftanks." + realm + "/wot/account/info/?application_id=" + process.env.REACT_APP_APIKEY + "&account_id=" + id + extra + statRandom
     const [data, setData] = useState(null)
 
     // Show date in text format: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
@@ -47,7 +47,7 @@ function GetPersonalData({nickname, id, realm}) {
     useEffect(() => {
         if(id !== undefined) {
             console.log("Retrieving Player's Personal Data")
-            axios.get("playerPersonalData.json").then(response => {
+            axios.get(urlGetPersonalData).then(response => {
                 setData(response.data)
             })
         }
