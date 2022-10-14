@@ -38,7 +38,7 @@ function App() {
 
     return (
         <>
-            <div id="topNav">
+            <div id="topMenu">
                 <button type="button" id="logo" onClick={logoClicked}>WOTPlayer</button>
                 
                 <div id="searchSpace">

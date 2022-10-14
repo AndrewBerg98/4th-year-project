@@ -14,7 +14,7 @@ body {
 
 */
 
-#topNav {
+#topMenu {
     display: flex; /* Align to middle (vertically) : https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container */
     align-items: center;
     justify-content: center;
@@ -34,6 +34,10 @@ body {
     color: white;
     cursor: pointer;
     border-radius: 6px;
+}
+
+#logo:hover {
+    background-color: rgb(60, 60, 60);
 }
 
 #searchSpace {
@@ -130,6 +134,39 @@ body {
 }
 
 /*
+    Sub Menu
+
+*/
+
+#subMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35px;
+    background-color: rgb(66, 66, 66);
+    user-select: none;
+}
+
+#subMenu button {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: rgb(82, 82, 82);
+    font-family: Verdana;
+    font-size: 10px;
+    color: rgb(230, 230, 230);
+    border: 1px solid black;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    padding: 0px 6px 0px 6px;
+}
+
+#subMenu button:hover {
+    background-color: rgb(60, 60, 60);
+}
+
+/*
     Account Details
 
 */
@@ -139,7 +176,7 @@ body {
     height: 38px;
     background: rgb(80, 80, 80);
     cursor: pointer;
-    color: rgb(200, 200, 200);
+    color: rgb(230, 230, 230);
     border: none;
     font-size: 18px;
     font-family: Verdana;
@@ -153,6 +190,8 @@ body {
     user-select: none;
     font-family: Verdana;
     font-size: 13px;
+    border-radius: 12px;
+    display: none;
 }
 
 #content {
@@ -211,9 +250,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: middle;
-    line-height: 1.35;
+    line-height: 1.45;
 }
 
 @media only screen and (max-width: 370px) {
-    
+    #personalDataTable {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0px;
+    }
+
+    #nicknameInput, #realmSelect, #searchSubmit, #title button, #sectionLeft, #sectionRight {
+        font-size: 3.5vw;
+    }
 }

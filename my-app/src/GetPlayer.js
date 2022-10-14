@@ -17,6 +17,19 @@ function GetPlayer({nickname, realm, urlPlayerList}) {
     if (nickname !== undefined && data !== null) {
         var match = false
 
+        if (data.status === "error") {
+            return (
+                <div id="error">
+                    <h4>Status: <span id="errorStatus">{data.status}</span></h4>
+                    <h4>Code: <span id="errorCode">{data.error.code}</span></h4>
+                    <h4>Message: <span id="errorMessage">{data.error.message}</span></h4>
+                    <h4>Field: <span id="errorField">{data.error.field}</span></h4>
+                    <h4>Value: <span id="errorValue">{data.error.value}</span></h4>
+                    <p>You may need to update the IP Address List on the WarGaming Developer site</p>
+                </div>
+            )
+        }
+
         if (data.meta.count !== 0) {
             for (var i = 0; i < data.meta.count; i++) {
                 if (nickname === data.data[i].nickname) {
