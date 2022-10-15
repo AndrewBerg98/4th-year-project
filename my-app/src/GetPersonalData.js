@@ -11,7 +11,6 @@ function GetPersonalData({nickname, id, realm}) {
     const urlGetPersonalData = "https://api.worldoftanks." + realm + "/wot/account/info/?application_id=" + process.env.REACT_APP_APIKEY + "&account_id=" + id + extra + statRandom
     const [data, setData] = useState(null)
 
-    // Show date in text format: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
     const dateOptions = {
         weekday: "long",
         year: "numeric",
@@ -23,7 +22,7 @@ function GetPersonalData({nickname, id, realm}) {
         if (document.getElementById("mainDataTable").style.display === "none") {
             document.getElementById("mainDataTable").style.display = "table"
             document.getElementById("mainDetails").style.backgroundColor = "rgb(2, 80, 196)"
-            document.getElementById("mainDetails").setAttribute("class", "Active") // How to add another id with JavaScript: https://www.delftstack.com/howto/javascript/add-id-to-element-using-javascript/#:~:text=element%20using%20JavaScript.-,Use%20setAttribute()%20Function%20to%20Add%20id%20to%20an%20Element,setAttribute()%20takes%20two%20parameters.
+            document.getElementById("mainDetails").setAttribute("class", "Active")
         
         }
 
@@ -74,22 +73,22 @@ function GetPersonalData({nickname, id, realm}) {
 
         if (data.meta.count !== 0) {
             for (var i = 0; i < 1; i++) {
-                if (id === data.data[id].account_id && match === false) { // Helped with getting nested data within JSON that starts with numbers: https://stackoverflow.com/questions/28149462/how-to-print-json-data-in-console-log
+                if (id === data.data[id].account_id && match === false) {
                     match = true
                     console.log(nickname + "'s", "Personal Data: ", data.data[id])
-                    document.title = (nickname + " - WOTPlayer") // Dynamically change title: https://stackoverflow.com/questions/413439/how-to-dynamically-change-a-web-pages-title
+                    document.title = (nickname + " - WOTPlayer")
                     
                     return (
                         <>
                             <div id="subMenu">
-                                <button id="mainDetails" class="Inactive" onClick={toggleMainDetails}>Main</button>
-                                <button id="allDetails" class="Inactive">All</button>
-                                <button id="regularTeamDetails" class="Inactive">Regular Team</button>
-                                <button id="companyDetails" class="Inactive">Company</button>
-                                <button id="randomDetails" class="Inactive" onClick={toggleRandomDetails}>Random</button>
-                                <button id="strongholdDetails" class="Inactive">Stronghold</button>
-                                <button id="historialDetails" class="Inactive">Historical</button>
-                                <button id="teamDetails" class="Inactive">Team</button>
+                                <button id="mainDetails" className="Inactive" onClick={toggleMainDetails}>Main</button>
+                                <button id="allDetails" className="Inactive">All</button>
+                                <button id="regularTeamDetails" className="Inactive">Regular Team</button>
+                                <button id="companyDetails" className="Inactive">Company</button>
+                                <button id="randomDetails" className="Inactive" onClick={toggleRandomDetails}>Random</button>
+                                <button id="strongholdDetails" className="Inactive">Stronghold</button>
+                                <button id="historialDetails" className="Inactive">Historical</button>
+                                <button id="teamDetails" className="Inactive">Team</button>
                             </div>
 
                             <div id="playerAccount">

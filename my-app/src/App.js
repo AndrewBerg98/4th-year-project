@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react"
 import GetPlayer from "./GetPlayer"
-import "./Styles/App.css"
+import "./styles/App.css"
 
 function App() {
     const [nickname, setNickname] = useState()
@@ -32,7 +32,7 @@ function App() {
         document.location.reload()
     }
 
-    window.addEventListener("keypress", function(event) { // Hit Enter to search: https://www.w3schools.com/HOWTO/howto_js_trigger_button_enter.asp, https://www.pluralsight.com/guides/event-listeners-in-react-components
+    window.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         document.getElementById("searchSubmit").click()
     }})
@@ -47,7 +47,7 @@ function App() {
                     <input type="text" id="nicknameInput" placeholder="Username (case-sensitive)" ref={nicknameRef}></input>
 
                     <label htmlFor="realmSelect">Realm: </label>
-                    <select type="dropdown" id="realmSelect" defaultValue="eu" ref={realmRef}> {/* Resolved select has not name attribute: https://dequeuniversity.com/rules/axe/4.0/select-name */}
+                    <select type="dropdown" id="realmSelect" defaultValue="eu" ref={realmRef}>
                         <option value="ru">RU</option>
                         <option value="eu">EU</option>
                         <option value="na">NA</option>
