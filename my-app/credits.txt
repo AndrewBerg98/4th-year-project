@@ -1,0 +1,29 @@
+
+    JavaScript
+
+Hit Enter to search: https://www.w3schools.com/HOWTO/howto_js_trigger_button_enter.asp, https://www.pluralsight.com/guides/event-listeners-in-react-components
+Resolved select has not name attribute: https://dequeuniversity.com/rules/axe/4.0/select-name
+Resolved <tr> cannot be child of <table>: https://stackoverflow.com/questions/61498491/how-to-fix-validatedomnesting-td-cannot-appear-as-a-child-of-tbody-an
+Showed how to add expressions between tags: https://github.com/AOEpeople/geb-spock-reports/issues/9
+Show date in text format: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
+How to add another id with JavaScript: https://www.delftstack.com/howto/javascript/add-id-to-element-using-javascript/#:~:text=element%20using%20JavaScript.-,Use%20setAttribute()%20Function%20to%20Add%20id%20to%20an%20Element,setAttribute()%20takes%20two%20parameters.
+Helped with getting nested data within JSON that starts with numbers: https://stackoverflow.com/questions/28149462/how-to-print-json-data-in-console-log
+Dynamically change title: https://stackoverflow.com/questions/413439/how-to-dynamically-change-a-web-pages-title
+Looping fix: https://stackoverflow.com/questions/67750003/useeffect-infinite-loop-with-axios
+Add comma to large numbers: https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+Open link in new tab (with security fix): https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/
+How to add multiple values in a single const state: https://stackoverflow.com/questions/59813926/how-can-i-store-and-update-multiple-values-in-react-usestate
+How to count how many objects in an array: https://stackoverflow.com/questions/16976904/javascript-counting-number-of-objects-in-object
+How to get first key, and value, from object: https://stackoverflow.com/questions/3298477/get-the-first-key-name-of-a-javascript-object
+How to increase increments in for loop from 1 to 2: https://stackoverflow.com/questions/12809776/can-a-for-loop-increment-decrement-by-more-than-one
+Showed how to push data into array: https://stackoverflow.com/questions/351409/how-to-append-something-to-an-array
+Showed that you can use .length on array: https://www.freecodecamp.org/news/check-if-javascript-array-is-empty-or-not-with-length/
+How to splice strings: https://stackoverflow.com/questions/952924/how-do-i-chop-slice-trim-off-last-character-in-string-using-javascript
+
+    CSS
+
+Align to middle (vertically) : https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
+Prevents blue highlight when selecting: https://css-tricks.com/almanac/properties/u/user-select/
+Text color in input when typing: https://stackoverflow.com/questions/6669846/css-input-field-text-color-of-inputted-text
+Removes border and gaps: https://stackoverflow.com/questions/2039438/removing-unwanted-table-cell-borders-with-css
+
