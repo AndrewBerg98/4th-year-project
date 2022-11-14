@@ -3,69 +3,58 @@ import GetPlayer from "./GetPlayer"
 import "./styles/App.css"
 
 function App() {
-    const [values, setValues] = useState({})
-    const [sendValues, setSendValues] = useState({})
-    // const [playerList, setPlayerList] = useState()
+    const [nickname, setNickname] = useState()
     const nicknameRef = useRef()
+
+    const [realm, setRealm] = useState()
     const realmRef = useRef()
+
+    const urlPlayerList = "https://api.worldoftanks." + realm + "/wot/account/list/?application_id=" + process.env.REACT_APP_APIKEY + "&search=" + nickname
+
+    function handleSetNickname() {
+        const nickname = nicknameRef.current.value
+        const realm = realmRef.current.value
+
+        if (nicknameRef.current.value !== "") {
+            setNickname(nickname)
+            setRealm(realm)
+            nicknameRef.current.value = null // QOL: clears entered text in input field
+            nicknameRef.current.placeholder = nickname
+            realmRef.current.value = "eu"
+        }
+    }
 
     function logoClicked() {
         document.location.reload()
     }
 
-    const handleSetValues = e => {
-        const nickname = nicknameRef.current.value
-        const realm = realmRef.current.value
-        const realmNick = nickname + "-realm" // Dedicated realm for each player, otherwise one or more players may not be from a specific realm
-
-        if (nickname !== "") {
-            setValues(prevValues => {
-                return {
-                    ...prevValues, // Keeps previous values, otherwise they get deleted (we need to store multiple names)
-                    [nickname]: nickname,
-                    [realmNick]: realm
-                }
-            })
-        }
-        nicknameRef.current.value = ""
-        realmRef.current.value = "eu"
-    }
-
-    /* Allows us to send props the value when clicking "Search" instead of everytime we add a player name */
-    function handleSendValues() {
-        setSendValues(values)
-    }
-
-    function handleKeyPress(event) {
-        if (event.key === "Enter") {
-            window.document.getElementById("buttonAdd").click()
-        }
-    }
+    window.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("searchSubmit").click()
+    }})
 
     return (
         <>
-            <div id="header">
+            <div id="topMenu">
                 <button type="button" id="logo" onClick={logoClicked}>WOTPlayer</button>
-
+                
                 <div id="searchSpace">
-                    <label htmlFor="inputNickname">Nickname: </label>
-                    <input type="text" id="inputNickname" placeholder="Username (case-sensitive)" ref={nicknameRef} onKeyPress={handleKeyPress}></input>
+                    <label htmlFor="nicknameInput">Nickname: </label>
+                    <input type="text" id="nicknameInput" placeholder="Username (case-sensitive)" ref={nicknameRef} defaultValue="karlaskk4"></input>
 
-                    <label htmlFor="selectRealm">Realm: </label>
-                    <select type="dropdown" id="selectRealm" defaultValue="eu" ref={realmRef}>
+                    <label htmlFor="realmSelect">Realm: </label>
+                    <select type="dropdown" id="realmSelect" defaultValue="eu" ref={realmRef}>
                         <option value="ru">RU</option>
                         <option value="eu">EU</option>
                         <option value="na">NA</option>
                         <option value="asia">ASIA</option>
                     </select>
-
-                    <button type="button" id="buttonAdd" onClick={handleSetValues}>Add</button>
-
-                    <button type="button" id="buttonSearch" onClick={handleSendValues}>Search</button>
+                    
+                    <button type="button" id="searchSubmit" onClick={handleSetNickname}>Search</button>
                 </div>
             </div>
 
-            <GetPlayer values={sendValues} />
+            <GetPlayer nickname={nickname} realm={realm} urlPlayerList={urlPlayerList} />
         </>
     )
 }

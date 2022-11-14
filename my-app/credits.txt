@@ -19,6 +19,7 @@ How to increase increments in for loop from 1 to 2: https://stackoverflow.com/qu
 Showed how to push data into array: https://stackoverflow.com/questions/351409/how-to-append-something-to-an-array
 Showed that you can use .length on array: https://www.freecodecamp.org/news/check-if-javascript-array-is-empty-or-not-with-length/
 How to splice strings: https://stackoverflow.com/questions/952924/how-do-i-chop-slice-trim-off-last-character-in-string-using-javascript
+How to push data into arrays: https://www.freecodecamp.org/news/javascript-array-insert-how-to-add-to-an-array-with-the-push-unshift-and-concat-functions/#:~:text=When%20you%20want%20to%20add,arrays%20together%20using%20concat()., https://stackoverflow.com/questions/40250139/push-object-into-array
 
     CSS
 

@@ -1,47 +1,60 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import axios from "axios"
+import GetPersonalData from "./GetPersonalData"
 
-function GetPlayer({values}) {
-    const [data, setData] = useState({})
-    var nicknames = []
-    var realms = []
-    var valid = false
-
-    if (Object.keys(values).length !== 0) {
-        valid = true;
-    }
+function GetPlayer({nickname, realm, urlPlayerList}) {
+    const [data, setData] = useState(null)
 
     useEffect(() => {
-        if (valid === true) {
+        if (nickname !== undefined) {
             console.log("Fetching Player List")
             axios.get("playerList.json").then(response => {
                 setData(response.data)
             })
         }
-    }, [valid, values])
+    }, [nickname, urlPlayerList])
 
-    if (valid === true) {
-        // We are seeing if the nicknames inputted matches with the data retrieved
-        for (let i = 0; i < Object.keys(values).length; i++) {
-            for (let j = 0; j <= data?.data?.length; j++) {
-                // If they match, store inside an array
-                if (data?.data[j]?.nickname === Object.keys(values)[i]) {
-                    nicknames.push(data?.data[j]?.nickname)
+    console.log("Data: ", data)
+
+    if (nickname !== undefined && data !== null) {
+        var match = false
+
+        if (data.status === "error") {
+            return (
+                <div id="error">
+                    <h4>Status: <span id="errorStatus">{data.status}</span></h4>
+                    <h4>Code: <span id="errorCode">{data.error.code}</span></h4>
+                    <h4>Message: <span id="errorMessage">{data.error.message}</span></h4>
+                    <h4>Field: <span id="errorField">{data.error.field}</span></h4>
+                    <h4>Value: <span id="errorValue">{data.error.value}</span></h4>
+                    <p>You may need to update the IP Address List on the WarGaming Developer site:</p>
+                    <a href="https://developers.wargaming.net/applications/" target="_blank" rel="noopener noreferrer">https://developers.wargaming.net/applications/</a>
+                </div>
+            )
+        }
+
+        if (data.meta.count !== 0) {
+            for (var i = 0; i < data.meta.count; i++) {
+                if (nickname === data.data[i].nickname) {
+                    match = true
+                    return (
+                        <GetPersonalData nickname={data.data[i].nickname} id={data.data[i].account_id} realm={realm} />
+                    )
+                }
+
+                else {
+                    match = false;
                 }
             }
         }
 
-        for (let k = 0; k < Object.keys(values).length; k++) {
-            for (let l = 0; l < nicknames.length; l++) {
-                if (nicknames[l] === (Object.keys(values)[k]).slice(0, -6)) { // If nickname from "Data" mtaches with Nickname from "Objects" (sliced)
-                    realms.push(Object.values(values)[k]) // Store the realm into array
-                }
-            }
+        else if (match === false) {
+            return (
+                <div id="noPlayer">
+                    <p>{nickname} does not Exists!</p>
+                </div>
+            )
         }
-    }
-
-    if (nicknames.length !== 0 && realms.length !== 0) {
-        console.log(nicknames, realms)
     }
 }
 
