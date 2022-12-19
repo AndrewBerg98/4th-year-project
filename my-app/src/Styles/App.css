@@ -2,7 +2,7 @@
     outline: 0px solid orange;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 body {
@@ -160,6 +160,7 @@ body {
     text-overflow: ellipsis;
     box-sizing: border-box;
     padding: 0px 6px 0px 6px;
+    overflow: hidden;
 }
 
 .Inactive:hover {
