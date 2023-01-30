@@ -32,34 +32,43 @@ function GetRandomData({data, id}) {
                     <th colSpan="2"><button onClick={toggleRandomDetails}>Random Battle</button></th>
                 </tr>
                 <tr id="randomContent">
-                    <td id="randomSectionLeft"><table><thead>
-                        <tr id="battles" className="randomBattle_Battles"><td>Battles</td></tr>
-                        <tr id="wins" className="randomBattle_Battles"><td>Wins</td></tr>
-                        <tr id="losses" className="randomBattle_Battles"><td>Losses</td></tr>
-                        <tr id="draws" className="randomBattle_Battles"><td>Draws</td></tr>
-                        <tr id="survivedBattles" className="randomBattle_Battles"><td>Battles Survived</td></tr>
+                    <td id="randomSectionLeft">
+                        <table>
+                            <thead>
+                                <tr id="battles" className="randomBattle_Battles"><td>Battles</td></tr>
+                                <tr id="wins" className="randomBattle_Battles"><td>Wins</td></tr>
+                                <tr id="losses" className="randomBattle_Battles"><td>Losses</td></tr>
+                                <tr id="draws" className="randomBattle_Battles"><td>Draws</td></tr>
+                                <tr id="survivedBattles" className="randomBattle_Battles"><td>Battles Survived</td></tr>
 
-                        <tr id="xp"><td>Total Exp.</td></tr>
-                        <tr id="avgBattleXP"><td>Average Exp.</td></tr>
+                                <tr id="xp"><td>Total Exp.</td></tr>
+                                <tr id="avgBattleXP"><td>Average Exp.</td></tr>
 
-                        <tr id="frags"><td>Frags</td></tr>
-                        <tr id="hits"><td>Hits</td></tr>
-                        <tr id="hitsPercentage"><td>Accuracy</td></tr>
-                    </thead></table></td>
-                    <td id="randomSectionRight"><table><thead>
-                        <tr id="battlesValue" className="randomBattle_Battles"><td>{Number(item.battles).toLocaleString()}</td></tr>
-                        <tr id="winsValue" className="randomBattle_Battles"><td>{Number(item.wins).toLocaleString()}</td></tr>
-                        <tr id="lossesValue" className="randomBattle_Battles"><td>{Number(item.losses).toLocaleString()}</td></tr>
-                        <tr id="drawsValue" className="randomBattle_Battles"><td>{Number(item.draws).toLocaleString()}</td></tr>    
-                        <tr id="survivedBattlesValue" className="randomBattle_Battles"><td>{item.draws}</td></tr>
+                                <tr id="frags"><td>Frags</td></tr>
+                                <tr id="hits"><td>Hits</td></tr>
+                                <tr id="hitsPercentage"><td>Accuracy</td></tr>
+                            </thead>
+                        </table>
+                    </td>
 
-                        <tr id="xpValue"><td>{Number(item.xp).toLocaleString()}</td></tr>
-                        <tr id="avgBattleXPValue"><td>{Number(item.battle_avg_xp).toLocaleString()}</td></tr>
+                    <td id="randomSectionRight">
+                        <table>
+                            <thead>
+                                <tr id="battlesValue" className="randomBattle_Battles"><td>{Number(item.battles).toLocaleString()}</td></tr>
+                                <tr id="winsValue" className="randomBattle_Battles"><td>{Number(item.wins).toLocaleString()}</td></tr>
+                                <tr id="lossesValue" className="randomBattle_Battles"><td>{Number(item.losses).toLocaleString()}</td></tr>
+                                <tr id="drawsValue" className="randomBattle_Battles"><td>{Number(item.draws).toLocaleString()}</td></tr>    
+                                <tr id="survivedBattlesValue" className="randomBattle_Battles"><td>{item.draws}</td></tr>
 
-                        <tr id="fragsValue"><td>{Number(item.frags).toLocaleString()}</td></tr>
-                        <tr id="hitsValue"><td>{Number(item.hits).toLocaleString()}</td></tr>
-                        <tr id="hitsPercentageValue"><td>{item.hits_percents + "%"}</td></tr>
-                    </thead></table></td>
+                                <tr id="xpValue"><td>{Number(item.xp).toLocaleString()}</td></tr>
+                                <tr id="avgBattleXPValue"><td>{Number(item.battle_avg_xp).toLocaleString()}</td></tr>
+
+                                <tr id="fragsValue"><td>{Number(item.frags).toLocaleString()}</td></tr>
+                                <tr id="hitsValue"><td>{Number(item.hits).toLocaleString()}</td></tr>
+                                <tr id="hitsPercentageValue"><td>{item.hits_percents + "%"}</td></tr>
+                            </thead>
+                        </table>
+                    </td>
                 </tr>
             </thead>
         </table>

@@ -51,7 +51,7 @@ body {
     font-size: 24px;
 }
 
-#nicknameInput, #realmSelect, #searchSubmit {
+#nicknameInput, #realmSelect, #sourceSelect, #searchSubmit {
     height: 38px;
     color: white;
     border: none;
@@ -92,14 +92,30 @@ body {
     background: rgb(80, 80, 80);
 }
 
-#realmSelect, #searchSubmit {
+#realmSelect, #sourceSelect, #searchSubmit {
     width: 66px;
     background-color: rgb(2, 80, 196);
     cursor: pointer;
 }
 
-#realmSelect:hover, #searchSubmit:hover {
+#realmSelect:hover, #sourceSelect:hover, #searchSubmit:hover {
     background-color: rgb(0, 68, 169);
+}
+
+#sourceSelect {
+    border-radius: 4px 4px 4px 4px;
+    margin: 0px 0px 0px 12px;
+    box-sizing: border-box;
+    padding: 6px 0px 6px 6px;
+}
+
+#sourceSelect > option {
+    background-color: rgb(44, 44, 44);
+    border-radius: 14px;
+}
+
+#sourceSelect > option:checked {
+    background: rgb(80, 80, 80);
 }
 
 #searchSubmit {
@@ -107,7 +123,7 @@ body {
     border-radius: 4px;
 }
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 614px) {
     #logo {
         display: none;
     }

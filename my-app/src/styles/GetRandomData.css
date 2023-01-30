@@ -87,7 +87,7 @@
         border-radius: 0px;
     }
 
-    #nicknameInput, #realmSelect, #searchSubmit, #randomTitle button, #randomSectionLeft, #randomSectionRight {
+    #nicknameInput, #realmSelect, #sourceSelect, #searchSubmit, #randomTitle button, #randomSectionLeft, #randomSectionRight {
         font-size: 3.5vw;
     }
 }

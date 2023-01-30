@@ -9,15 +9,20 @@ function App() {
     const [realm, setRealm] = useState()
     const realmRef = useRef()
 
+    const [source, setSource] = useState()
+    const sourceRef = useRef()
+
     const urlPlayerList = "https://api.worldoftanks." + realm + "/wot/account/list/?application_id=" + process.env.REACT_APP_APIKEY + "&search=" + nickname
 
     function handleSetNickname() {
         const nickname = nicknameRef.current.value
         const realm = realmRef.current.value
+        const source = sourceRef.current.value
 
         if (nicknameRef.current.value !== "") {
             setNickname(nickname)
             setRealm(realm)
+            setSource(source)
             nicknameRef.current.value = null // QOL: clears entered text in input field
             nicknameRef.current.placeholder = nickname
             realmRef.current.value = "eu"
@@ -49,12 +54,18 @@ function App() {
                         <option value="na">NA</option>
                         <option value="asia">ASIA</option>
                     </select>
+
+                    <label htmlFor="sourceSelect">Source: </label>
+                    <select type="dropdown" id="sourceSelect" defaultValue="local" ref={sourceRef}>
+                        <option value="local">Local</option>
+                        <option value="api">API</option>
+                    </select>
                     
                     <button type="button" id="searchSubmit" onClick={handleSetNickname}>Search</button>
                 </div>
             </div>
 
-            <GetPlayer nickname={nickname} realm={realm} urlPlayerList={urlPlayerList} />
+            <GetPlayer nickname={nickname} realm={realm} urlPlayerList={urlPlayerList} source={source} />
         </>
     )
 }

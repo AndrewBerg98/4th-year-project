@@ -3,7 +3,7 @@ import axios from "axios"
 import GetMainData from "./GetMainData"
 import GetRandomData from "./GetRandomData"
 
-function GetPersonalData({nickname, id, realm}) {
+function GetPersonalData({nickname, id, realm, source}) {
     const extra = "&extra="
     // eslint-disable-next-line
     const and = "%2C+"
@@ -60,13 +60,24 @@ function GetPersonalData({nickname, id, realm}) {
     }
 
     useEffect(() => {
-        if(id !== undefined) {
-            console.log("Fetching Personal Data")
+        if(id !== undefined && source === "local") {
+            console.log("Fetching Personal Data From LOCAL SOURCE")
             axios.get("playerPersonalData.json").then(response => {
                 setData(response.data)
             })
         }
-    }, [id, realm, urlGetPersonalData])
+
+        else if (id !== undefined && source === "api") {
+            console.log("Fetching Personal Data From API")
+            axios.get(urlGetPersonalData).then(response => {
+                setData(response.data)
+            })
+        }
+
+        else {
+            console.log("ID or SOURCE LOCAL Unspecified")
+        }
+    }, [id, realm, urlGetPersonalData, source])
 
     if (id !== undefined && data !== null) {
         var match = false

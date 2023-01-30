@@ -2,19 +2,32 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import GetPersonalData from "./GetPersonalData"
 
-function GetPlayer({nickname, realm, urlPlayerList}) {
+function GetPlayer({nickname, realm, urlPlayerList, source}) {
     const [data, setData] = useState(null)
 
     useEffect(() => {
         if (nickname !== undefined) {
             console.log("Fetching Player List")
-            axios.get("playerList.json").then(response => {
-                setData(response.data)
-            })
-        }
-    }, [nickname, urlPlayerList])
 
-    console.log("Data: ", data)
+            if (source === "local") {
+                console.log("Collecting Data From LOCAL SOURCE")
+                axios.get("playerList.json").then(response => {
+                    setData(response.data)
+                })
+            }
+
+            else if (source === "api") {
+                console.log("Collecting Data From API")
+                axios.get(urlPlayerList).then(response => {
+                    setData(response.data)
+                })
+            }
+
+            else (
+                console.log("DATA SOURCE Not Specified")
+            )
+        }
+    }, [nickname, urlPlayerList, source])
 
     if (nickname !== undefined && data !== null) {
         var match = false
@@ -33,17 +46,32 @@ function GetPlayer({nickname, realm, urlPlayerList}) {
             )
         }
 
-        if (data.meta.count !== 0) {
-            for (var i = 0; i < data.meta.count; i++) {
-                if (nickname === data.data[i].nickname) {
+        if (source === "local") {
+            for (var n = 0; n < data.data.length; n++) {
+                if (nickname === data.data[n].nickname && match === false) {
                     match = true
-                    return (
-                        <GetPersonalData nickname={data.data[i].nickname} id={data.data[i].account_id} realm={realm} />
-                    )
                 }
+            }
+        }
 
-                else {
-                    match = false;
+        if (source === "api") {
+            if (data.data.length !== 0) {
+                if (nickname === data.data[0].nickname) {
+                    match = true
+                }
+            }
+
+            else {
+                match = false
+            }
+        }
+
+        if (data.meta.count !== 0 && match === true) {
+            for (var i = 0; i < data.meta.count; i++) {
+                if (nickname === data.data[i].nickname && match === true) {
+                    return (
+                        <GetPersonalData nickname={data.data[i].nickname} id={data.data[i].account_id} realm={realm} source={source} />
+                    )
                 }
             }
         }
