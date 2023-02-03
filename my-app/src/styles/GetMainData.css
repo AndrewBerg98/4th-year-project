@@ -11,89 +11,45 @@
     float: left;
 }
 
-#mainTitle button {
+#mainDataTableTitle button {
     width: 100%;
     height: 38px;
-    background: rgb(80, 80, 80);
+    background: rgb(66, 66, 66);
     cursor: pointer;
     color: rgb(230, 230, 230);
     border: none;
     font-size: 18px;
     font-family: Verdana;
+    transition: height 2s;
 }
 
-#mainTitle button:hover {
-    /* background: rgb(60, 60, 60); */
-    background-color: rgb(2, 80, 196);
+#mainDataTableTitle button:hover {
+    background-color: rgba(0, 61, 153, 0.8);
 }
 
-/* #mainContent {
-    width: 100%;
-    display: table;
-} */
-
-#mainContent > td > table {
-    width: 100%;
-    background-color: rgb(44, 44, 44);
-    color: rgb(230, 230, 230);
-    border: none;
-    border-collapse: collapse;
+#mainRows {
+    transition: max-height 1s ease;
 }
 
-#mainContent tr:nth-child(even) {
-    background-color: rgb(55, 55, 55);
+#mainRow:nth-child(even) {
+    background-color: rgb(88, 88, 88);
 }
 
-/* 
-#mainContent td {
+#mainRow:nth-child(odd) {
+    background-color: rgb(99, 99, 99);
+}
+
+#mainRow td {
+    color: white;
     box-sizing: border-box;
-    padding: 0px 8px 0px 8px;
-} */
-
-
-#mainContent > td > table > thead > tr > td {
-    box-sizing: border-box;
-    padding: 0px 0px 0px 8px;
-}
-
-#mainContent tr, #mainSectionRight tr, #mainSectionRight p {
-    height: 44px;
-}
-
-/* #mainSectionRight {
-    width: 60%;
-}
-
-#mainSectionRight table {
-    width: 100%;
-    background-color: rgb(96, 96, 96);
-    color: rgb(230, 230, 230);
-    border: none;
-    border-collapse: collapse;
-}
-
-#mainSectionRight tr:nth-child(even) {
-    background-color: rgb(109, 109, 109);
-}
-
-#mainSectionRight > table > thead > tr > td {
-    box-sizing: border-box;
-    padding: 0px 8px 0px 8px;
+    padding: 8px 8px 8px 8px;
     align-items: center;
     justify-content: middle;
     line-height: 1.45;
-} */
-
-#mainContent tr > td:nth-child(2) {
-    background-color: rgb(96, 96, 96);
 }
 
-#mainContent tr:nth-child(even) > td:nth-child(even) {
-    background-color: rgb(109, 109, 109);
-}
-
-#mainContent tr:hover, #mainContent tr > td:nth-child(2):hover {
-    background-color: rgb(2, 80, 196);
+#mainRow:hover {
+    background-color: rgba(0, 61, 153, 0.8);
 }
 
 @media only screen and (max-width: 392px) {
@@ -103,7 +59,7 @@
         border-radius: 0px;
     }
 
-    #nicknameInput, #realmSelect, #searchSubmit, #mainTitle button, #mainSectionLeft, #mainSectionRight {
+    #mainDataTableTitle button {
         font-size: 3.5vw;
     }
 }
