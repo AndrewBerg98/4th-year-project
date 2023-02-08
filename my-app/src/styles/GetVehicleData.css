@@ -1,0 +1,111 @@
+#tankListTiles {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.tankTile, .tankTile td {
+    outline: 0px solid orange;
+    background-color: rgba(82, 82, 82, 0.5);
+}
+
+.tankTile {
+    width: 160px;
+    display: inline-block;
+    /* float: left; */
+    margin: 8px;
+    border-radius: 8px;
+}
+
+.tankTile img {
+    transform: scale(0.9, 0.9);
+    font-size: 0.75rem;
+}
+
+.tankTile img:hover {
+    transition: 0.1s ease-in-out;
+    transform: scale(0.8, 0.8);
+    cursor: pointer;
+}
+
+.tankTile > td {
+    color: white;
+    font-family: Verdana;
+    display: block;
+    text-align: center;
+}
+
+.tankTile td:nth-child(1) {
+    border-radius: 8px 8px 0px 0px;
+    font-size: 0.75rem;
+    line-height: 2;
+}
+
+.tankTile td:nth-child(2) {
+    width: 100%;
+    height: 100px;
+    margin: 0px auto 0px auto;
+    border-radius: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    background-color: rgba(102, 102, 102, 0.5);
+}
+
+.tankTile td:nth-child(3) {
+    font-size: 0.75rem;
+    line-height: 2;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.china > td:nth-child(2) {
+    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
+    background-position: 0px -200px;
+}
+
+.czech > td:nth-child(2) {
+    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
+    background-position: 0px -700px;
+}
+
+.france > td:nth-child(2) {
+    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
+    background-position: 0px -300px;
+}
+
+.germany > td:nth-child(2) {
+    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
+    background-position: 0px -600px;
+}
+
+.italy > td:nth-child(2) {
+    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
+    background-position: 0px -900px;
+}
+
+.japan > td:nth-child(2) {
+    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
+    background-position: 0px -400px;
+}
+
+.poland > td:nth-child(2) {
+    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
+    background-position: 0px -1000px;
+}
+
+.sweden > td:nth-child(2) {
+    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
+    background-position: 0px -800px;
+}
+
+.uk > td:nth-child(2) {
+    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
+    background-position: 0px -500px;
+}
+
+.usa > td:nth-child(2) {
+    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
+    background-position: 0px 0px;
+}
+
+.ussr > td:nth-child(2) {
+    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
+    background-position: 0px -100px;
+}

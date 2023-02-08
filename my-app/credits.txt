@@ -1,7 +1,7 @@
 
     JavaScript
 
-Hit Enter to search: https://www.w3schools.com/HOWTO/howto_js_trigger_button_enter.asp, https://www.pluralsight.com/guides/event-listeners-in-react-components
+Hit 'Enter' to search: https://www.w3schools.com/HOWTO/howto_js_trigger_button_enter.asp, https://www.pluralsight.com/guides/event-listeners-in-react-components
 Resolved select has not name attribute: https://dequeuniversity.com/rules/axe/4.0/select-name
 Resolved <tr> cannot be child of <table>: https://stackoverflow.com/questions/61498491/how-to-fix-validatedomnesting-td-cannot-appear-as-a-child-of-tbody-an
 Showed how to add expressions between tags: https://github.com/AOEpeople/geb-spock-reports/issues/9
@@ -20,7 +20,13 @@ Showed how to push data into array: https://stackoverflow.com/questions/351409/h
 Showed that you can use .length on array: https://www.freecodecamp.org/news/check-if-javascript-array-is-empty-or-not-with-length/
 How to splice strings: https://stackoverflow.com/questions/952924/how-do-i-chop-slice-trim-off-last-character-in-string-using-javascript
 How to push data into arrays: https://www.freecodecamp.org/news/javascript-array-insert-how-to-add-to-an-array-with-the-push-unshift-and-concat-functions/#:~:text=When%20you%20want%20to%20add,arrays%20together%20using%20concat()., https://stackoverflow.com/questions/40250139/push-object-into-array
-
+How to fix unique key issue: https://www.digitalocean.com/community/conceptual-articles/understanding-how-to-render-arrays-in-react
+How to render array: https://www.g2i.co/blog/understanding-the-objects-are-not-valid-as-a-react-child-error-in-react
+How to center inlines: https://stackoverflow.com/questions/19076919/marginauto-doesnt-work-on-inline-block-elements
+Zoom in/out image on hover: https://stackoverflow.com/questions/52695453/make-images-expand-on-hover-from-center-and-make-image-still-stay-in-box
+How to set background image: https://www.w3schools.com/cssref/pr_background-image.php
+Add multiple classes: https://www.delftstack.com/howto/react/react-multiple-class-names/
+    
     CSS
 
 Align to middle (vertically) : https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container

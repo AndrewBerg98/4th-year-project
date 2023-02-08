@@ -45,7 +45,7 @@ function App() {
                 
                 <div id="searchSpace">
                     <label htmlFor="nicknameInput">Nickname: </label>
-                    <input type="text" id="nicknameInput" placeholder="Username (case-sensitive)" ref={nicknameRef} defaultValue="karlaskk4"></input>
+                    <input type="text" id="nicknameInput" placeholder="Username (case-sensitive)" ref={nicknameRef} defaultValue="Andreykaberg"></input>
 
                     <label htmlFor="realmSelect">Realm: </label>
                     <select type="dropdown" id="realmSelect" defaultValue="eu" ref={realmRef}>

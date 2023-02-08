@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import GetMainData from "./GetMainData"
 import GetRandomData from "./GetRandomData"
+import GetVehicleData from "./GetVehicleData"
 
 function GetPersonalData({nickname, id, realm, source}) {
     const extra = "&extra="
@@ -9,7 +10,7 @@ function GetPersonalData({nickname, id, realm, source}) {
     const and = "%2C+"
     const statRandom = "statistics.random"
     const urlGetPersonalData = "https://api.worldoftanks." + realm + "/wot/account/info/?application_id=" + process.env.REACT_APP_APIKEY + "&account_id=" + id + extra + statRandom
-    const [data, setData] = useState(null)
+    const [personalData, setPersonalData] = useState(null)
 
     const dateOptions = {
         weekday: "long",
@@ -63,14 +64,14 @@ function GetPersonalData({nickname, id, realm, source}) {
         if(id !== undefined && source === "local") {
             console.log("Fetching Personal Data From LOCAL SOURCE")
             axios.get("playerPersonalData.json").then(response => {
-                setData(response.data)
+                setPersonalData(response.data)
             })
         }
 
         else if (id !== undefined && source === "api") {
             console.log("Fetching Personal Data From API")
             axios.get(urlGetPersonalData).then(response => {
-                setData(response.data)
+                setPersonalData(response.data)
             })
         }
 
@@ -79,12 +80,12 @@ function GetPersonalData({nickname, id, realm, source}) {
         }
     }, [id, realm, urlGetPersonalData, source])
 
-    if (id !== undefined && data !== null) {
+    if (id !== undefined && personalData !== null) {
         var match = false
 
-        if (data.meta.count !== 0) {
+        if (personalData.meta.count !== 0) {
             for (var i = 0; i < 1; i++) {
-                if (id === data.data[id].account_id && match === false) {
+                if (id === personalData.data[id].account_id && match === false) {
                     match = true
                     document.title = (nickname + " - WOTPlayer")
                     
@@ -102,8 +103,9 @@ function GetPersonalData({nickname, id, realm, source}) {
                             </div>
 
                             <div id="playerAccount">
-                                <GetMainData data={data} id={id} dateOptions={dateOptions} />
-                                <GetRandomData data={data} id={id} />
+                                <GetMainData personalData={personalData} id={id} dateOptions={dateOptions} />
+                                <GetRandomData personalData={personalData} id={id} />
+                                <GetVehicleData personalData={personalData} id={id} realm={realm} source={source} />
                             </div>
                         </>
                     )

@@ -2,6 +2,7 @@
     outline: 0px solid orange;
     margin: 0;
     padding: 0;
+    user-select: none;
     /* overflow: hidden; */
 }
 
@@ -51,7 +52,7 @@ body {
     font-size: 24px;
 }
 
-#nicknameInput, #realmSelect, #sourceSelect, #searchSubmit {
+#nicknameInput, #realmSelect, #sourceSelect, #colorRatings, #searchSubmit {
     height: 38px;
     color: white;
     border: none;
@@ -92,29 +93,29 @@ body {
     background: rgb(80, 80, 80);
 }
 
-#realmSelect, #sourceSelect, #searchSubmit {
+#realmSelect, #sourceSelect, #colorRatings, #searchSubmit {
     width: 66px;
     background-color: rgb(2, 80, 196);
     cursor: pointer;
 }
 
-#realmSelect:hover, #sourceSelect:hover, #searchSubmit:hover {
+#realmSelect:hover, #sourceSelect:hover, #colorRatings:hover, #searchSubmit:hover {
     background-color: rgb(0, 68, 169);
 }
 
-#sourceSelect {
+#sourceSelect, #colorRatings {
     border-radius: 4px 4px 4px 4px;
     margin: 0px 0px 0px 12px;
     box-sizing: border-box;
     padding: 6px 0px 6px 6px;
 }
 
-#sourceSelect > option {
+#sourceSelect > option, #colorRatings > option {
     background-color: rgb(44, 44, 44);
     border-radius: 14px;
 }
 
-#sourceSelect > option:checked {
+#sourceSelect > option:checked, #colorRatings > option:checked {
     background: rgb(80, 80, 80);
 }
 
@@ -123,7 +124,7 @@ body {
     border-radius: 4px;
 }
 
-@media only screen and (max-width: 614px) {
+@media only screen and (max-width: 633px) {
     #logo {
         display: none;
     }
@@ -143,6 +144,12 @@ body {
     }
 
     #searchSubmit {
+        display: block;
+        width: 92px;
+        margin: 0px 0px 0px 12px;
+    }
+
+    #colorRatings {
         display: block;
         width: 92px;
         margin: 0px 0px 0px 12px;
@@ -188,7 +195,7 @@ body {
 }
 
 @media only screen and (max-width: 392px) {
-    #nicknameInput, #realmSelect, #searchSubmit {
+    #nicknameInput, #realmSelect, #sourceSelect, #searchSubmit {
         font-size: 3.5vw;
     }
 }

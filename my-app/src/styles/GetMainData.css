@@ -14,7 +14,7 @@
 #mainDataTableTitle button {
     width: 100%;
     height: 38px;
-    background: rgb(66, 66, 66);
+    background-color: rgb(66, 66, 66);
     cursor: pointer;
     color: rgb(230, 230, 230);
     border: none;
