@@ -4,7 +4,7 @@
     border: none;
     border-collapse: collapse;
     user-select: none;
-    font-family: Verdana;
+    font-family: Helvetica;
     font-size: 13px;
     border-radius: 12px;
     display: none;
@@ -19,7 +19,7 @@
     color: rgb(230, 230, 230);
     border: none;
     font-size: 18px;
-    font-family: Verdana;
+    font-family: Helvetica;
     transition: height 2s;
 }
 

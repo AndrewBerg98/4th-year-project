@@ -4,7 +4,7 @@
     border: none;
     border-collapse: collapse;
     user-select: none;
-    font-family: Verdana;
+    font-family: Helvetica;
     font-size: 13px;
     border-radius: 12px;
     display: none;
@@ -19,7 +19,7 @@
     color: rgb(230, 230, 230);
     border: none;
     font-size: 18px;
-    font-family: Verdana;
+    font-family: Helvetica;
 }
 
 #randomDataTableTitle button:hover {
@@ -59,7 +59,7 @@
 }
 
 #damagedealings button {
-    background-color: rgba(100, 0, 0, 0.8);
+    background-color: rgba(50, 0, 0, 0.8);
 }
 
 #damagedealings > tr {
@@ -71,7 +71,7 @@
 }
 
 #damagereceivings button {
-    background-color: rgba(99, 66, 0, 0.8);
+    background-color: rgba(51, 34, 0, 0.8);
 }
 
 #damagereceivings > tr {
@@ -83,7 +83,7 @@
 }
 
 #spottingandassistance button {
-    background-color: rgba(5, 100, 0, 0.8);
+    background-color: rgba(2, 50, 0, 0.8);
 }
 
 #spottingandassistance > tr {
@@ -95,7 +95,7 @@
 }
 
 #baseactivities button {
-    background-color: rgba(0, 41, 100, 0.8);
+    background-color: rgba(0, 21, 50, 0.8);
 }
 
 #baseactivities > tr {
@@ -111,7 +111,7 @@
 }
 
 #misc > tr {
-    background-color: rgba(101, 0, 148, 0.5);
+    background-color: rgba(34, 0, 50, 0.5);
 }
 
 #misc tr:nth-child(even) {
