@@ -8,7 +8,8 @@ function GetVehicleData({personalData, id, realm, source}) {
     const [vehicleList, setVehicleList] = useState(null)
     const [individualVehicleDetails, setIndividualVehicleDetails] = useState(null)
     const [playerTankStats, setPlayerTankStats] = useState(null)
-    const array = []
+    const [playerTankAchievements, setPlayerTankAchievements] = useState(null)
+    const completeData = []
 
     useEffect(() => {
         if(id !== undefined && source === "local") {
@@ -28,6 +29,10 @@ function GetVehicleData({personalData, id, realm, source}) {
             axios.get("playerTankStats.json").then(response => {
                 setPlayerTankStats(response.data)
             })
+
+            axios.get("playerVehicleAchievements.json").then(response => {
+                setPlayerTankAchievements(response.data)
+            })
         }
 
         else if (id !== undefined && source === "api") {
@@ -42,23 +47,36 @@ function GetVehicleData({personalData, id, realm, source}) {
         }
     }, [id, realm, GetPlayerVehicleList, source])
 
-    if (playerVehicles && vehicleList && individualVehicleDetails && playerTankStats) {
+    if (playerVehicles && vehicleList && individualVehicleDetails && playerTankStats && playerTankAchievements) {
         // console.log("Vehicle Data: ", playerVehicles.data[id])
         // console.log("Vehicle List: ", vehicleList)
         // console.log("Vehicle Details: ", individualVehicleDetails)
         // console.log("Vehicle Tank Stats Details: ", playerTankStats.data[id])
 
         for (var i = 0; i < playerVehicles.data[id].length; i++) {
-            // console.log(vehicleList.data[playerVehicles.data[id][i].tank_id]?.name, "(ID: " + playerVehicles.data[id][i]?.tank_id + ")", "Image Link: " + individualVehicleDetails.data[playerVehicles.data[id][i].tank_id]?.images.big_icon)
-            // console.log(vehicleList.data[playerVehicles.data[id][i].tank_id]?.name, playerTankStats.data[id][playerVehicles.data[id][i].tank_id]?.mark_of_mastery)
+            for (var k = 0; k < playerTankStats.data[id].length; k++) {
+                if (playerTankStats.data[id][k].tank_id === playerVehicles.data[id][i]?.tank_id) {
+                    // console.log(playerTankAchievements.data[500706224][k].achievements.marksOnGun)
 
-            array.push({
-                name: vehicleList.data[playerVehicles.data[id][i].tank_id]?.name,
-                id: playerVehicles.data[id][i]?.tank_id,
-                nation: individualVehicleDetails.data[playerVehicles.data[id][i].tank_id]?.nation,
-                big_image: individualVehicleDetails.data[playerVehicles.data[id][i].tank_id]?.images.big_icon,
-                mark_of_mastery: playerTankStats.data[id][playerVehicles.data[id][i].tank_id]?.mark_of_mastery
-            })
+                    completeData.push({
+                        name: vehicleList.data[playerVehicles.data[id][i].tank_id]?.name,
+                        id: playerVehicles.data[id][i]?.tank_id,
+                        nation: individualVehicleDetails.data[playerVehicles.data[id][i].tank_id]?.nation,
+                        tank_image_big: individualVehicleDetails.data[playerVehicles.data[id][i].tank_id]?.images.big_icon,
+                        mark_of_mastery: playerTankStats.data[id][k]?.mark_of_mastery,
+                        mark_of_excellence: playerTankAchievements.data[id][k]?.achievements.marksOnGun,
+                        tier: individualVehicleDetails.data[playerVehicles.data[id][i].tank_id]?.tier,
+                        premium: individualVehicleDetails.data[playerVehicles.data[id][i].tank_id]?.is_premium
+                    })
+                }
+            }
+
+            // completeData.push({
+            //     name: vehicleList.data[playerVehicles.data[id][i].tank_id]?.name,
+            //     id: playerVehicles.data[id][i]?.tank_id,
+            //     nation: individualVehicleDetails.data[playerVehicles.data[id][i].tank_id]?.nation,
+            //     tank_image_big: individualVehicleDetails.data[playerVehicles.data[id][i].tank_id]?.images.big_icon
+            // })
         }
     }
 
@@ -69,12 +87,20 @@ function GetVehicleData({personalData, id, realm, source}) {
             </thead>
 
             <tbody>
-                {array.map((tank) => (
-                    <tr className={"tankTile".concat(" ") + tank.nation} key={tank.id}>
-                        <td key={tank.id}>{tank.name}</td>
-                        <td key={tank.big_image}><img src={tank.big_image} alt="missing_tank_image"></img></td>
-                        <td key={tank.name}>ID: {tank.id}</td>
-                        {/* <td key={tank.mark_of_mastery}>Mark of Mastery: {tank.mark_of_mastery}</td> */}
+                {completeData.map((tank) => (
+                    <tr className={"tankTile".concat(" ") + tank.nation.concat(" ") + "".concat("is_premium_") + tank.premium} key={tank.id + "".concat("_") + tank.name}>
+                        <td key={tank.name} className={tank.name}>{tank.name}</td>
+                        <td key={tank.tank_image_big}>
+                            <img src={tank.tank_image_big} alt="missing_tank_image" draggable="false"></img>
+                        </td>
+                        <td key={tank.id} className={tank.id}>ID: {tank.id}</td>
+                        <td key={"tier_" + tank.tier} className={tank.tier}>Tier {tank.tier}</td>
+                        <td key={tank.mark_of_mastery} id="mark_of_mastery">
+                            <p className={"mark_of_mastery_" + tank.mark_of_mastery}></p>
+                        </td>
+                        <td>
+                            <p className={tank.nation + "_mark_of_excellence_" + tank.mark_of_excellence + "".concat(" ") + "mark_of_excellence_" + tank.mark_of_mastery}></p>
+                        </td>
                     </tr>
                 ))}
             </tbody>

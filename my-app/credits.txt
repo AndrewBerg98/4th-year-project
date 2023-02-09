@@ -26,6 +26,11 @@ How to center inlines: https://stackoverflow.com/questions/19076919/marginauto-d
 Zoom in/out image on hover: https://stackoverflow.com/questions/52695453/make-images-expand-on-hover-from-center-and-make-image-still-stay-in-box
 How to set background image: https://www.w3schools.com/cssref/pr_background-image.php
 Add multiple classes: https://www.delftstack.com/howto/react/react-multiple-class-names/
+How to add multiple text as src for image: https://stackoverflow.com/questions/35149719/html-image-src-call-javascript-variable
+Change background image size: https://stackoverflow.com/questions/4055598/max-size-for-background-image-css
+Prevent image dragging: https://stackoverflow.com/questions/7439042/css-js-to-prevent-dragging-of-ghost-image
+Glow/shadow on hover: https://superdevresources.com/css-button-glow-effect/
+Shaking animztion: https://www.w3schools.com/howto/howto_css_shake_image.asp
     
     CSS
 

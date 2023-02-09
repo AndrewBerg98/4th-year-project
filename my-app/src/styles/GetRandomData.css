@@ -124,4 +124,8 @@
         margin: 0 auto;
         border-radius: 0px;
     }
+
+    #randomDataTableTitle button {
+        font-size: 3.5vw;
+    }
 }
