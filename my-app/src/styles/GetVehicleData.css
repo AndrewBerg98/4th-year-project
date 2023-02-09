@@ -1,7 +1,17 @@
 #tankListTiles {
+    width: 100%;
     text-align: center;
-    margin: 0 auto;
-    float: left;
+    margin: auto;
+}
+
+.tankTileFull {
+    text-align: center;
+    display: inline-block;
+}
+
+.tankTileFull:hover {
+    transform: scale(1.05, 1.05);
+    transition: 0.1s ease-in-out;
 }
 
 .tankTile, .tankTile td {
@@ -12,15 +22,12 @@
 .tankTile {
     width: 160px;
     display: inline-block;
-    /* float: left; */
     margin: 12px;
     border-radius: 8px;
 }
 
 .is_premium_false:hover {
     box-shadow: 0px 10px 15px rgba(30, 30, 30, 1);
-    transform: scale(1.05, 1.05);
-    transition: 0.1s ease-in-out;
     animation: shake 0s;
     animation-iteration-count: infinite;
 }
@@ -31,8 +38,6 @@
 
 .is_premium_true:hover {
     box-shadow: 0px 10px 15px rgba(145, 123, 0, 1);
-    transform: scale(1.05, 1.05);
-    transition: 0.2s ease-in-out;
     animation: shake 2s;
     animation-iteration-count: infinite;
 }
@@ -188,12 +193,6 @@
     background-size: 70%;
     background-position: center;
 }
-
-/*
-    .mark_of_mastery_1 {
-        background-image: url("https://wiki.wgcdn.co/images/1/1f/Class_icons_1.png"); This image does not exist since this icon doesn't exist in the game anyway
-    }
-*/
 
 .mark_of_mastery_2 {
     background-image: url("https://wiki.wgcdn.co/images/1/1f/Class_icons_2.png");

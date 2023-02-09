@@ -31,6 +31,7 @@ Change background image size: https://stackoverflow.com/questions/4055598/max-si
 Prevent image dragging: https://stackoverflow.com/questions/7439042/css-js-to-prevent-dragging-of-ghost-image
 Glow/shadow on hover: https://superdevresources.com/css-button-glow-effect/
 Shaking animztion: https://www.w3schools.com/howto/howto_css_shake_image.asp
+Use alternative name if original is empty: https://stackoverflow.com/questions/43453768/react-component-check-is-variable-is-empty
     
     CSS
 

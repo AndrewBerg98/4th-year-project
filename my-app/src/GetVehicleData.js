@@ -86,10 +86,10 @@ function GetVehicleData({personalData, id, realm, source}) {
 
             </thead>
 
-            <tbody>
-                {completeData.map((tank) => (
-                    <tr className={"tankTile".concat(" ") + tank.nation.concat(" ") + "".concat("is_premium_") + tank.premium} key={tank.id + "".concat("_") + tank.name}>
-                        <td key={tank.name} className={tank.name}>{tank.name}</td>
+            {completeData.map((tank) => (
+                <tbody className="tankTileFull" key={"tile_" + tank.id}>
+                    <tr className={"tankTile".concat(" ") + tank.nation.concat(" ") + "".concat("is_premium_") + tank.premium} key={tank.id + "".concat("_") + tank.name + "".concat("_") + tank.premium}>
+                        <td key={tank.name} className={tank.name}>{!tank.name ? <i><b>"Unknown"</b></i> : tank.name}</td>
                         <td key={tank.tank_image_big}>
                             <img src={tank.tank_image_big} alt="missing_tank_image" draggable="false"></img>
                         </td>
@@ -102,8 +102,8 @@ function GetVehicleData({personalData, id, realm, source}) {
                             <p className={tank.nation + "_mark_of_excellence_" + tank.mark_of_excellence + "".concat(" ") + "mark_of_excellence_" + tank.mark_of_mastery}></p>
                         </td>
                     </tr>
-                ))}
-            </tbody>
+                </tbody>
+            ))}
         </table>
     )
 }
