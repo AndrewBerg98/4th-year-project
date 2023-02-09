@@ -105,7 +105,7 @@ function GetPersonalData({nickname, id, realm, source}) {
                             <div id="playerAccount">
                                 <GetMainData personalData={personalData} id={id} dateOptions={dateOptions} />
                                 <GetRandomData personalData={personalData} id={id} />
-                                <GetVehicleData personalData={personalData} id={id} realm={realm} source={source} />
+                                <GetVehicleData id={id} realm={realm} source={source} />
                             </div>
                         </>
                     )
