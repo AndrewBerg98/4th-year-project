@@ -29,7 +29,7 @@ function GetMainData({personalData, id, dateOptions}) {
                 <tr id="mainRow"><td>Registration Date</td><td>{new Date(personalData.data[id].created_at * 1000).toLocaleString("en-IE", dateOptions)} <br/> {new Date(personalData.data[id].created_at * 1000).toLocaleTimeString("en-IE")}</td></tr>
                 <tr id="mainRow"><td>Last Profile Update</td><td>{new Date(personalData.data[id].updated_at * 1000).toLocaleString("en-IE", dateOptions)} <br/> {new Date(personalData.data[id].updated_at * 1000).toLocaleTimeString("en-IE")}</td></tr>
                 <tr id="mainRow"><td>Global Rating</td><td>{personalData.data[id].global_rating}</td></tr>
-                <tr id="mainRow"><td>Clas ID</td><td>{personalData.data[id].clan_id === null ? <i>NaN</i> : personalData.data[id].clan_id}</td></tr>
+                <tr id="mainRow"><td>Clan ID</td><td>{personalData.data[id].clan_id === null ? <i>NaN</i> : personalData.data[id].clan_id}</td></tr>
             </tbody>
         </table>
     )
