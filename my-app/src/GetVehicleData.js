@@ -4,7 +4,7 @@ import "./styles/GetVehicleData.css"
 
 function GetVehicleData({id, realm, source}) {
     const GetPlayerVehicleList = "https://api.worldoftanks." + realm + "/wot/account/tanks/?application_id=" + process.env.REACT_APP_APIKEY + "&account_id=" + id
-    // const GetVehicleList = ""
+    const GetVehicleList = "https://api.worldoftanks." + realm + "/wot/encyclopedia/vehicles/?application_id=" + process.env.REACT_APP_APIKEY
     const GetIndividualVehicleDetails = "https://api.worldoftanks." + realm + "/wot/encyclopedia/vehicles/?application_id=" + process.env.REACT_APP_APIKEY
     const GetPlayerTankStats = "https://api.worldoftanks." + realm + "/wot/tanks/stats/?application_id=" + process.env.REACT_APP_APIKEY + "&account_id=" + id
     const GetPlayerTankAchievements = "https://api.worldoftanks." + realm + "/wot/tanks/achievements/?application_id=" + process.env.REACT_APP_APIKEY + "&account_id=" + id
@@ -49,7 +49,7 @@ function GetVehicleData({id, realm, source}) {
                 setPlayerVehicles(response.data)
             })
 
-            axios.get("tankList.json").then(response => {
+            axios.get(GetVehicleList).then(response => {
                 setVehicleList(response.data)
             })
 
@@ -69,13 +69,13 @@ function GetVehicleData({id, realm, source}) {
         else {
             console.log("ID or SOURCE LOCAL Unspecified")
         }
-    }, [id, realm, GetPlayerVehicleList, GetIndividualVehicleDetails, GetPlayerTankStats, GetPlayerTankAchievements, source])
+    }, [id, realm, GetPlayerVehicleList, GetIndividualVehicleDetails, GetVehicleList, GetPlayerTankStats, GetPlayerTankAchievements, source])
 
     if (playerVehicles && vehicleList && individualVehicleDetails && playerTankStats && playerTankAchievements) {
         for (var i = 0; i < playerVehicles.data[id].length; i++) {
             for (var k = 0; k < playerTankStats.data[id].length; k++) {
                 if (playerTankStats.data[id][k].tank_id === playerVehicles.data[id][i]?.tank_id) {
-                    console.log(playerTankAchievements)
+                    // console.log(playerTankAchievements)
                     completeData.push({
                         name: vehicleList.data[playerVehicles.data[id][i].tank_id]?.name,
                         id: playerVehicles.data[id][i]?.tank_id,
@@ -99,8 +99,8 @@ function GetVehicleData({id, realm, source}) {
 
             {completeData.map((tank) => (
                 <tbody className="tankTileFull" key={"tile_" + tank.id}>
-                    <tr className={"tankTile".concat(" ") + tank.nation.concat(" ") + "".concat("is_premium_") + tank.premium} key={tank.id + "".concat("_") + tank.name + "".concat("_") + tank.premium}>
-                        <td key={tank.name} className={tank.name}>{!tank.name ? <i><b>"Unknown"</b></i> : tank.name}</td>
+                    <tr className={"tankTile".concat(" ") + tank.nation + "".concat(" ") + "".concat("is_premium_") + tank.premium} key={tank.id + "".concat("_") + tank.name + "".concat("_") + tank.premium}>
+                        <td key={tank.name} className={tank.name}>{!tank.name ? <i><b>"missing_name"</b></i> : tank.name}</td>
                         <td key={tank.tank_image_big}>
                             <img src={tank.tank_image_big} alt="missing_tank_image" draggable="false"></img>
                         </td>

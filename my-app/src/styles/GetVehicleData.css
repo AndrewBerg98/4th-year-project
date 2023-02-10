@@ -64,9 +64,11 @@
 }
 
 .tankTile td:nth-child(1) {
+    height: 24px;
     border-radius: 8px 8px 0px 0px;
     font-size: 0.75rem;
     line-height: 2;
+    overflow: auto;
 }
 
 .tankTile td:nth-child(2) {
@@ -91,6 +93,7 @@
 
 .tankTile td:nth-child(3) {
     display: none;
+    height: 24px;
     font-size: 0.75rem;
     line-height: 2;
 }
