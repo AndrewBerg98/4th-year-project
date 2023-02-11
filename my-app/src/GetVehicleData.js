@@ -94,14 +94,19 @@ function GetVehicleData({id, realm, source}) {
     function doneLoading() {
         if (document.getElementById("loadingTankTiles")) {
             document.getElementById("loadingTankTiles").style.display = "none"
-            document.getElementById("tankListTiles").style.display = "block"
+            document.getElementById("tankListTiles").style.display = "inline-block" // using block makes it take space more efficently, but maybe not line up as wanted
         }
     }
 
     return (
         <>
+            {/* <div id="loadingTankTiles">
+                <span>Loading Player's Tank List...</span>
+            </div> */}
+
             <div id="loadingTankTiles">
                 <span>Loading Player's Tank List...</span>
+                <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             </div>
 
             <table id="tankListTiles">
