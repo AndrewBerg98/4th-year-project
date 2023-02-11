@@ -91,31 +91,44 @@ function GetVehicleData({id, realm, source}) {
         }
     }
 
+    function doneLoading() {
+        if (document.getElementById("loadingTankTiles")) {
+            document.getElementById("loadingTankTiles").style.display = "none"
+            document.getElementById("tankListTiles").style.display = "block"
+        }
+    }
+
     return (
-        <table id="tankListTiles">
-            <thead>
+        <>
+            <div id="loadingTankTiles">
+                <span>Loading Player's Tank List...</span>
+            </div>
 
-            </thead>
+            <table id="tankListTiles">
+                <thead>
 
-            {completeData.map((tank) => (
-                <tbody className="tankTileFull" key={"tile_" + tank.id}>
-                    <tr className={"tankTile".concat(" ") + tank.nation + "".concat(" ") + "".concat("is_premium_") + tank.premium} key={tank.id + "".concat("_") + tank.name + "".concat("_") + tank.premium}>
-                        <td key={tank.name} className={tank.name}>{!tank.name ? <i><b>"missing_name"</b></i> : tank.name}</td>
-                        <td key={tank.tank_image_big}>
-                            <img src={tank.tank_image_big} alt="missing_tank_image" draggable="false"></img>
-                        </td>
-                        <td key={tank.id} className={tank.id}>ID: {tank.id}</td>
-                        <td key={"tier_" + tank.tier} className={tank.tier}>Tier {tank.tier}</td>
-                        <td key={tank.mark_of_mastery} id="mark_of_mastery">
-                            <p className={"mark_of_mastery_" + tank.mark_of_mastery}></p>
-                        </td>
-                        <td>
-                            <p className={tank.nation + "_mark_of_excellence_" + tank.mark_of_excellence + "".concat(" ") + "mark_of_excellence_" + tank.mark_of_mastery}></p>
-                        </td>
-                    </tr>
-                </tbody>
-            ))}
-        </table>
+                </thead>
+
+                {completeData.map((tank) => (
+                    <tbody className={"tankTileFull" + "".concat(" ") + "".concat("is_premium_") + tank.premium} key={"tile_" + tank.id} onLoad={doneLoading()}>
+                        <tr className={"tankTile".concat(" ") + tank.nation} key={tank.id + "".concat("_") + tank.name + "".concat("_") + tank.premium}>
+                            <td key={tank.name} className={tank.name}>{!tank.name ? <i><b>"missing_name"</b></i> : tank.name}</td>
+                            <td key={tank.tank_image_big}>
+                                <img src={tank.tank_image_big} alt="missing_tank_image" draggable="false"></img>
+                            </td>
+                            <td key={tank.id} className={tank.id}>ID: {tank.id}</td>
+                            <td key={"tier_" + tank.tier} className={tank.tier}>Tier {tank.tier}</td>
+                            <td key={"mom_" + tank.mark_of_mastery} id="mark_of_mastery">
+                                <p className={"mark_of_mastery_" + tank.mark_of_mastery}></p>
+                            </td>
+                            <td>
+                                <p className={tank.nation + "_mark_of_excellence_" + tank.mark_of_excellence + "".concat(" ") + "mark_of_excellence_" + tank.mark_of_mastery}></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                ))}
+            </table>
+        </>
     )
 }
 
