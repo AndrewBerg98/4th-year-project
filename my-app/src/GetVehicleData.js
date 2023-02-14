@@ -91,31 +91,54 @@ function GetVehicleData({id, realm, source}) {
         }
     }
 
-    function doneLoading() {
+    function LoadedTankTiles() {
         if (document.getElementById("loadingTankTiles")) {
             document.getElementById("loadingTankTiles").style.display = "none"
             document.getElementById("tankListTiles").style.display = "inline-block" // using block makes it take space more efficently, but maybe not line up as wanted
+            document.getElementById("viewingOptions").style.display = "block"
         }
     }
 
+    function HorizontalViewing() {
+        if (document.getElementById("tankListTiles")) {
+            document.getElementById("viewingOptions").style.position = "sticky"
+            document.getElementById("viewingOptions").style.left = "0"
+            document.getElementById("tankListTiles").style.height = "370px"
+            document.getElementById("tankListTiles").style.overflowX = "scroll"
+            document.getElementById("tankListTiles").style.overflowY = "hidden"
+            document.getElementById("tankListTiles").style.whiteSpace = "nowrap"
+        }
+    }
+
+    function VerticalViewing() {
+        if (document.getElementById("tankListTiles")) {
+            document.getElementById("viewingOptions").style.position = "inherit"
+            document.getElementById("viewingOptions").style.left = "inherit"
+            document.getElementById("tankListTiles").style.height = "inherit"
+            document.getElementById("tankListTiles").style.overflowX = "inherit"
+            document.getElementById("tankListTiles").style.whiteSpace = "inherit"
+        }
+    }
+    
     return (
         <>
-            {/* <div id="loadingTankTiles">
-                <span>Loading Player's Tank List...</span>
-            </div> */}
-
             <div id="loadingTankTiles">
                 <span>Loading Player's Tank List...</span>
                 <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             </div>
 
             <table id="tankListTiles">
-                <thead>
-
+                <thead id="viewingOptions">
+                    <tr>
+                        <td>
+                            <button id="horizontalView" onClick={() => HorizontalViewing()}>Horizontal</button>
+                            <button id="verticalView" onClick={() => VerticalViewing()}>Vertical</button>
+                        </td>
+                    </tr>
                 </thead>
 
                 {completeData.map((tank) => (
-                    <tbody className={"tankTileFull" + "".concat(" ") + "".concat("is_premium_") + tank.premium} key={"tile_" + tank.id} onLoad={doneLoading()}>
+                    <tbody className={"tankTileFull" + "".concat(" ") + "".concat("is_premium_") + tank.premium} key={"tile_" + tank.id} onLoad={LoadedTankTiles()}>
                         <tr className={"tankTile".concat(" ") + tank.nation} key={tank.id + "".concat("_") + tank.name + "".concat("_") + tank.premium}>
                             <td key={tank.name} className={tank.name}>{!tank.name ? <i><b>"missing_name"</b></i> : tank.name}</td>
                             <td key={tank.tank_image_big}>

@@ -6,8 +6,6 @@ import GetVehicleData from "./GetVehicleData"
 
 function GetPersonalData({nickname, id, realm, source}) {
     const extra = "&extra="
-    // eslint-disable-next-line
-    const and = "%2C+"
     const statRandom = "statistics.random"
     const urlGetPersonalData = "https://api.worldoftanks." + realm + "/wot/account/info/?application_id=" + process.env.REACT_APP_APIKEY + "&account_id=" + id + extra + statRandom
     const [personalData, setPersonalData] = useState(null)

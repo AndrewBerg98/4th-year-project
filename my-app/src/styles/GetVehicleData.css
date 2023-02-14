@@ -127,27 +127,78 @@
 #loadingTankTiles {
     display: inline-block;
     width: 100%;
+    height: 280px;
     /* height: 100px; */
-    /* line-height: 100px; */
+    line-height: 280px;
     text-align: center;
     /* outline: 1px solid purple; */
-    padding: 16px 0px 16px 0px;
-    background-color: rgba(44, 44, 44, 0.2);
+    /* padding: 16px 0px 16px 0px; */
+    background-color: rgba(44, 44, 44, 0.1);
+
+    /* Vertically Alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #loadingTankTiles > span {
     font-family: Helvetica;
-    display: block;
+    display: none;
     /* vertical-align: middle; */
     line-height: normal;
     padding-bottom: 16px;
 }
 
 #tankListTiles {
-    display: none;
     width: 100%;
+    /* height: 280px; */
     text-align: center;
     margin: auto;
+    display: inline-block;
+    background-color: rgba(82, 82, 82, 0.2);
+
+    /* HORIZON SCROLLING */
+    /* overflow-x: scroll;
+    white-space: nowrap; */
+}
+
+#viewingOptions {
+    display: none;
+    text-align: center;
+    margin: auto;
+    background-color: rgba(82, 82, 82, 0.4);
+    margin-bottom: 12px;
+}
+
+#viewingOptions > tr {
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+}
+
+#viewingOptions > tr > td > button:first-child {
+    margin: 24px 12px 24px 0px;
+    border-radius: 4px;
+    border: 0px;
+}
+
+#viewingOptions > tr > td > button:last-child {
+    margin: 12px 0px 12px 12px;
+    border-radius: 4px;
+    border: 0px;
+}
+
+#viewingOptions > tr > td > button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 61, 153, 1);
+}
+
+#horizontalView, #verticalView {
+    padding: 6px;
+    width: 120px;
+    color: white;
+    font-family: Helvetica;
+    background-color: rgb(2, 80, 196);
 }
 
 .tankTileFull {
@@ -173,7 +224,7 @@
 }
 
 .is_premium_false:hover > tr {
-    box-shadow: 0px 10px 15px rgba(30, 30, 30, 1);
+    box-shadow: 0px 0px 30px rgba(30, 30, 30, 1);
     animation: shake 0s;
     animation-iteration-count: infinite;
 }
@@ -183,7 +234,7 @@
 }
 
 .is_premium_true:hover > tr {
-    box-shadow: 0px 10px 15px rgba(145, 123, 0, 1);
+    box-shadow: 0px 0px 30px rgba(145, 123, 0, 1);
     animation: shake 2s;
     animation-iteration-count: infinite;
 }

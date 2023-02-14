@@ -32,6 +32,7 @@ Prevent image dragging: https://stackoverflow.com/questions/7439042/css-js-to-pr
 Glow/shadow on hover: https://superdevresources.com/css-button-glow-effect/
 Shaking animztion: https://www.w3schools.com/howto/howto_css_shake_image.asp
 Use alternative name if original is empty: https://stackoverflow.com/questions/43453768/react-component-check-is-variable-is-empty
+How to stop auto function running on render: https://stackoverflow.com/questions/33846682/react-onclick-function-fires-on-render
     
     CSS
 
@@ -40,3 +41,5 @@ Prevents blue highlight when selecting: https://css-tricks.com/almanac/propertie
 Text color in input when typing: https://stackoverflow.com/questions/6669846/css-input-field-text-color-of-inputted-text
 Removes border and gaps: https://stackoverflow.com/questions/2039438/removing-unwanted-table-cell-borders-with-css
 Loading spinner: https://loading.io/css/
+Add shadow around an element: https://stackoverflow.com/questions/6821295/add-css-box-shadow-around-the-whole-div
+How to add horizonal scrolling: https://stackoverflow.com/questions/5533636/add-a-horizontal-scrollbar-to-an-html-table
