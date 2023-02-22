@@ -99,24 +99,52 @@ function GetVehicleData({id, realm, source}) {
         }
     }
 
-    function HorizontalViewing() {
-        if (document.getElementById("tankListTiles")) {
-            document.getElementById("viewingOptions").style.position = "sticky"
-            document.getElementById("viewingOptions").style.left = "0"
-            document.getElementById("tankListTiles").style.height = "370px"
-            document.getElementById("tankListTiles").style.overflowX = "scroll"
-            document.getElementById("tankListTiles").style.overflowY = "hidden"
-            document.getElementById("tankListTiles").style.whiteSpace = "nowrap"
-        }
-    }
+    function Viewing() {
+        const viewingOptions = document.getElementById("viewingOptions")
+        const tankListTiles = document.getElementById("tankListTiles")
 
-    function VerticalViewing() {
-        if (document.getElementById("tankListTiles")) {
-            document.getElementById("viewingOptions").style.position = "inherit"
-            document.getElementById("viewingOptions").style.left = "inherit"
-            document.getElementById("tankListTiles").style.height = "inherit"
-            document.getElementById("tankListTiles").style.overflowX = "inherit"
-            document.getElementById("tankListTiles").style.whiteSpace = "inherit"
+        if (viewingOptions.style.position !== "sticky") {
+            viewingOptions.style.position = "sticky"
+            viewingOptions.style.left = "0"
+            tankListTiles.style.height = "370px"
+            tankListTiles.style.overflowX = "scroll"
+            tankListTiles.style.overflowY = "hidden"
+            tankListTiles.style.whiteSpace = "nowrap"
+
+            // SOURCE: https://stackoverflow.com/questions/18481308/set-mouse-wheel-to-horizontal-scroll-using-css
+            const container = document.getElementById("tankListTiles")
+            container.addEventListener("wheel", function(e) {
+                if (e.deltaY > 0) {
+                    container.scrollLeft += 184
+                    e.preventDefault()
+                }
+
+                else {
+                    container.scrollLeft -= 184
+                    e.preventDefault()
+                }
+            })
+        }
+
+        else if (viewingOptions.style.position === "sticky") {
+            viewingOptions.style.position = "inherit"
+            viewingOptions.style.left = "inherit"
+            tankListTiles.style.height = "inherit"
+            tankListTiles.style.overflowX = "inherit"
+            tankListTiles.style.overflowY = "inherit"
+            tankListTiles.style.whiteSpace = "inherit"
+
+            tankListTiles.replaceWith(tankListTiles.cloneNode(true))
+
+            document.getElementById("switchView").addEventListener("click", function(e) {
+                document.getElementById("switchView").onClick = Viewing()
+                e.preventDefault()
+            })
+
+            // console.log("Event Listeners: ", document.getEventListeners(document))
+            // document.getEventListeners("tankListTiles").copy[0].remove();
+            // getEventListeners().click.forEach((e)=>{e.remove()})
+            // document.getElementById("tankListTiles").innerHTML = document.getElementById("tankListTiles").innerHTML;
         }
     }
     
@@ -131,8 +159,9 @@ function GetVehicleData({id, realm, source}) {
                 <thead id="viewingOptions">
                     <tr>
                         <td>
-                            <button id="horizontalView" onClick={() => HorizontalViewing()}>Horizontal</button>
-                            <button id="verticalView" onClick={() => VerticalViewing()}>Vertical</button>
+                            {/* <button id="horizontalView" onClick={() => Viewing()}>Horizontal</button>
+                            <button id="verticalView" onClick={() => Viewing()}>Vertical</button> */}
+                            <button id="switchView" onClick={() => Viewing()}>Switch View</button>
                         </td>
                     </tr>
                 </thead>
@@ -140,7 +169,7 @@ function GetVehicleData({id, realm, source}) {
                 {completeData.map((tank) => (
                     <tbody className={"tankTileFull" + "".concat(" ") + "".concat("is_premium_") + tank.premium} key={"tile_" + tank.id} onLoad={LoadedTankTiles()}>
                         <tr className={"tankTile".concat(" ") + tank.nation} key={tank.id + "".concat("_") + tank.name + "".concat("_") + tank.premium}>
-                            <td key={tank.name} className={tank.name}>{!tank.name ? <i><b>"missing_name"</b></i> : tank.name}</td>
+                            <td key={tank.name} className={tank.name}>{!tank.name ? <i><b>Unknown Tank</b></i> : tank.name}</td>
                             <td key={tank.tank_image_big}>
                                 <img src={tank.tank_image_big} alt="missing_tank_image" draggable="false"></img>
                             </td>

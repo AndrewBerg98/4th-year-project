@@ -170,20 +170,17 @@
     margin-bottom: 12px;
 }
 
-#viewingOptions > tr {
+#viewingOptions > tr,
+#viewingOptions > tr > td {
+    width: 100%;
     display: inline-block;
     text-align: center;
     margin: auto;
 }
 
-#viewingOptions > tr > td > button:first-child {
-    margin: 24px 12px 24px 0px;
-    border-radius: 4px;
-    border: 0px;
-}
-
+#viewingOptions > tr > td > button:first-child,
 #viewingOptions > tr > td > button:last-child {
-    margin: 12px 0px 12px 12px;
+    margin: 24px;
     border-radius: 4px;
     border: 0px;
 }
@@ -193,7 +190,7 @@
     background-color: rgba(0, 61, 153, 1);
 }
 
-#horizontalView, #verticalView {
+#horizontalView, #verticalView, #switchView {
     padding: 6px;
     width: 120px;
     color: white;
@@ -207,13 +204,8 @@
 }
 
 .tankTileFull:hover {
-    transform: scale(1.05, 1.05);
+    transform: scale(1.02, 1.02);
     transition: 0.1s ease-in-out;
-}
-
-.tankTile, .tankTile td {
-    outline: 0px solid orange;
-    background-color: rgba(82, 82, 82, 0.5);
 }
 
 .tankTile {
@@ -221,6 +213,11 @@
     display: inline-block;
     margin: 12px;
     border-radius: 8px;
+}
+
+.tankTile, .tankTile td {
+    outline: 0px solid orange;
+    background-color: rgba(82, 82, 82, 0.5);
 }
 
 .is_premium_false:hover > tr {
@@ -333,58 +330,62 @@
     text-align: center;
 }
 
+.china > td:nth-child(2),
+.czech > td:nth-child(2),
+.france > td:nth-child(2),
+.germany > td:nth-child(2),
+.italy > td:nth-child(2),
+.japan > td:nth-child(2),
+.poland > td:nth-child(2),
+.sweden > td:nth-child(2),
+.uk > td:nth-child(2),
+.usa > td:nth-child(2),
+.ussr > td:nth-child(2) {
+    /* background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png"); */
+    background-image: url("../assets/flags.png");
+}
+
 .china > td:nth-child(2) {
-    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
     background-position: 0px -200px;
 }
 
 .czech > td:nth-child(2) {
-    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
     background-position: 0px -700px;
 }
 
 .france > td:nth-child(2) {
-    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
     background-position: 0px -300px;
 }
 
 .germany > td:nth-child(2) {
-    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
     background-position: 0px -600px;
 }
 
 .italy > td:nth-child(2) {
-    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
     background-position: 0px -900px;
 }
 
 .japan > td:nth-child(2) {
-    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
     background-position: 0px -400px;
 }
 
 .poland > td:nth-child(2) {
-    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
     background-position: 0px -1000px;
 }
 
 .sweden > td:nth-child(2) {
-    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
     background-position: 0px -800px;
 }
 
 .uk > td:nth-child(2) {
-    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
     background-position: 0px -500px;
 }
 
 .usa > td:nth-child(2) {
-    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
     background-position: 0px 0px;
 }
 
 .ussr > td:nth-child(2) {
-    background-image: url("https://wiki.wargaming.net/skins/globalwiki/images/ug/flags.png");
     background-position: 0px -100px;
 }
 
@@ -394,16 +395,27 @@
     background-position: center;
 }
 
+.mark_of_mastery_1 {
+    /* background-image: url("https://eu-wotp.wgcdn.co/dcont/fb/image/mastery_badge_class_iii_MaWSZi8.png"); */
+    background-image: url("../assets/mastery_badge_class_i.png");
+}
+
 .mark_of_mastery_2 {
-    background-image: url("https://wiki.wgcdn.co/images/1/1f/Class_icons_2.png");
+    /* background-image: url("https://wiki.wgcdn.co/images/1/1f/Class_icons_2.png"); */
+    /* background-image: url("https://eu-wotp.wgcdn.co/dcont/fb/image/mastery_badge_class_ii_6EzPFo3.png"); */
+    background-image: url("../assets/mastery_badge_class_ii.png");
 }
 
 .mark_of_mastery_3 {
-    background-image: url("https://wiki.wgcdn.co/images/a/a3/Class_icons_3.png");
+    /* background-image: url("https://wiki.wgcdn.co/images/a/a3/Class_icons_3.png"); */
+    /* background-image: url("https://eu-wotp.wgcdn.co/dcont/fb/image/mastery_badge_class_i_KecWa6Q.png"); */
+    background-image: url("../assets/mastery_badge_class_iii.png");
 }
 
 .mark_of_mastery_4 {
-    background-image: url("https://eu-wotp.wgcdn.co/dcont/fb/image/ace_tanker_3EJeyiE.png");
+    /* background-image: url("https://eu-wotp.wgcdn.co/dcont/fb/image/ace_tanker_3EJeyiE.png"); */
+    /* background-image: url("https://eu-wotp.wgcdn.co/dcont/fb/image/ace_tanker_3EJeyiE.png"); */
+    background-image: url("../assets/ace_tanker.png");
 }
 
 .china_mark_of_excellence_1, .china_mark_of_excellence_2, .china_mark_of_excellence_3,
@@ -423,133 +435,168 @@
 }
 
 .china_mark_of_excellence_1 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/china_1_mark.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/china_1_mark.png"); */
+    background-image: url("../assets/china_1_mark.png");
 }
 
 .china_mark_of_excellence_2 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/china_2_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/china_2_marks.png"); */
+    background-image: url("../assets/china_2_marks.png");
 }
 
 .china_mark_of_excellence_3 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/china_3_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/china_3_marks.png"); */
+    background-image: url("../assets/china_3_marks.png");
 }
 
 .czech_mark_of_excellence_1 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/czech_1_mark.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/czech_1_mark.png"); */
+    background-image: url("../assets/czech_1_mark.png");
 }
 
 .czech_mark_of_excellence_2 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/czech_2_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/czech_2_marks.png"); */
+    background-image: url("../assets/czech_2_marks.png");
 }
 
 .czech_mark_of_excellence_3 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/czech_3_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/czech_3_marks.png"); */
+    background-image: url("../assets/czech_3_marks.png");
 }
 
 .france_mark_of_excellence_1 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/france_1_mark.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/france_1_mark.png"); */
+    background-image: url("../assets/france_1_mark.png");
+
 }
 
 .france_mark_of_excellence_2 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/france_2_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/france_2_marks.png"); */
+    background-image: url("../assets/france_2_marks.png");
+
 }
 
 .france_mark_of_excellence_3 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/france_3_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/france_3_marks.png"); */
+    background-image: url("../assets/france_3_marks.png");
 }
 
 .germany_mark_of_excellence_1 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/germany_1_mark.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/germany_1_mark.png"); */
+    background-image: url("../assets/germany_1_mark.png");
 }
 
 .germany_mark_of_excellence_2 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/germany_2_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/germany_2_marks.png"); */
+    background-image: url("../assets/germany_2_marks.png");
 }
 
 .germany_mark_of_excellence_3 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/germany_3_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/germany_3_marks.png"); */
+    background-image: url("../assets/germany_3_marks.png");
 }
 
 .italy_mark_of_excellence_1 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/italy_1_mark.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/italy_1_mark.png"); */
+    background-image: url("../assets/italy_1_mark.png");
 }
 
 .italy_mark_of_excellence_2 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/italy_2_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/italy_2_marks.png"); */
+    background-image: url("../assets/italy_2_marks.png");
 }
 
 .italy_mark_of_excellence_3 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/italy_3_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/italy_3_marks.png"); */
+    background-image: url("../assets/italy_3_marks.png");
 }
 
 .japan_mark_of_excellence_1 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/japan_1_mark.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/japan_1_mark.png"); */
+    background-image: url("../assets/japan_1_mark.png");
 }
 
 .japan_mark_of_excellence_2 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/japan_2_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/japan_2_marks.png"); */
+    background-image: url("../assets/japan_2_marks.png");
 }
 
 .japan_mark_of_excellence_3 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/japan_3_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/japan_3_marks.png"); */
+    background-image: url("../assets/japan_3_marks.png");
 }
 
 .poland_mark_of_excellence_1 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/poland_1_mark.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/poland_1_mark.png"); */
+    background-image: url("../assets/poland_1_mark.png");
 }
 
 .poland_mark_of_excellence_2 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/poland_2_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/poland_2_marks.png"); */
+    background-image: url("../assets/poland_2_marks.png");
 }
 
 .poland_mark_of_excellence_3 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/poland_3_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/poland_3_marks.png"); */
+    background-image: url("../assets/poland_3_marks.png");
 }
 
 .sweden_mark_of_excellence_1 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/sweden_1_mark.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/sweden_1_mark.png"); */
+    background-image: url("../assets/sweden_1_mark.png");
 }
 
 .sweden_mark_of_excellence_2 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/sweden_2_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/sweden_2_marks.png"); */
+    background-image: url("../assets/sweden_2_marks.png");
 }
 
 .sweden_mark_of_excellence_3 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/sweden_3_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/sweden_3_marks.png"); */
+    background-image: url("../assets/sweden_3_marks.png");
 }
 
 .uk_mark_of_excellence_1 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/uk_1_mark.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/uk_1_mark.png"); */
+    background-image: url("../assets/uk_1_mark.png");
 }
 
 .uk_mark_of_excellence_2 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/uk_2_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/uk_2_marks.png"); */
+    background-image: url("../assets/uk_2_marks.png");
 }
 
 .uk_mark_of_excellence_3 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/uk_3_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/uk_3_marks.png"); */
+    background-image: url("../assets/uk_3_marks.png");
 }
 
 .usa_mark_of_excellence_1 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/usa_1_mark.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/usa_1_mark.png"); */
+    background-image: url("../assets/usa_1_mark.png");
 }
 
 .usa_mark_of_excellence_2 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/usa_2_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/usa_2_marks.png"); */
+    background-image: url("../assets/usa_2_marks.png");
 }
 
 .usa_mark_of_excellence_3 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/usa_3_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/usa_3_marks.png"); */
+    background-image: url("../assets/usa_3_marks.png");
 }
 
 .ussr_mark_of_excellence_1 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/ussr_1_mark.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/ussr_1_mark.png"); */
+    background-image: url("../assets/ussr_1_mark.png");
 }
 
 .ussr_mark_of_excellence_2 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/ussr_2_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/ussr_2_marks.png"); */
+    background-image: url("../assets/ussr_2_marks.png");
 }
 
 .ussr_mark_of_excellence_3 {
-    background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/ussr_3_marks.png");
+    /* background-image: url("https://dav-static.worldoftanks.com//ptlwotus/wot/current/marksOnGun/67x71/ussr_3_marks.png"); */
+    background-image: url("../assets/ussr_3_marks.png");
 }

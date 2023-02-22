@@ -3,6 +3,7 @@ import axios from "axios"
 import GetMainData from "./GetMainData"
 import GetRandomData from "./GetRandomData"
 import GetVehicleData from "./GetVehicleData"
+import GetTeamData from "./GetTeamData"
 
 function GetPersonalData({nickname, id, realm, source}) {
     const extra = "&extra="
@@ -18,43 +19,72 @@ function GetPersonalData({nickname, id, realm, source}) {
     }
 
     function toggleMainDetails() {
-        if (document.getElementById("mainDataTable").style.display === "none") {
-            document.getElementById("mainDataTable").style.display = "table"
-            document.getElementById("mainDetails").style.backgroundColor = "rgb(2, 80, 196)"
-            document.getElementById("mainDetails").setAttribute("class", "Active")
+        var mainDataTable = document.getElementById("mainDataTable")
+        var mainDetails = document.getElementById("mainDetails")
+
+        if (mainDataTable.style.display === "none") {
+            mainDataTable.style.display = "table"
+            mainDetails.style.backgroundColor = "rgb(2, 80, 196)"
+            mainDetails.setAttribute("class", "Active")
         
         }
 
-        else if (document.getElementById("mainDataTable").style.display === "table") {
-            document.getElementById("mainDataTable").style.display = "none"
-            document.getElementById("mainDetails").style.backgroundColor = "rgb(82, 82, 82)"
-            document.getElementById("mainDetails").setAttribute("class", "Inactive")
+        else if (mainDataTable.style.display === "table") {
+            mainDataTable.style.display = "none"
+            mainDetails.style.backgroundColor = "rgb(82, 82, 82)"
+            mainDetails.setAttribute("class", "Inactive")
         }
 
         else {
-            document.getElementById("mainDataTable").style.display = "table"
-            document.getElementById("mainDetails").style.backgroundColor = "rgb(2, 80, 196)"
-            document.getElementById("mainDetails").setAttribute("class", "Active")
+            mainDataTable.style.display = "table"
+            mainDetails.style.backgroundColor = "rgb(2, 80, 196)"
+            mainDetails.setAttribute("class", "Active")
         }
     }
 
     function toggleRandomDetails() {
-        if (document.getElementById("randomDataTable").style.display === "none") {
-            document.getElementById("randomDataTable").style.display = "table"
-            document.getElementById("randomDetails").style.backgroundColor = "rgb(2, 80, 196)"
-            document.getElementById("randomDetails").setAttribute("class", "Active")
+        var randomDataTable = document.getElementById("randomDataTable")
+        var randomDetails = document.getElementById("randomDetails")
+
+        if (randomDataTable.style.display === "none") {
+            randomDataTable.style.display = "table"
+            randomDetails.style.backgroundColor = "rgb(2, 80, 196)"
+            randomDetails.setAttribute("class", "Active")
         }
 
-        else if (document.getElementById("randomDataTable").style.display === "table") {
-            document.getElementById("randomDataTable").style.display = "none"
-            document.getElementById("randomDetails").style.backgroundColor = "rgb(82, 82, 82)"
-            document.getElementById("randomDetails").setAttribute("class", "Inactive")
+        else if (randomDataTable.style.display === "table") {
+            randomDataTable.style.display = "none"
+            randomDetails.style.backgroundColor = "rgb(82, 82, 82)"
+            randomDetails.setAttribute("class", "Inactive")
         }
 
         else {
-            document.getElementById("randomDataTable").style.display = "table"
-            document.getElementById("randomDetails").style.backgroundColor = "rgb(2, 80, 196)"
-            document.getElementById("randomDetails").setAttribute("class", "Active")
+            randomDataTable.style.display = "table"
+            randomDetails.style.backgroundColor = "rgb(2, 80, 196)"
+            randomDetails.setAttribute("class", "Active")
+        }
+    }
+
+    function toggleTeamDetails() {
+        var teamDataTable = document.getElementById("teamDataTable")
+        var teamDetails = document.getElementById("teamDetails")
+
+        if (teamDataTable.style.display === "none") {
+            teamDataTable.style.display = "table"
+            teamDetails.style.backgroundColor = "rgb(2, 80, 196)"
+            teamDetails.setAttribute("class", "Active")
+        }
+
+        else if (teamDataTable.style.display === "table") {
+            teamDataTable.style.display = "none"
+            teamDetails.style.backgroundColor = "rgb(82, 82, 82)"
+            teamDetails.setAttribute("class", "Inactive")
+        }
+
+        else {
+            teamDataTable.style.display = "table"
+            teamDetails.style.backgroundColor = "rgb(2, 80, 196)"
+            teamDetails.setAttribute("class", "Active")
         }
     }
 
@@ -97,11 +127,12 @@ function GetPersonalData({nickname, id, realm, source}) {
                                 <button id="randomDetails" className="Inactive" onClick={toggleRandomDetails}>Random</button>
                                 <button id="strongholdDetails" className="Inactive">Stronghold</button>
                                 <button id="historialDetails" className="Inactive">Historical</button>
-                                <button id="teamDetails" className="Inactive">Team</button>
+                                <button id="teamDetails" className="Inactive" onClick={toggleTeamDetails}>Team</button>
                             </div>
 
                             <div id="playerAccount">
                                 <GetMainData personalData={personalData} id={id} dateOptions={dateOptions} />
+                                <GetTeamData personalData={personalData} id={id} dateOptions={dateOptions} />
                                 <GetRandomData personalData={personalData} id={id} />
                                 <GetVehicleData id={id} realm={realm} source={source} />
                             </div>

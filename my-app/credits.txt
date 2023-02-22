@@ -33,6 +33,8 @@ Glow/shadow on hover: https://superdevresources.com/css-button-glow-effect/
 Shaking animztion: https://www.w3schools.com/howto/howto_css_shake_image.asp
 Use alternative name if original is empty: https://stackoverflow.com/questions/43453768/react-component-check-is-variable-is-empty
 How to stop auto function running on render: https://stackoverflow.com/questions/33846682/react-onclick-function-fires-on-render
+Horizontal scrolling: https://stackoverflow.com/questions/18481308/set-mouse-wheel-to-horizontal-scroll-using-css
+How to remove Event Listeners: https://stackoverflow.com/questions/4386300/javascript-dom-how-to-remove-all-event-listeners-of-a-dom-object
     
     CSS
 

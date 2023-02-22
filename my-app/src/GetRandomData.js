@@ -200,7 +200,7 @@ function GetRandomData({personalData, id}) {
             <thead>
                 <tr id="randomDataTableTitle">
                     <th colSpan="2">
-                        <button onClick={toggleRandomDetails}>Random Battle</button>
+                        <button onClick={toggleRandomDetails}>Random Battles</button>
                     </th>
                 </tr>
             </thead>
