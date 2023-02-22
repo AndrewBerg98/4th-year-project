@@ -171,7 +171,7 @@ function GetVehicleData({id, realm, source}) {
                         <tr className={"tankTile".concat(" ") + tank.nation} key={tank.id + "".concat("_") + tank.name + "".concat("_") + tank.premium}>
                             <td key={tank.name} className={tank.name}>{!tank.name ? <i><b>Unknown Tank</b></i> : tank.name}</td>
                             <td key={tank.tank_image_big}>
-                                <img src={!tank.tank_image_big ? <i>Missing Tank Image</i> : <i>Tank Image</i>} alt="missing_tank_image" draggable="false"></img>
+                                <img src={!tank.tank_image_big ? <i>Missing Tank Image</i> : <i>Tank Image</i>} alt={tank.name + ".png"} draggable="false"></img>
                             </td>
                             <td key={tank.id} className={tank.id}>ID: {tank.id}</td>
                             <td key={"tier_" + tank.tier} className={tank.tier}>Tier {tank.tier}</td>
