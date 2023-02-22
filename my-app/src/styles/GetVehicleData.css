@@ -181,7 +181,7 @@
 #viewingOptions > tr > td > button:first-child,
 #viewingOptions > tr > td > button:last-child {
     margin: 24px;
-    border-radius: 4px;
+    border-radius: 16px;
     border: 0px;
 }
 
@@ -212,7 +212,7 @@
     width: 160px;
     display: inline-block;
     margin: 12px;
-    border-radius: 8px;
+    border-radius: 16px;
 }
 
 .tankTile, .tankTile td {
@@ -259,7 +259,7 @@
 
 .tankTile td:nth-child(1) {
     height: 24px;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 16px 16px 0px 0px;
     font-size: 0.75rem;
     line-height: 2;
     overflow: auto;
@@ -302,7 +302,7 @@
     height: 80px;
     display: inline-table;
     float: left;
-    border-radius: 0px 0px 0px 8px;
+    border-radius: 0px 0px 0px 16px;
     border-collapse: collapse;
 }
 
@@ -318,7 +318,7 @@
     height: 80px;
     display: inline-table;
     float: left;
-    border-radius: 0px 0px 8px 0px;
+    border-radius: 0px 0px 16px 0px;
     border-collapse: collapse;
     background-color: rgba(112, 112, 112, 0.5);
 }
