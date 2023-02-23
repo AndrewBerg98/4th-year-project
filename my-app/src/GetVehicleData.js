@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import "./styles/GetVehicleData.css"
+import question_mark from "./assets/flaticon - Muhammed Ali.png"
 
 function GetVehicleData({id, realm, source}) {
     const GetPlayerVehicleList = "https://api.worldoftanks." + realm + "/wot/account/tanks/?application_id=" + process.env.REACT_APP_APIKEY + "&account_id=" + id
@@ -140,11 +141,6 @@ function GetVehicleData({id, realm, source}) {
                 document.getElementById("switchView").onClick = Viewing()
                 e.preventDefault()
             })
-
-            // console.log("Event Listeners: ", document.getEventListeners(document))
-            // document.getEventListeners("tankListTiles").copy[0].remove();
-            // getEventListeners().click.forEach((e)=>{e.remove()})
-            // document.getElementById("tankListTiles").innerHTML = document.getElementById("tankListTiles").innerHTML;
         }
     }
     
@@ -159,8 +155,6 @@ function GetVehicleData({id, realm, source}) {
                 <thead id="viewingOptions">
                     <tr>
                         <td>
-                            {/* <button id="horizontalView" onClick={() => Viewing()}>Horizontal</button>
-                            <button id="verticalView" onClick={() => Viewing()}>Vertical</button> */}
                             <button id="switchView" onClick={() => Viewing()}>Switch View</button>
                         </td>
                     </tr>
@@ -171,7 +165,7 @@ function GetVehicleData({id, realm, source}) {
                         <tr className={"tankTile".concat(" ") + tank.nation} key={tank.id + "".concat("_") + tank.name + "".concat("_") + tank.premium}>
                             <td key={tank.name} className={tank.name}>{!tank.name ? <i><b>Unknown Tank</b></i> : tank.name}</td>
                             <td key={tank.tank_image_big}>
-                                <img src={!tank.tank_image_big ? <i>Missing Tank Image</i> : <i>Tank Image</i>} alt={tank.name + ".png"} draggable="false"></img>
+                                <img src={navigator.onLine === true ? tank.tank_image_big : question_mark} alt={tank.name + ".png"} draggable="false"></img>
                             </td>
                             <td key={tank.id} className={tank.id}>ID: {tank.id}</td>
                             <td key={"tier_" + tank.tier} className={tank.tier}>Tier {tank.tier}</td>
