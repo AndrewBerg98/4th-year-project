@@ -1,0 +1,11 @@
+/* #errorValue {
+    display: inline-block;
+} */
+
+/* #errorValueActual {
+    display: none;
+} */
+
+#errorValue:hover, #errorValueActual:hover {
+    cursor: pointer;
+}
