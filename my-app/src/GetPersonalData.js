@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import GetMainData from "./GetMainData"
-import GetRandomData from "./GetRandomData"
+// import GetRandomData from "./GetRandomData"
 import GetVehicleData from "./GetVehicleData"
-import GetTeamData from "./GetTeamData"
+// import GetTeamData from "./GetTeamData"
 
 function GetPersonalData({nickname, id, realm, source}) {
     const extra = "&extra="
-    const statRandom = "statistics.random"
+    const statRandom = "statistics.random%2Cstatistics.epic%2C+statistics.fallout%2C+statistics.ranked_battles_current%2C+statistics.ranked_battles_previous"
     const urlGetPersonalData = "https://api.worldoftanks." + realm + "/wot/account/info/?application_id=" + process.env.REACT_APP_APIKEY + "&account_id=" + id + extra + statRandom
     const [personalData, setPersonalData] = useState(null)
-
     const dateOptions = {
         weekday: "long",
         year: "numeric",
@@ -115,7 +114,7 @@ function GetPersonalData({nickname, id, realm, source}) {
             for (var i = 0; i < 1; i++) {
                 if (id === personalData.data[id].account_id && match === false) {
                     match = true
-                    document.title = (nickname + " - WOTPlayer")
+                    document.title = (nickname + " - GGTankers")
                     
                     return (
                         <>
@@ -132,8 +131,8 @@ function GetPersonalData({nickname, id, realm, source}) {
 
                             <div id="playerAccount">
                                 <GetMainData personalData={personalData} id={id} dateOptions={dateOptions} />
-                                <GetTeamData personalData={personalData} id={id} dateOptions={dateOptions} />
-                                <GetRandomData personalData={personalData} id={id} />
+                                {/* <GetTeamData personalData={personalData} id={id} dateOptions={dateOptions} /> */}
+                                {/* <GetRandomData personalData={personalData} id={id} /> */}
                                 <GetVehicleData id={id} realm={realm} source={source} />
                             </div>
                         </>

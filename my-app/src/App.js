@@ -41,7 +41,7 @@ function App() {
     return (
         <>
             <div id="topMenu">
-                <button type="button" id="logo" onClick={logoClicked}>WOTPlayer</button>
+                <button type="button" id="logo" onClick={logoClicked}>GGTankers</button>
                 
                 <div id="searchSpace">
                     <label htmlFor="nicknameInput">Nickname: </label>

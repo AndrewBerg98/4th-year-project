@@ -20,7 +20,7 @@ function GetVehicleData({id, realm, source}) {
 
     useEffect(() => {
         if(id !== undefined && source === "local") {
-            console.log("Fetching Personal Data From LOCAL SOURCE")
+            console.log("Fetching Vehicle Data From LOCAL SOURCE")
 
             axios.get("playerVehicles.json").then(response => {
                 setPlayerVehicles(response.data)
@@ -44,7 +44,7 @@ function GetVehicleData({id, realm, source}) {
         }
 
         else if (id !== undefined && source === "api") {
-            console.log("Fetching Personal Data From API")
+            console.log("Fetching Vehicle Data From API")
 
             axios.get(GetPlayerVehicleList).then(response => {
                 setPlayerVehicles(response.data)
@@ -76,7 +76,6 @@ function GetVehicleData({id, realm, source}) {
         for (var i = 0; i < playerVehicles.data[id].length; i++) {
             for (var k = 0; k < playerTankStats.data[id].length; k++) {
                 if (playerTankStats.data[id][k].tank_id === playerVehicles.data[id][i]?.tank_id) {
-                    // console.log(playerTankAchievements)
                     completeData.push({
                         name: vehicleList.data[playerVehicles.data[id][i].tank_id]?.name,
                         id: playerVehicles.data[id][i]?.tank_id,
