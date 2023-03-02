@@ -16,6 +16,7 @@ function GetPersonalData({nickname, id, realm, source}) {
         month: "long",
         day: "numeric"
     }
+    const battles = personalData?.data[id].statistics.all.battles
 
     function toggleMainDetails() {
         var mainDataTable = document.getElementById("mainDataTable")
@@ -133,7 +134,7 @@ function GetPersonalData({nickname, id, realm, source}) {
                                 <GetMainData personalData={personalData} id={id} dateOptions={dateOptions} />
                                 {/* <GetTeamData personalData={personalData} id={id} dateOptions={dateOptions} /> */}
                                 {/* <GetRandomData personalData={personalData} id={id} /> */}
-                                <GetVehicleData id={id} realm={realm} source={source} />
+                                <GetVehicleData id={id} realm={realm} source={source} totalBattles={battles}/>
                             </div>
                         </>
                     )

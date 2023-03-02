@@ -36,7 +36,10 @@ How to stop auto function running on render: https://stackoverflow.com/questions
 Horizontal scrolling: https://stackoverflow.com/questions/18481308/set-mouse-wheel-to-horizontal-scroll-using-css
 How to remove Event Listeners: https://stackoverflow.com/questions/4386300/javascript-dom-how-to-remove-all-event-listeners-of-a-dom-object
 Check if user has internet: https://www.kindacode.com/article/react-how-to-check-internet-connection-online-offline/
-    
+Get ID of element: https://stackoverflow.com/questions/4825295/onclick-to-get-the-id-of-the-clicked-button, https://stackoverflow.com/questions/44325272/getting-the-id-of-a-clicked-element-from-rendered-list
+How to customize charts: https://recharts.org/en-US
+Target image src: https://stackoverflow.com/questions/11722400/programmatically-change-the-src-of-an-img-tag
+
     CSS
 
 Align to middle (vertically) : https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
@@ -46,3 +49,6 @@ Removes border and gaps: https://stackoverflow.com/questions/2039438/removing-un
 Loading spinner: https://loading.io/css/
 Add shadow around an element: https://stackoverflow.com/questions/6821295/add-css-box-shadow-around-the-whole-div
 How to add horizonal scrolling: https://stackoverflow.com/questions/5533636/add-a-horizontal-scrollbar-to-an-html-table
+How to center stuff: https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/
+How to blur: https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter
+How to fix div disppearing due to positioning: https://stackoverflow.com/questions/18747466/div-disappears-on-positioning-it-fixed
