@@ -123,7 +123,9 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                         tier: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.tier,
                         premium: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.is_premium,
                         battles: playerVehicles?.data[id][i]?.statistics.battles,
-                        description: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.description
+                        description: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.description,
+                        crew: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.crew,
+                        type: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.type
                     })
                 }
             }
@@ -280,10 +282,10 @@ function GetVehicleData({id, realm, source, totalBattles}) {
 
             // tankListTiles.replaceWith(tankListTiles.cloneNode(true))
 
-            document.getElementById("switchView").addEventListener("click", function(e) {
-                document.getElementById("switchView").onClick = Viewing()
-                e.preventDefault()
-            })
+            // document.getElementById("switchView").addEventListener("click", function(e) {
+            //     document.getElementById("switchView").onClick = Viewing()
+            //     e.preventDefault()
+            // })
         }
     }
 
@@ -303,13 +305,63 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                 information.push({
                     title: completeData[c].name,
                     image: completeData[c].tank_image_big,
-                    description: completeData[c].description
+                    description: completeData[c].description,
+                    crew: completeData[c].crew,
+                    type: completeData[c].type
                 })
+
+                if (information[0].type === "lightTank") {information[0].type = "Light Tank"}
+                if (information[0].type === "mediumTank") {information[0].type = "Medium Tank"}
+                if (information[0].type === "heavyTank") {information[0].type = "Heavy Tank"}
+                if (information[0].type === "AT-SPG") {information[0].type = "Tank Destroyer"}
+                if (information[0].type === "SPG") {information[0].type = "SPG / Artillery"}
+
+                document.getElementById("tankInfo_crewLayout").innerText = ""
+
+                for (var v = 0; v < information[0].crew.length; v++) { 
+                    var prev = document.getElementById("tankInfo_crewLayout").innerText
+                    const myImage = new Image(64, 64)
+
+                    if (prev === "") {
+                        const crewMember = information[0]?.crew[v]["member_id"]
+
+                        if (crewMember === "commander") {
+                            console.log("Commander")
+                            myImage.src = require('./assets/crew_roles/commander(2).png')
+                            document.getElementById("tankInfo_crewLayout").appendChild(myImage)
+                        }
+
+                        else if (crewMember === "gunner") {
+                            console.log("Gunner")
+                            myImage.src = require('./assets/crew_roles/gunner(2).png')
+                            document.getElementById("tankInfo_crewLayout").appendChild(myImage)
+                        }
+
+                        else if (crewMember === "driver") {
+                            console.log("Driver")
+                            myImage.src = require('./assets/crew_roles/driver(2).png')
+                            document.getElementById("tankInfo_crewLayout").appendChild(myImage)
+                        }
+
+                        else if (crewMember === "radio_operator") {
+                            console.log("Radio Operator")
+                            myImage.src = require('./assets/crew_roles/radio_operator(2).png')
+                            document.getElementById("tankInfo_crewLayout").appendChild(myImage)
+                        }
+                        
+                        else if (crewMember === "loader") {
+                            console.log("Loader")
+                            myImage.src = require('./assets/crew_roles/loader(2).png')
+                            document.getElementById("tankInfo_crewLayout").appendChild(myImage)
+                        }
+                    }
+                }
             }
         }
 
         document.getElementById("tankInfo_title").innerText = information[0].title
         document.getElementById("tankInfo_image").src = information[0].image
+        document.getElementById("tankInfo_subTitle").innerText = information[0].type
         document.getElementById("tankInfo_description").innerText = information[0].description
         document.getElementById("individualTankInfoContainer").style.display = "block"
     }
@@ -381,9 +433,15 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                     <button id="closeTankInfoActual" onClick={HideTankStats}>X</button>
                     
                     <div id="tankInfo_history">
-                        <h3 id="tankInfo_title">Title</h3>
+                        <h4 id="tankInfo_title">Title</h4>
                         <img id="tankInfo_image" src="" alt="missing_tank_image"></img>
+                        <h4 id="tankInfo_subTitle">Type</h4>
                         <p id="tankInfo_description">Description</p>
+                    </div>
+
+                    <div id="tankInfo_crew">
+                        <h4 id="tankInfo_title2">Crew Layout</h4>
+                        <p id="tankInfo_crewLayout"></p>
                     </div>
                 </div>
             </div>

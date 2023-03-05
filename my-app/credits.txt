@@ -52,3 +52,6 @@ How to add horizonal scrolling: https://stackoverflow.com/questions/5533636/add-
 How to center stuff: https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/
 How to blur: https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter
 How to fix div disppearing due to positioning: https://stackoverflow.com/questions/18747466/div-disappears-on-positioning-it-fixed
+How to move inline-block divs to top: https://stackoverflow.com/questions/9273016/why-is-this-inline-block-element-pushed-downward
+How to display images: https://stackoverflow.com/questions/42580130/display-images-in-react-using-jsx-without-import
+Add images in ReactJS/JS: https://stackoverflow.com/questions/2735881/adding-images-to-an-html-document-with-javascript, https://stackoverflow.com/questions/5865790/adding-image-using-javascript
