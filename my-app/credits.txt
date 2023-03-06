@@ -39,6 +39,7 @@ Check if user has internet: https://www.kindacode.com/article/react-how-to-check
 Get ID of element: https://stackoverflow.com/questions/4825295/onclick-to-get-the-id-of-the-clicked-button, https://stackoverflow.com/questions/44325272/getting-the-id-of-a-clicked-element-from-rendered-list
 How to customize charts: https://recharts.org/en-US
 Target image src: https://stackoverflow.com/questions/11722400/programmatically-change-the-src-of-an-img-tag
+Change bar colors: https://stackoverflow.com/questions/72092698/customize-rechart-bar-chart-labels-and-colors-for-each-bar
 
     CSS
 

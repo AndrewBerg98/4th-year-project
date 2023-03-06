@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import "./styles/GetVehicleData.css"
 import question_mark from "./assets/flaticon - Muhammed Ali.png"
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip } from 'recharts'
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts'
 
 function GetVehicleData({id, realm, source, totalBattles}) {
     // console.clear()
@@ -21,30 +21,30 @@ function GetVehicleData({id, realm, source, totalBattles}) {
     const [playerTankAchievements, setPlayerTankAchievements] = useState(null)
     const completeData = []
     const nationVehicleCount = [
-        { nation: 'China', count: 0 },
-        { nation: 'Czech', count: 0 },
-        { nation: 'France', count: 0 },
-        { nation: 'Germany', count: 0 },
-        { nation: 'Italy', count: 0 },
-        { nation: 'Japan', count: 0 },
-        { nation: 'Poland', count: 0 },
-        { nation: 'Sweden', count: 0 },
-        { nation: 'UK', count: 0 },
-        { nation: 'USA', count: 0 },
-        { nation: 'USSR', count: 0 }
+        { Nation: 'China', Tanks: 0 },
+        { Nation: 'Czech', Tanks: 0 },
+        { Nation: 'France', Tanks: 0 },
+        { Nation: 'Germany', Tanks: 0 },
+        { Nation: 'Italy', Tanks: 0 },
+        { Nation: 'Japan', Tanks: 0 },
+        { Nation: 'Poland', Tanks: 0 },
+        { Nation: 'Sweden', Tanks: 0 },
+        { Nation: 'UK', Tanks: 0 },
+        { Nation: 'USA', Tanks: 0 },
+        { Nation: 'USSR', Tanks: 0 }
     ]
     const nationBattleCount = [
-        { nation: 'China', count: 0 },
-        { nation: 'Czech', count: 0 },
-        { nation: 'France', count: 0 },
-        { nation: 'Germany', count: 0 },
-        { nation: 'Italy', count: 0 },
-        { nation: 'Japan', count: 0 },
-        { nation: 'Poland', count: 0 },
-        { nation: 'Sweden', count: 0 },
-        { nation: 'UK', count: 0 },
-        { nation: 'USA', count: 0 },
-        { nation: 'USSR', count: 0 }
+        { Nation: 'China', Battles: 0 },
+        { Nation: 'Czech', Battles: 0 },
+        { Nation: 'France', Battles: 0 },
+        { Nation: 'Germany', Battles: 0 },
+        { Nation: 'Italy', Battles: 0 },
+        { Nation: 'Japan', Battles: 0 },
+        { Nation: 'Poland', Battles: 0 },
+        { Nation: 'Sweden', Battles: 0 },
+        { Nation: 'UK', Battles: 0 },
+        { Nation: 'USA', Battles: 0 },
+        { Nation: 'USSR', Battles: 0 }
     ]
     // eslint-disable-next-line
     const vehicleTypeCount = [
@@ -135,47 +135,47 @@ function GetVehicleData({id, realm, source, totalBattles}) {
     // counts how many tanks of each nation a player has
     for (var h = 0; h < completeData.length; h++) {
         if (completeData[h].nation === "china") {
-            nationVehicleCount[0]["count"]++
+            nationVehicleCount[0]["Tanks"]++
         }
 
         else if (completeData[h].nation === "czech") {
-            nationVehicleCount[1]["count"]++
+            nationVehicleCount[1]["Tanks"]++
         }
 
         else if (completeData[h].nation === "france") {
-            nationVehicleCount[2]["count"]++
+            nationVehicleCount[2]["Tanks"]++
         }
 
         else if (completeData[h].nation === "germany") {
-            nationVehicleCount[3]["count"]++
+            nationVehicleCount[3]["Tanks"]++
         }
 
         else if (completeData[h].nation === "italy") {
-            nationVehicleCount[4]["count"]++
+            nationVehicleCount[4]["Tanks"]++
         }
 
         else if (completeData[h].nation === "japan") {
-            nationVehicleCount[5]["count"]++
+            nationVehicleCount[5]["Tanks"]++
         }
 
         else if (completeData[h].nation === "poland") {
-            nationVehicleCount[6]["count"]++
+            nationVehicleCount[6]["Tanks"]++
         }
 
         else if (completeData[h].nation === "sweden") {
-            nationVehicleCount[7]["count"]++
+            nationVehicleCount[7]["Tanks"]++
         }
 
         else if (completeData[h].nation === "uk") {
-            nationVehicleCount[8]["count"]++
+            nationVehicleCount[8]["Tanks"]++
         }
 
         else if (completeData[h].nation === "usa") {
-            nationVehicleCount[9]["count"]++
+            nationVehicleCount[9]["Tanks"]++
         }
 
         else if (completeData[h].nation === "ussr") {
-            nationVehicleCount[10]["count"]++
+            nationVehicleCount[10]["Tanks"]++
         }
 
         else {
@@ -192,47 +192,47 @@ function GetVehicleData({id, realm, source, totalBattles}) {
     // counts how many battles player has played for each nation
     for (var f = 0; f < completeData.length; f++) {
         if (completeData[f].nation === "china") {
-            nationBattleCount[0]["count"] += completeData[f].battles
+            nationBattleCount[0]["Battles"] += completeData[f].battles
         }
 
         if (completeData[f].nation === "czech") {
-            nationBattleCount[1]["count"] += completeData[f].battles
+            nationBattleCount[1]["Battles"] += completeData[f].battles
         }
 
         if (completeData[f].nation === "france") {
-            nationBattleCount[2]["count"] += completeData[f].battles
+            nationBattleCount[2]["Battles"] += completeData[f].battles
         }
 
         if (completeData[f].nation === "germany") {
-            nationBattleCount[3]["count"] += completeData[f].battles
+            nationBattleCount[3]["Battles"] += completeData[f].battles
         }
 
         if (completeData[f].nation === "italy") {
-            nationBattleCount[4]["count"] += completeData[f].battles
+            nationBattleCount[4]["Battles"] += completeData[f].battles
         }
 
         if (completeData[f].nation === "japan") {
-            nationBattleCount[5]["count"] += completeData[f].battles
+            nationBattleCount[5]["Battles"] += completeData[f].battles
         }
 
         if (completeData[f].nation === "poland") {
-            nationBattleCount[6]["count"] += completeData[f].battles
+            nationBattleCount[6]["Battles"] += completeData[f].battles
         }
 
         if (completeData[f].nation === "sweden") {
-            nationBattleCount[7]["count"] += completeData[f].battles
+            nationBattleCount[7]["Battles"] += completeData[f].battles
         }
 
         if (completeData[f].nation === "uk") {
-            nationBattleCount[8]["count"] += completeData[f].battles
+            nationBattleCount[8]["Battles"] += completeData[f].battles
         }
 
         if (completeData[f].nation === "usa") {
-            nationBattleCount[9]["count"] += completeData[f].battles
+            nationBattleCount[9]["Battles"] += completeData[f].battles
         }
 
         if (completeData[f].nation === "ussr") {
-            nationBattleCount[10]["count"] += completeData[f].battles
+            nationBattleCount[10]["Battles"] += completeData[f].battles
         }
     }
 
@@ -241,7 +241,8 @@ function GetVehicleData({id, realm, source, totalBattles}) {
             document.getElementById("loadingTankTiles").style.display = "none"
             document.getElementById("tankListTiles").style.display = "inline-block" // using block makes it take space more efficently, but maybe not line up as wanted
             document.getElementById("viewingOptions").style.display = "block"
-            document.getElementById("radarChart").style.display = "block"
+            document.getElementById("barChart").style.display = "inline-block"
+            document.getElementById("radarChart").style.display = "inline-block"
         }
     }
 
@@ -326,31 +327,26 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                         const crewMember = information[0]?.crew[v]["member_id"]
 
                         if (crewMember === "commander") {
-                            console.log("Commander")
                             myImage.src = require('./assets/crew_roles/commander(2).png')
                             document.getElementById("tankInfo_crewLayout").appendChild(myImage)
                         }
 
                         else if (crewMember === "gunner") {
-                            console.log("Gunner")
                             myImage.src = require('./assets/crew_roles/gunner(2).png')
                             document.getElementById("tankInfo_crewLayout").appendChild(myImage)
                         }
 
                         else if (crewMember === "driver") {
-                            console.log("Driver")
                             myImage.src = require('./assets/crew_roles/driver(2).png')
                             document.getElementById("tankInfo_crewLayout").appendChild(myImage)
                         }
 
                         else if (crewMember === "radio_operator") {
-                            console.log("Radio Operator")
                             myImage.src = require('./assets/crew_roles/radio_operator(2).png')
                             document.getElementById("tankInfo_crewLayout").appendChild(myImage)
                         }
                         
                         else if (crewMember === "loader") {
-                            console.log("Loader")
                             myImage.src = require('./assets/crew_roles/loader(2).png')
                             document.getElementById("tankInfo_crewLayout").appendChild(myImage)
                         }
@@ -364,8 +360,30 @@ function GetVehicleData({id, realm, source, totalBattles}) {
         document.getElementById("tankInfo_subTitle").innerText = information[0].type
         document.getElementById("tankInfo_description").innerText = information[0].description
         document.getElementById("individualTankInfoContainer").style.display = "block"
+        document.getElementById("tankInfo_description").scrollTo(0, 0)
     }
     
+    function BarChartCustomTooltip({ payload, label, active }) {
+        if (active) {
+            return (
+                <div className="custom-tooltip">
+                    <p className="label"><b>{label}</b></p>
+                    <p className="intro">Tanks: {Number(payload[0].value).toLocaleString()}</p>
+                    <p className="desc"></p>
+                </div>
+            )
+        }
+
+        for (var h = 0; h < document.getElementsByTagName("tspan").length; h++) {
+            if (document.getElementsByTagName("tspan")[h].innerHTML === "China") {
+                const myImage = new Image(64, 64)
+                myImage.src = require('./assets/flags/china.png')
+                document.getElementsByTagName("tspan")[h].innerText = "TEST"
+                document.getElementsByTagName("tspan")[h].appendChild(myImage)
+            }
+        }
+    }
+
     function RadarChartCustomTooltip({ payload, label, active }) {
         if (active) {
             return (
@@ -377,24 +395,56 @@ function GetVehicleData({id, realm, source, totalBattles}) {
             )
         }
     }
+
+    const COLORS = [
+        "rgb(222, 41, 16)", // China
+        'rgb(37, 60, 117)', // Czech
+        'rgb(255, 255, 255)', // France
+        'rgb(0, 0, 0)', // Germany
+        'rgb(0, 145, 68)', // Italy
+        "rgb(238, 27, 46)", // Japan
+        'rgb(220, 20, 60)', // Poland
+        'rgb(19,91, 173)', // Sweden
+        'rgb(203, 163, 20)', // UK
+        'rgb(0, 29, 101)', // USA
+        "rgb(203, 1, 1)" // USSR
+    ]
     
     return (
         <>
+            <div id="allCharts">
+                <div id="barChart">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <BarChart width={500} height={300} data={nationVehicleCount} margin={{ top: 5, right: 30, left: -20, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="Nation" />
+                        <YAxis />
+                        <Tooltip content={<BarChartCustomTooltip />} />
+                        <Bar dataKey="Tanks" fill={COLORS}>
+                            {COLORS.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={COLORS[index % 20]} />
+                            ))}
+                        </Bar>
+                        </BarChart>
+                    </ResponsiveContainer>
+                </div>
+
+                <div id="radarChart">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={nationBattleCount}>
+                            <PolarGrid />
+                            <PolarAngleAxis dataKey="Nation" />
+                            <PolarRadiusAxis angle={30} />
+                            <Radar name={id} dataKey="Battles" stroke="rgba(0, 68, 169, 1)" fill="rgb(0, 68, 169, 1)" fillOpacity={0.3} />
+                            <Tooltip content={<RadarChartCustomTooltip />} />
+                        </RadarChart>
+                    </ResponsiveContainer>
+                </div>
+            </div>
+
             <div id="loadingTankTiles">
                 <span>Loading Player's Tank List...</span>
                 <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-            </div>
-
-            <div id="radarChart">
-                <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={nationBattleCount}>
-                        <PolarGrid />
-                        <PolarAngleAxis dataKey="nation" />
-                        <PolarRadiusAxis angle={30} />
-                        <Radar name={id} dataKey="count" stroke="rgba(0, 68, 169, 1)" fill="rgb(0, 68, 169, 1)" fillOpacity={0.3} />
-                        <Tooltip content={<RadarChartCustomTooltip />} />
-                    </RadarChart>
-                </ResponsiveContainer>
             </div>
             
             <table id="tankListTiles">
@@ -442,6 +492,11 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                     <div id="tankInfo_crew">
                         <h4 id="tankInfo_title2">Crew Layout</h4>
                         <p id="tankInfo_crewLayout"></p>
+                    </div>
+
+                    <div id="tankInfo_profile">
+                        <h4 id="tankInfo_title3">Stock Configuration</h4>
+                        <p id="tankInfo_stockConfig"></p>
                     </div>
                 </div>
             </div>

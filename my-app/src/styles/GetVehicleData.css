@@ -149,14 +149,30 @@
     padding-bottom: 16px;
 }
 
+#allCharts {
+    text-align: center;
+}
+
+#barChart {
+    /* display: none; */
+    outline: 0px solid magenta;
+    width: 700px;
+    height: 300px;
+    padding: 36px 0px 36px 0px;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+}
+
 #radarChart {
-    display: none;
+    /* display: none; */
     outline: 0px solid magenta;
     width: 400px;
     height: 300px;
     padding: 36px 0px 36px 0px;
     text-align: center;
     margin: 0 auto;
+    display: inline-block;
 }
 
 /* #radarChart .recharts-default-legend {
@@ -698,13 +714,14 @@
 }
 
 #tankInfo_history {
-    display: inline-block;
+    /* display: inline-block; */
     width: 300px;
     height: 100%;
     box-sizing: border-box;
     padding: 16px 24px 16px 24px;
     outline: 0px solid orange;
     vertical-align: top;
+    float: left;
 }
 
 #tankInfo_title {
@@ -752,13 +769,14 @@
 }
 
 #tankInfo_crew {
-    display: inline-block;
+    /* display: inline-block; */
     width: calc(100% - 342px);
     /* height: 100%; */
     box-sizing: border-box;
-    padding: 16px 12px 16px 12px;
+    padding: 16px 12px 0px 12px;
     outline: 0px solid orange;
     vertical-align: top;
+    float: left;
 }
 
 #tankInfo_title2 {
@@ -774,37 +792,67 @@
     margin: 6px 0px 0px 0px;
 }
 
+#tankInfo_profile {
+    /* display: inline-block; */
+    width: calc(100% - 342px);
+    /* height: 100%; */
+    box-sizing: border-box;
+    padding: 16px 12px 16px 12px;
+    outline: 0px solid orange;
+    vertical-align: top;
+    float: left;
+}
+
+#tankInfo_title3 {
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 6px 0px 6px 0px;
+    background-color: rgba(88, 88, 88, 1);
+    border-radius: 12px;
+}
+
+@media only screen and (max-width: 1100px) {
+    #barChart {
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 770px) {
     #individualTankInfoActual {
         width: 100%;
         border-radius: 0px;
     }
-
-    /* #tankInfo_crew {
-        width: 100%;
-        max-width: 216px;
-    } */
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 560px) {
+
     #individualTankInfoActual {
-        width: auto;
-        height: auto;
+        max-width: 375px;
         text-align: center;
-        /* margin-top: 0px; */
         border-radius: 12px;
+        overflow-y: scroll;
+        margin: auto;
     }
 
     #tankInfo_history {
         display: block;
+        float: none;
+        margin: auto;
+        height: auto;
     }
 
-    #tankInfo_crew {
+    #tankInfo_crew, #tankInfo_profile {
         width: 100%;
     }
 }
 
 @media only screen and (max-width: 400px) {
+    #tankInfo_history {
+        width: auto;
+        height: auto;
+    }
+    
     #radarChart {
         width: 100%;
         height: auto;

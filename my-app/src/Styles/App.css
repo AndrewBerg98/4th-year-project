@@ -137,38 +137,6 @@ body {
     border-radius: 4px;
 }
 
-@media only screen and (max-width: 625px) {
-    #logo {
-        display: none;
-    }
-
-    #searchSpace {
-        display: flex;
-        width: 100%;
-        margin-left: 8px;
-        margin-right: 8px;
-        text-overflow: ellipsis;
-    }
-
-    #nicknameInput {
-        width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    #searchSubmit {
-        display: block;
-        width: 92px;
-        margin: 0px 0px 0px 12px;
-    }
-
-    #colorRatings {
-        display: block;
-        width: 92px;
-        margin: 0px 0px 0px 12px;
-    }
-}
-
 #subMenu {
     display: flex;
     display: none;
@@ -203,8 +171,38 @@ body {
     background-color: rgba(0, 61, 153, 1) !important;
 }
 
-@media only screen and (max-width: 392px) {
-    #nicknameInput, #realmSelect, #sourceSelect, #searchSubmit {
-        font-size: 3.5vw;
+@media only screen and (max-width: 615px) {
+    #logo {
+        display: none;
+    }
+
+    #searchSpace {
+        display: flex;
+        width: 100%;
+        margin-left: 8px;
+        margin-right: 8px;
+        text-overflow: ellipsis;
+    }
+
+    #nicknameInput {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #searchSubmit {
+        display: block;
+        width: 92px;
+        margin: 0px 0px 0px 12px;
+    }
+
+    #colorRatings {
+        display: block;
+        width: 92px;
+        margin: 0px 0px 0px 12px;
+    }
+
+    #realmSelect, #sourceSelect, #searchSubmit {
+        font-size: 2vw;
     }
 }
