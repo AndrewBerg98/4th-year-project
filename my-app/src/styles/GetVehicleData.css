@@ -703,14 +703,19 @@
 
 #closeTankInfoActual {
     position: fixed;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 22px;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
     color: white;
     background-color: darkred;
     border: 0px;
     cursor: pointer;
+    border-radius: 0px 12px 0px 0px;
+}
+
+#closeTankInfoActual:hover {
+    background-color: rgb(101, 0, 0);
 }
 
 #tankInfo_history {
@@ -790,6 +795,12 @@
 
 #tankInfo_crewLayout {
     margin: 6px 0px 0px 0px;
+    overflow-y: scroll;
+    height: 68px;
+}
+
+#tankInfo_crewLayout::-webkit-scrollbar {
+    width: 5px;
 }
 
 #tankInfo_profile {
@@ -797,10 +808,12 @@
     width: calc(100% - 342px);
     /* height: 100%; */
     box-sizing: border-box;
-    padding: 16px 12px 16px 12px;
+    padding: 16px 12px 0px 12px;
     outline: 0px solid orange;
     vertical-align: top;
+    text-align: center;
     float: left;
+    overflow-x: hidden;
 }
 
 #tankInfo_title3 {
@@ -810,6 +823,76 @@
     padding: 6px 0px 6px 0px;
     background-color: rgba(88, 88, 88, 1);
     border-radius: 12px;
+}
+
+.tankInfo_armorTile {
+    /* width: 250px; */
+    height: 35px;
+    color: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.tankInfo_armorTile > p {
+    margin-left: 8px;
+    width: 100px;
+    text-align: left;
+}
+
+.tankInfo_armorTile > span {
+    margin-left: 8px;
+}
+
+.tankInfo_mobilityTile {
+    /* width: 250px; */
+    height: 35px;
+    color: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.tankInfo_mobilityTile > p {
+    margin-left: 8px;
+    width: 100px;
+    text-align: left;
+}
+
+.tankInfo_mobilityTile > span {
+    margin-left: 8px;
+}
+
+#tankInfo_misc {
+    /* display: inline-block; */
+    width: calc(100% - 342px);
+    /* height: 100%; */
+    box-sizing: border-box;
+    padding: 16px 12px 16px 12px;
+    outline: 0px solid orange;
+    vertical-align: top;
+    text-align: center;
+    float: left;
+}
+
+#tankInfo_title4 {
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 6px 0px 6px 0px;
+    background-color: rgba(88, 88, 88, 1);
+    border-radius: 12px;
+}
+
+#tankInfo_miscPriceXP, #tankInfo_miscPriceGold, #tankInfo_miscPriceCredits {
+    margin-left: 8px;
+    width: auto;
+    text-align: left;
+    color: white;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -822,6 +905,10 @@
     #individualTankInfoActual {
         width: 100%;
         border-radius: 0px;
+    }
+
+    #closeTankInfoActual {
+        border-radius: 0px 0px 0px 0px;
     }
 }
 
@@ -842,7 +929,7 @@
         height: auto;
     }
 
-    #tankInfo_crew, #tankInfo_profile {
+    #tankInfo_crew, #tankInfo_profile, #tankInfo_misc {
         width: 100%;
     }
 }

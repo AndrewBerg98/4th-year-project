@@ -46,6 +46,19 @@ function GetVehicleData({id, realm, source, totalBattles}) {
         { Nation: 'USA', Battles: 0 },
         { Nation: 'USSR', Battles: 0 }
     ]
+    const COLORS = [
+        "rgb(222, 41, 16)", // China
+        'rgb(37, 60, 117)', // Czech
+        'rgb(255, 255, 255)', // France
+        'rgb(0, 0, 0)', // Germany
+        'rgb(0, 145, 68)', // Italy
+        "rgb(238, 27, 46)", // Japan
+        'rgb(220, 20, 60)', // Poland
+        'rgb(19,91, 173)', // Sweden
+        'rgb(203, 163, 20)', // UK
+        'rgb(0, 29, 101)', // USA
+        "rgb(203, 1, 1)" // USSR
+    ]
     // eslint-disable-next-line
     const vehicleTypeCount = [
         { type: 'LT', count: 10 },
@@ -125,7 +138,11 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                         battles: playerVehicles?.data[id][i]?.statistics.battles,
                         description: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.description,
                         crew: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.crew,
-                        type: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.type
+                        type: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.type,
+                        stock_profile: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.default_profile,
+                        price_xp: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.prices_xp,
+                        price_gold: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.price_gold,
+                        price_credit: individualVehicleDetails?.data[playerVehicles.data[id][i].tank_id]?.price_credit,
                     })
                 }
             }
@@ -308,7 +325,15 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                     image: completeData[c].tank_image_big,
                     description: completeData[c].description,
                     crew: completeData[c].crew,
-                    type: completeData[c].type
+                    type: completeData[c].type,
+                    armorTurret: completeData[c].stock_profile?.armor?.turret,
+                    armorHull: completeData[c].stock_profile.armor.hull,
+                    speedForward: completeData[c].stock_profile.speed_forward,
+                    speedBackward: completeData[c].stock_profile.speed_backward,
+                    rapid: completeData[c].stock_profile?.rapid,
+                    priceXP: completeData[c]?.price_xp,
+                    priceGold: completeData[c]?.price_gold,
+                    priceCredit: completeData[c]?.price_credit
                 })
 
                 if (information[0].type === "lightTank") {information[0].type = "Light Tank"}
@@ -321,7 +346,7 @@ function GetVehicleData({id, realm, source, totalBattles}) {
 
                 for (var v = 0; v < information[0].crew.length; v++) { 
                     var prev = document.getElementById("tankInfo_crewLayout").innerText
-                    const myImage = new Image(64, 64)
+                    const myImage = new Image(60, 60)
 
                     if (prev === "") {
                         const crewMember = information[0]?.crew[v]["member_id"]
@@ -361,6 +386,45 @@ function GetVehicleData({id, realm, source, totalBattles}) {
         document.getElementById("tankInfo_description").innerText = information[0].description
         document.getElementById("individualTankInfoContainer").style.display = "block"
         document.getElementById("tankInfo_description").scrollTo(0, 0)
+
+        if (information[0].armorTurret) {
+            document.getElementById("tankInfo_stockArmorTurretValues").innerText = information[0].armorTurret["front"] + " / " + information[0].armorTurret["sides"] +  " / " + information[0].armorTurret["rear"]
+            document.getElementById("tankInfo_stockArmorHullValues").innerText = information[0].armorHull["front"] +  " / " + information[0].armorHull["sides"] +  " / " + information[0].armorHull["rear"]
+        }
+
+        else {
+            document.getElementById("tankInfo_stockArmorTurretValues").innerText = 0 + " / " + 0 +  " / " + 0
+            document.getElementById("tankInfo_stockArmorHullValues").innerText = information[0].armorHull["front"] +  " / " + information[0].armorHull["sides"] +  " / " + information[0].armorHull["rear"]
+        }
+
+        document.getElementById("tankInfo_mobilityForwardBackwards").innerText = information[0].speedForward + " / " + information[0].speedBackward
+
+        if (information[0].rapid !== null) {
+            document.getElementById("tankInfo_mobilityRapid").innerText = information[0].rapid.speed_forward + " / " + information[0].rapid.speed_forward
+        }
+
+        else {
+            document.getElementById("tankInfo_mobilityRapid").innerText = "* / *"
+        }
+
+        if (information[0].priceXP !== null) {
+            if (Object.values(information[0].priceXP) !== undefined) { 
+                document.getElementById("tankInfo_miscPriceXP").innerText = "XP Price: " + Number(Object.values(information[0].priceXP)).toLocaleString()
+            }
+        }
+
+        else {
+            document.getElementById("tankInfo_miscPriceXP").innerText = "XP Price: " + 0
+        }
+
+        if (information[0].priceGold !== undefined) { 
+            document.getElementById("tankInfo_miscPriceGold").innerText = "Gold Price: " + Number(information[0].priceGold).toLocaleString()
+        }
+
+        if (information[0].priceCredit !== undefined) { 
+            document.getElementById("tankInfo_miscPriceCredits").innerText = "Credits Price: " + Number(information[0].priceCredit).toLocaleString()
+        }
+
     }
     
     function BarChartCustomTooltip({ payload, label, active }) {
@@ -395,20 +459,6 @@ function GetVehicleData({id, realm, source, totalBattles}) {
             )
         }
     }
-
-    const COLORS = [
-        "rgb(222, 41, 16)", // China
-        'rgb(37, 60, 117)', // Czech
-        'rgb(255, 255, 255)', // France
-        'rgb(0, 0, 0)', // Germany
-        'rgb(0, 145, 68)', // Italy
-        "rgb(238, 27, 46)", // Japan
-        'rgb(220, 20, 60)', // Poland
-        'rgb(19,91, 173)', // Sweden
-        'rgb(203, 163, 20)', // UK
-        'rgb(0, 29, 101)', // USA
-        "rgb(203, 1, 1)" // USSR
-    ]
     
     return (
         <>
@@ -496,7 +546,33 @@ function GetVehicleData({id, realm, source, totalBattles}) {
 
                     <div id="tankInfo_profile">
                         <h4 id="tankInfo_title3">Stock Configuration</h4>
-                        <p id="tankInfo_stockConfig"></p>
+
+                        <div className="tankInfo_armorTile">
+                            <p id="tankInfo_stockArmorTurretValues"></p>
+                            <span>Turret Armor (mm)</span>
+                        </div>
+
+                        <div className="tankInfo_armorTile">
+                            <p id="tankInfo_stockArmorHullValues"></p>
+                            <span>Hull Armor (mm)</span>
+                        </div>
+
+                        <div className="tankInfo_mobilityTile">
+                            <p id="tankInfo_mobilityForwardBackwards"></p>
+                            <span>Forward/Reverse (km/h)</span>
+                        </div>
+
+                        <div className="tankInfo_mobilityTile">
+                            <p id="tankInfo_mobilityRapid"></p>
+                            <span>Rapid (km/h)</span>
+                        </div>
+                    </div>
+
+                    <div id="tankInfo_misc">
+                        <h4 id="tankInfo_title4">Prices (excl. Bonds)</h4>
+                        <p id="tankInfo_miscPriceXP"></p>
+                        <p id="tankInfo_miscPriceGold"></p>
+                        <p id="tankInfo_miscPriceCredits"></p>
                     </div>
                 </div>
             </div>

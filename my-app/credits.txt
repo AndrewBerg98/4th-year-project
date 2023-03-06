@@ -43,7 +43,7 @@ Change bar colors: https://stackoverflow.com/questions/72092698/customize-rechar
 
     CSS
 
-Align to middle (vertically) : https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
+Align to middle (vertically) : https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container, https://www.geeksforgeeks.org/how-to-vertically-center-text-with-css/
 Prevents blue highlight when selecting: https://css-tricks.com/almanac/properties/u/user-select/
 Text color in input when typing: https://stackoverflow.com/questions/6669846/css-input-field-text-color-of-inputted-text
 Removes border and gaps: https://stackoverflow.com/questions/2039438/removing-unwanted-table-cell-borders-with-css
