@@ -950,6 +950,12 @@
     }
 }
 
+@media only screen and (max-width: 615px) {
+    #battleStatistics {
+        margin-top: 55px;
+    }
+}
+
 @media only screen and (max-width: 560px) {
 
     #individualTankInfoActual {
