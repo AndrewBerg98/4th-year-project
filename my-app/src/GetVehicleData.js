@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import "./styles/GetVehicleData.css"
 import question_mark from "./assets/flaticon - Muhammed Ali.png"
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts'
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Treemap } from 'recharts'
 
 function GetVehicleData({id, realm, source, totalBattles}) {
     // console.clear()
@@ -46,6 +46,7 @@ function GetVehicleData({id, realm, source, totalBattles}) {
         { Nation: 'USA', Battles: 0 },
         { Nation: 'USSR', Battles: 0 }
     ]
+    const vehicleHaves = []
     const COLORS = [
         "rgb(222, 41, 16)", // China
         'rgb(37, 60, 117)', // Czech
@@ -58,14 +59,6 @@ function GetVehicleData({id, realm, source, totalBattles}) {
         'rgb(203, 163, 20)', // UK
         'rgb(0, 29, 101)', // USA
         "rgb(203, 1, 1)" // USSR
-    ]
-    // eslint-disable-next-line
-    const vehicleTypeCount = [
-        { type: 'LT', count: 10 },
-        { type: 'MT', count: 20 },
-        { type: 'HT', count: 30 },
-        { type: 'TD', count: 40 },
-        { type: 'SPG', count: 50 }
     ]
 
     useEffect(() => {
@@ -147,6 +140,18 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                 }
             }
         }
+    }
+
+    if (completeData[0]) {
+        // names the tanks the player has and battles they played with that particular tank
+    for (var g = 0; g < 30; g++) {
+        vehicleHaves.push({
+            name: completeData[g].name,
+            children: [{
+                name: completeData[g].name, size: completeData[g].battles
+            }]
+        })
+    }
     }
 
     // counts how many tanks of each nation a player has
@@ -258,8 +263,9 @@ function GetVehicleData({id, realm, source, totalBattles}) {
             document.getElementById("loadingTankTiles").style.display = "none"
             document.getElementById("tankListTiles").style.display = "inline-block" // using block makes it take space more efficently, but maybe not line up as wanted
             document.getElementById("viewingOptions").style.display = "block"
-            document.getElementById("barChart").style.display = "inline-block"
-            document.getElementById("radarChart").style.display = "inline-block"
+            // document.getElementById("barChart").style.display = "inline-block"
+            // document.getElementById("radarChart").style.display = "inline-block"
+            document.getElementById("allCharts").style.display = "block"
         }
     }
 
@@ -459,6 +465,18 @@ function GetVehicleData({id, realm, source, totalBattles}) {
             )
         }
     }
+
+    function TreeMapChartCustomTooltip({ payload, label, active }) {
+        if (active) {
+            return (
+                <div className="custom-tooltip">
+                    <p className="label"><b>{payload[0].payload.root.name}</b></p>
+                    <p className="intro">Battles: {Number(payload[0].value).toLocaleString()}</p>
+                    <p className="desc"></p>
+                </div>
+            )
+        }
+    }
     
     return (
         <>
@@ -488,6 +506,14 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                             <Radar name={id} dataKey="Battles" stroke="rgba(0, 68, 169, 1)" fill="rgb(0, 68, 169, 1)" fillOpacity={0.3} />
                             <Tooltip content={<RadarChartCustomTooltip />} />
                         </RadarChart>
+                    </ResponsiveContainer>
+                </div>
+
+                <div id="treeMap">
+                    <ResponsiveContainer width="100%" height="100%">
+                        <Treemap width={400} height={200} data={vehicleHaves} dataKey="size" aspectRatio={4 / 3} stroke="#fff" fill="#8884d8">
+                            <Tooltip content={<TreeMapChartCustomTooltip />} />
+                        </Treemap>
                     </ResponsiveContainer>
                 </div>
             </div>

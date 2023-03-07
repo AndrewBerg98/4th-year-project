@@ -151,6 +151,7 @@
 
 #allCharts {
     text-align: center;
+    display: none;
 }
 
 #barChart {
@@ -169,11 +170,27 @@
     outline: 0px solid magenta;
     width: 400px;
     height: 300px;
+    padding: 36px 36px 36px 0px;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+#treeMap {
+    /* display: none; */
+    outline: 0px solid magenta;
+    width: 700px;
+    height: 300px;
     padding: 36px 0px 36px 0px;
     text-align: center;
     margin: 0 auto;
     display: inline-block;
 }
+
+/* .recharts-layer > g > text {
+    font-size: 10px;
+    font-family:'Times New Roman', Times, serif;
+} */
 
 /* #radarChart .recharts-default-legend {
     display: none;
@@ -895,9 +912,30 @@
     justify-content: left;
 }
 
+@media only screen and (max-width: 1835px) {
+    #radarChart {
+        padding-right: 0px;
+    }
+    
+    #treeMap {
+        display: block;
+        width: 95%;
+    }
+}
+
 @media only screen and (max-width: 1100px) {
     #barChart {
         width: 100%;
+    }
+
+    #radarChart {
+        width: 100%;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    #treeMap {
+        width: 95%;
     }
 }
 
@@ -942,6 +980,6 @@
     
     #radarChart {
         width: 100%;
-        height: auto;
+        /* height: auto; */
     }
 }
