@@ -41,6 +41,8 @@ How to customize charts: https://recharts.org/en-US
 Target image src: https://stackoverflow.com/questions/11722400/programmatically-change-the-src-of-an-img-tag
 Change bar colors: https://stackoverflow.com/questions/72092698/customize-rechart-bar-chart-labels-and-colors-for-each-bar
 Implement tooltip for TreeMap Chart: https://stackoverflow.com/questions/68617980/recharts-treemap-tooltip-label
+How to disable TreeMap animation: https://stackoverflow.com/questions/56580007/how-to-disable-animation-for-linechart-in-recharts
+Optimized version of IF statements: https://stackoverflow.com/questions/43935655/how-to-simplify-multiple-if-statements-javascript
 
     CSS
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, PureComponent } from "react"
 import axios from "axios"
 import "./styles/GetVehicleData.css"
 import question_mark from "./assets/flaticon - Muhammed Ali.png"
@@ -48,17 +48,17 @@ function GetVehicleData({id, realm, source, totalBattles}) {
     ]
     const vehicleHaves = []
     const COLORS = [
-        "rgb(222, 41, 16)", // China
-        'rgb(37, 60, 117)', // Czech
-        'rgb(255, 255, 255)', // France
-        'rgb(0, 0, 0)', // Germany
-        'rgb(0, 145, 68)', // Italy
-        "rgb(238, 27, 46)", // Japan
-        'rgb(220, 20, 60)', // Poland
-        'rgb(19,91, 173)', // Sweden
-        'rgb(203, 163, 20)', // UK
-        'rgb(0, 29, 101)', // USA
-        "rgb(203, 1, 1)" // USSR
+        "rgb(107, 125, 91)", // China
+        "rgb(109, 101, 85)", // Czech
+        "rgb(87, 107, 101)", // France
+        "rgb(95, 94, 95)", // Germany
+        "rgb(142, 125, 99)", // Italy
+        "rgb(81, 90, 68)", // Japan
+        "rgb(57, 48, 38)", // Poland
+        "rgb(57, 58, 47)", // Sweden
+        "rgb(117, 110, 96)", // UK
+        "rgb(129, 124, 109)", // USA
+        "rgb(95, 104, 74)" // USSR
     ]
 
     useEffect(() => {
@@ -115,6 +115,7 @@ function GetVehicleData({id, realm, source, totalBattles}) {
         }
     }, [id, realm, GetPlayerVehicleList, GetIndividualVehicleDetails, GetVehicleList, GetPlayerTankStats, GetPlayerTankAchievements, source])
 
+    // collects certain data regarding each tanks
     if (playerVehicles && vehicleList && individualVehicleDetails && playerTankStats && playerTankAchievements) {
         for (var i = 0; i < playerVehicles.data[id].length; i++) {
             for (var k = 0; k < playerTankStats.data[id].length; k++) {
@@ -142,16 +143,17 @@ function GetVehicleData({id, realm, source, totalBattles}) {
         }
     }
 
+    // names the tanks the player has and battles they played with that particular tank
     if (completeData[0]) {
-        // names the tanks the player has and battles they played with that particular tank
-    for (var g = 0; g < 30; g++) {
-        vehicleHaves.push({
-            name: completeData[g].name,
-            children: [{
-                name: completeData[g].name, size: completeData[g].battles
-            }]
-        })
-    }
+        for (var g = 0; g < 30; g++) {
+            vehicleHaves.push({
+                name: completeData[g].name,
+                nation: completeData[g].nation,
+                children: [{
+                    name: completeData[g].name, size: completeData[g].battles
+                }]
+            })
+        }
     }
 
     // counts how many tanks of each nation a player has
@@ -263,8 +265,6 @@ function GetVehicleData({id, realm, source, totalBattles}) {
             document.getElementById("loadingTankTiles").style.display = "none"
             document.getElementById("tankListTiles").style.display = "inline-block" // using block makes it take space more efficently, but maybe not line up as wanted
             document.getElementById("viewingOptions").style.display = "block"
-            // document.getElementById("barChart").style.display = "inline-block"
-            // document.getElementById("radarChart").style.display = "inline-block"
             document.getElementById("allCharts").style.display = "block"
         }
     }
@@ -477,6 +477,99 @@ function GetVehicleData({id, realm, source, totalBattles}) {
             )
         }
     }
+
+    // SOURCE: https://recharts.org/en-US/examples/CustomContentTreemap
+    class CustomizedContent extends PureComponent {
+        render() {
+            // eslint-disable-next-line
+            const { root, depth, x, y, width, height, index, payload, colors, rank, name } = this.props
+
+            switch (root.nation) {
+                case "china":
+                    return  (
+                        <g>
+                            <rect x={x} y={y} width={width} height={height} style={{fill: COLORS[0], stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                            <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                        </g>
+                    )
+                case "czech":
+                    return  (
+                        <g>
+                            <rect x={x} y={y} width={width} height={height} style={{fill: COLORS[1], stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                            <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                        </g>
+                    )
+                case "france":
+                    return  (
+                        <g>
+                            <rect x={x} y={y} width={width} height={height} style={{fill: COLORS[2], stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                            <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                        </g>
+                    )
+                case "germany":
+                    return  (
+                        <g>
+                            <rect x={x} y={y} width={width} height={height} style={{fill: COLORS[3], stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                            <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                        </g>
+                    )
+                case "italy":
+                    return  (
+                        <g>
+                            <rect x={x} y={y} width={width} height={height} style={{fill: COLORS[4], stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                            <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                        </g>
+                    )
+                case "japan":
+                    return  (
+                        <g>
+                            <rect x={x} y={y} width={width} height={height} style={{fill: COLORS[5], stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                            <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                        </g>
+                    )
+                case "poland":
+                    return  (
+                        <g>
+                            <rect x={x} y={y} width={width} height={height} style={{fill: COLORS[6], stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                            <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                        </g>
+                    )
+                case "sweden":
+                    return  (
+                        <g>
+                            <rect x={x} y={y} width={width} height={height} style={{fill: COLORS[7], stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                            <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                        </g>
+                    )
+                case "uk":
+                    return  (
+                        <g>
+                            <rect x={x} y={y} width={width} height={height} style={{fill: COLORS[8], stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                            <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                        </g>
+                    )
+                case "usa":
+                    return  (
+                        <g>
+                            <rect x={x} y={y} width={width} height={height} style={{fill: COLORS[9], stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                            <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                        </g>
+                    )
+                case "ussr":
+                    return  (
+                        <g>
+                            <rect x={x} y={y} width={width} height={height} style={{fill: COLORS[10], stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                            <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                        </g>
+                    )
+                default:
+                    <g>
+                        <rect x={x} y={y} width={width} height={height} style={{fill: "lightblue", stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                        <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                    </g>
+            }
+        }
+    }
     
     return (
         <>
@@ -484,15 +577,15 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                 <div id="barChart">
                     <ResponsiveContainer width="100%" height="100%">
                         <BarChart width={500} height={300} data={nationVehicleCount} margin={{ top: 5, right: 30, left: -20, bottom: 5 }}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="Nation" />
-                        <YAxis />
-                        <Tooltip content={<BarChartCustomTooltip />} />
-                        <Bar dataKey="Tanks" fill={COLORS}>
-                            {COLORS.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={COLORS[index % 20]} />
-                            ))}
-                        </Bar>
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="Nation" />
+                            <YAxis />
+                            <Tooltip content={<BarChartCustomTooltip />} />
+                            <Bar dataKey="Tanks" fill={COLORS} isAnimationActive={false}>
+                                {COLORS.map((entry, index) => (
+                                    <Cell key={`cell-${index}`} fill={COLORS[index % 20]} />
+                                ))}
+                            </Bar>
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
@@ -503,7 +596,7 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                             <PolarGrid />
                             <PolarAngleAxis dataKey="Nation" />
                             <PolarRadiusAxis angle={30} />
-                            <Radar name={id} dataKey="Battles" stroke="rgba(0, 68, 169, 1)" fill="rgb(0, 68, 169, 1)" fillOpacity={0.3} />
+                            <Radar name={id} dataKey="Battles" stroke="rgb(95, 94, 95)" fill="rgb(95, 94, 95)" fillOpacity={0.3} isAnimationActive={false} />
                             <Tooltip content={<RadarChartCustomTooltip />} />
                         </RadarChart>
                     </ResponsiveContainer>
@@ -511,7 +604,8 @@ function GetVehicleData({id, realm, source, totalBattles}) {
 
                 <div id="treeMap">
                     <ResponsiveContainer width="100%" height="100%">
-                        <Treemap width={400} height={200} data={vehicleHaves} dataKey="size" aspectRatio={4 / 3} stroke="#fff" fill="#8884d8">
+                        <Treemap width={400} height={200} data={vehicleHaves} dataKey="size" aspectRatio={4 / 3} stroke="#fff" fill="#8884d8"
+                        content={<CustomizedContent colors={COLORS} />} isAnimationActive={false}>
                             <Tooltip content={<TreeMapChartCustomTooltip />} />
                         </Treemap>
                     </ResponsiveContainer>
