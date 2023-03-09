@@ -134,6 +134,7 @@
     /* outline: 1px solid purple; */
     /* padding: 16px 0px 16px 0px; */
     background-color: rgba(44, 44, 44, 0.1);
+    z-index: 10;
 
     /* Vertically Alignment */
     display: flex;
@@ -151,7 +152,12 @@
 
 #allCharts {
     text-align: center;
-    display: none;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    opacity: -100%;
+    top: 0;
+    left: 0;
 }
 
 #barChart {

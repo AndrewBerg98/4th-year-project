@@ -144,8 +144,24 @@ function GetVehicleData({id, realm, source, totalBattles}) {
     }
 
     // names the tanks the player has and battles they played with that particular tank
+    // console.log("Complete Data: ", completeData)
+
     if (completeData[0]) {
-        for (var g = 0; g < 30; g++) {
+        var vehicleCount = 0;
+
+        if (completeData.length >= 30) {
+            vehicleCount = 30
+        }
+
+        else if (completeData.length < 30 && completeData.length >= 20) {
+            vehicleCount = 20
+        }
+
+        else {
+            vehicleCount = 10
+        }
+
+        for (var g = 0; g < vehicleCount; g++) {
             vehicleHaves.push({
                 name: completeData[g].name,
                 nation: completeData[g].nation,
@@ -153,6 +169,8 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                     name: completeData[g].name, size: completeData[g].battles
                 }]
             })
+
+            // console.log("Vehicle Haves: ", vehicleHaves)
         }
     }
 
@@ -265,7 +283,12 @@ function GetVehicleData({id, realm, source, totalBattles}) {
             document.getElementById("loadingTankTiles").style.display = "none"
             document.getElementById("tankListTiles").style.display = "inline-block" // using block makes it take space more efficently, but maybe not line up as wanted
             document.getElementById("viewingOptions").style.display = "block"
-            document.getElementById("allCharts").style.display = "block"
+            // document.getElementById("allCharts").style.display = "block"
+            document.getElementById("allCharts").style.position = "relative"
+            document.getElementById("allCharts").style.zIndex = "1"
+            document.getElementById("allCharts").style.opacity = "100%"
+            document.getElementById("allCharts").style.top = "inherit"
+            document.getElementById("allCharts").style.left = "inherit"
         }
     }
 
@@ -452,6 +475,8 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                 document.getElementsByTagName("tspan")[h].appendChild(myImage)
             }
         }
+
+        ChangeRadarPolygonColor()
     }
 
     function RadarChartCustomTooltip({ payload, label, active }) {
@@ -478,8 +503,70 @@ function GetVehicleData({id, realm, source, totalBattles}) {
         }
     }
 
+    function ChangeRadarPolygonColor() {
+        var NationWithHighestBattleCount = ""
+        var HighestBattleCount = 0
+        for (var m = 0; m < nationBattleCount.length; m++) {
+            if (nationBattleCount[m].Battles > HighestBattleCount) {
+                NationWithHighestBattleCount = nationBattleCount[m].Nation
+                HighestBattleCount = nationBattleCount[m].Battles
+            }
+        }
+
+        switch (NationWithHighestBattleCount) {
+            case "China":
+                return  (
+                    COLORS[0]
+                )
+            case "Czech":
+                return  (
+                    COLORS[1]
+                )
+            case "France":
+                return  (
+                    COLORS[2]
+                )
+            case "Germany":
+                return  (
+                    COLORS[3]
+                )
+            case "Italy":
+                return  (
+                    COLORS[4]
+                )
+            case "Japan":
+                return  (
+                    COLORS[5]
+                )
+            case "Poland":
+                return  (
+                    COLORS[6]
+                )
+            case "Sweden":
+                return  (
+                    COLORS[7]
+                )
+            case "UK":
+                return  (
+                    COLORS[8]
+                )
+            case "USA":
+                return  (
+                    COLORS[9]
+                )
+            case "USSR":
+                return  (
+                    COLORS[10]
+                )
+            default:
+                return  (
+                    "#8884d8"
+                )
+        }
+    }
+
     // SOURCE: https://recharts.org/en-US/examples/CustomContentTreemap
-    class CustomizedContent extends PureComponent {
+    class CustomizedTreeMapContent extends PureComponent {
         render() {
             // eslint-disable-next-line
             const { root, depth, x, y, width, height, index, payload, colors, rank, name } = this.props
@@ -563,10 +650,12 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                         </g>
                     )
                 default:
-                    <g>
-                        <rect x={x} y={y} width={width} height={height} style={{fill: "lightblue", stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
-                        <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
-                    </g>
+                    return (
+                        <g>
+                            <rect x={x} y={y} width={width} height={height} style={{fill: "lightblue", stroke: '#fff', strokeWidth: 2 / (depth + 1e-10), strokeOpacity: 1 / (depth + 1e-10)}} />
+                            <text x={x + width / 2} y={y + height / 2 + 7} textAnchor="middle" fill="purple" fontSize={14}>{name}</text>
+                        </g>
+                    )
             }
         }
     }
@@ -580,7 +669,7 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                             <CartesianGrid strokeDasharray="3 3" />
                             <XAxis dataKey="Nation" />
                             <YAxis />
-                            <Tooltip content={<BarChartCustomTooltip />} />
+                            <Tooltip content={<BarChartCustomTooltip />}  isAnimationActive={false} />
                             <Bar dataKey="Tanks" fill={COLORS} isAnimationActive={false}>
                                 {COLORS.map((entry, index) => (
                                     <Cell key={`cell-${index}`} fill={COLORS[index % 20]} />
@@ -596,8 +685,8 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                             <PolarGrid />
                             <PolarAngleAxis dataKey="Nation" />
                             <PolarRadiusAxis angle={30} />
-                            <Radar name={id} dataKey="Battles" stroke="rgb(95, 94, 95)" fill="rgb(95, 94, 95)" fillOpacity={0.3} isAnimationActive={false} />
-                            <Tooltip content={<RadarChartCustomTooltip />} />
+                            <Radar name={id} dataKey="Battles" stroke="rgb(95, 94, 95)" fill={ChangeRadarPolygonColor()} fillOpacity={0.3} isAnimationActive={false} />
+                            <Tooltip content={<RadarChartCustomTooltip />}  isAnimationActive={false} />
                         </RadarChart>
                     </ResponsiveContainer>
                 </div>
@@ -605,8 +694,8 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                 <div id="treeMap">
                     <ResponsiveContainer width="100%" height="100%">
                         <Treemap width={400} height={200} data={vehicleHaves} dataKey="size" aspectRatio={4 / 3} stroke="#fff" fill="#8884d8"
-                        content={<CustomizedContent colors={COLORS} />} isAnimationActive={false}>
-                            <Tooltip content={<TreeMapChartCustomTooltip />} />
+                        content={<CustomizedTreeMapContent colors={COLORS} />} isAnimationActive={false}>
+                            <Tooltip content={<TreeMapChartCustomTooltip />}  isAnimationActive={false} />
                         </Treemap>
                     </ResponsiveContainer>
                 </div>
