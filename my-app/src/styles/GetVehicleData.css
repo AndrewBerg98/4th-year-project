@@ -752,7 +752,8 @@
     float: left;
 }
 
-#tankInfo_title {
+.tankInfo_title {
+    width: 100%;
     color: white;
     text-align: center;
     padding: 6px 0px 6px 0px;
@@ -796,6 +797,23 @@
 	background-color:#292929;
 }
 
+#tankInfo_nation {
+    /* display: inline-block; */
+    width: calc(100% - 342px);
+    /* height: 100%; */
+    box-sizing: border-box;
+    padding: 16px 12px 0px 12px;
+    outline: 0px solid orange;
+    vertical-align: top;
+    text-align: center;
+    float: left;
+    overflow-x: hidden;
+}
+
+#tankInfo_nationFlag {
+    margin-top: 16px;
+}
+
 #tankInfo_crew {
     /* display: inline-block; */
     width: calc(100% - 342px);
@@ -805,15 +823,6 @@
     outline: 0px solid orange;
     vertical-align: top;
     float: left;
-}
-
-#tankInfo_title2 {
-    width: 100%;
-    color: white;
-    text-align: center;
-    padding: 6px 0px 6px 0px;
-    background-color: rgba(88, 88, 88, 1);
-    border-radius: 12px;
 }
 
 #tankInfo_crewLayout {
@@ -837,15 +846,6 @@
     text-align: center;
     float: left;
     overflow-x: hidden;
-}
-
-#tankInfo_title3 {
-    width: 100%;
-    color: white;
-    text-align: center;
-    padding: 6px 0px 6px 0px;
-    background-color: rgba(88, 88, 88, 1);
-    border-radius: 12px;
 }
 
 .tankInfo_armorTile {
@@ -896,15 +896,6 @@
     vertical-align: top;
     text-align: center;
     float: left;
-}
-
-#tankInfo_title4 {
-    width: 100%;
-    color: white;
-    text-align: center;
-    padding: 6px 0px 6px 0px;
-    background-color: rgba(88, 88, 88, 1);
-    border-radius: 12px;
 }
 
 #tankInfo_miscPriceXP, #tankInfo_miscPriceGold, #tankInfo_miscPriceCredits {
@@ -979,7 +970,7 @@
         height: auto;
     }
 
-    #tankInfo_crew, #tankInfo_profile, #tankInfo_misc {
+    #tankInfo_nation, #tankInfo_crew, #tankInfo_profile, #tankInfo_misc {
         width: 100%;
     }
 }

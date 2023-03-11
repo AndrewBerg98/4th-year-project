@@ -5,8 +5,6 @@ import question_mark from "./assets/flaticon - Muhammed Ali.png"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Treemap } from 'recharts'
 
 function GetVehicleData({id, realm, source, totalBattles}) {
-    // console.clear()
-
     const GetPlayerVehicleList = "https://api.worldoftanks." + realm + "/wot/account/tanks/?application_id=" + process.env.REACT_APP_APIKEY + "&account_id=" + id
     const GetVehicleList = "https://api.worldoftanks." + realm + "/wot/encyclopedia/vehicles/?application_id=" + process.env.REACT_APP_APIKEY
     const GetIndividualVehicleDetails = "https://api.worldoftanks." + realm + "/wot/encyclopedia/vehicles/?application_id=" + process.env.REACT_APP_APIKEY
@@ -144,8 +142,6 @@ function GetVehicleData({id, realm, source, totalBattles}) {
     }
 
     // names the tanks the player has and battles they played with that particular tank
-    // console.log("Complete Data: ", completeData)
-
     if (completeData[0]) {
         var vehicleCount = 0;
 
@@ -283,7 +279,6 @@ function GetVehicleData({id, realm, source, totalBattles}) {
             document.getElementById("loadingTankTiles").style.display = "none"
             document.getElementById("tankListTiles").style.display = "inline-block" // using block makes it take space more efficently, but maybe not line up as wanted
             document.getElementById("viewingOptions").style.display = "block"
-            // document.getElementById("allCharts").style.display = "block"
             document.getElementById("allCharts").style.position = "relative"
             document.getElementById("allCharts").style.zIndex = "1"
             document.getElementById("allCharts").style.opacity = "100%"
@@ -362,7 +357,8 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                     rapid: completeData[c].stock_profile?.rapid,
                     priceXP: completeData[c]?.price_xp,
                     priceGold: completeData[c]?.price_gold,
-                    priceCredit: completeData[c]?.price_credit
+                    priceCredit: completeData[c]?.price_credit,
+                    nation: completeData[c].nation
                 })
 
                 if (information[0].type === "lightTank") {information[0].type = "Light Tank"}
@@ -409,51 +405,64 @@ function GetVehicleData({id, realm, source, totalBattles}) {
             }
         }
 
-        document.getElementById("tankInfo_title").innerText = information[0].title
+        document.getElementById("individualTankInfoContainer").style.display = "block"
+        document.getElementsByClassName("tankInfo_title")[0].innerText = information[0].title
         document.getElementById("tankInfo_image").src = information[0].image
         document.getElementById("tankInfo_subTitle").innerText = information[0].type
         document.getElementById("tankInfo_description").innerText = information[0].description
-        document.getElementById("individualTankInfoContainer").style.display = "block"
         document.getElementById("tankInfo_description").scrollTo(0, 0)
 
-        if (information[0].armorTurret) {
-            document.getElementById("tankInfo_stockArmorTurretValues").innerText = information[0].armorTurret["front"] + " / " + information[0].armorTurret["sides"] +  " / " + information[0].armorTurret["rear"]
-            document.getElementById("tankInfo_stockArmorHullValues").innerText = information[0].armorHull["front"] +  " / " + information[0].armorHull["sides"] +  " / " + information[0].armorHull["rear"]
+
+        if (document.getElementById("tankInfo_nation")) {
+            var flag = document.getElementById("tankInfo_nationFlag")
+
+            if (information[0].nation !== undefined) {
+                flag.src = require("./assets/flags/" + information[0].nation + ".png")
+            }
+     
         }
 
-        else {
-            document.getElementById("tankInfo_stockArmorTurretValues").innerText = 0 + " / " + 0 +  " / " + 0
-            document.getElementById("tankInfo_stockArmorHullValues").innerText = information[0].armorHull["front"] +  " / " + information[0].armorHull["sides"] +  " / " + information[0].armorHull["rear"]
-        }
+        if (document.getElementById("tankInfo_profile")) {
+            if (information[0].armorTurret) {
+                document.getElementById("tankInfo_stockArmorTurretValues").innerText = information[0].armorTurret["front"] + " / " + information[0].armorTurret["sides"] +  " / " + information[0].armorTurret["rear"]
+                document.getElementById("tankInfo_stockArmorHullValues").innerText = information[0].armorHull["front"] +  " / " + information[0].armorHull["sides"] +  " / " + information[0].armorHull["rear"]
+            }
 
-        document.getElementById("tankInfo_mobilityForwardBackwards").innerText = information[0].speedForward + " / " + information[0].speedBackward
+            else {
+                document.getElementById("tankInfo_stockArmorTurretValues").innerText = 0 + " / " + 0 +  " / " + 0
+                document.getElementById("tankInfo_stockArmorHullValues").innerText = information[0].armorHull["front"] +  " / " + information[0].armorHull["sides"] +  " / " + information[0].armorHull["rear"]
+            }
 
-        if (information[0].rapid !== null) {
-            document.getElementById("tankInfo_mobilityRapid").innerText = information[0].rapid.speed_forward + " / " + information[0].rapid.speed_forward
-        }
+            document.getElementById("tankInfo_mobilityForwardBackwards").innerText = information[0].speedForward + " / " + information[0].speedBackward
 
-        else {
-            document.getElementById("tankInfo_mobilityRapid").innerText = "* / *"
-        }
+            if (information[0].rapid !== null) {
+                document.getElementById("tankInfo_mobilityRapid").innerText = information[0].rapid.speed_forward + " / " + information[0].rapid.speed_forward
+            }
 
-        if (information[0].priceXP !== null) {
-            if (Object.values(information[0].priceXP) !== undefined) { 
-                document.getElementById("tankInfo_miscPriceXP").innerText = "XP Price: " + Number(Object.values(information[0].priceXP)).toLocaleString()
+            else {
+                document.getElementById("tankInfo_mobilityRapid").innerText = "* / *"
             }
         }
 
-        else {
-            document.getElementById("tankInfo_miscPriceXP").innerText = "XP Price: " + 0
+        if (document.getElementById("tankInfo_misc")) {
+            if (information[0].priceXP !== null) {
+                if (Object.values(information[0].priceXP) !== undefined) { 
+                    document.getElementById("tankInfo_miscPriceXP").innerText = "XP Price: " + Number(Object.values(information[0].priceXP)).toLocaleString()
+                }
+            }
+    
+            else {
+                document.getElementById("tankInfo_miscPriceXP").innerText = "XP Price: " + 0
+            }
+    
+            if (information[0].priceGold !== undefined) { 
+                document.getElementById("tankInfo_miscPriceGold").innerText = "Gold Price: " + Number(information[0].priceGold).toLocaleString()
+            }
+    
+            if (information[0].priceCredit !== undefined) { 
+                document.getElementById("tankInfo_miscPriceCredits").innerText = "Credits Price: " + Number(information[0].priceCredit).toLocaleString()
+            }
         }
-
-        if (information[0].priceGold !== undefined) { 
-            document.getElementById("tankInfo_miscPriceGold").innerText = "Gold Price: " + Number(information[0].priceGold).toLocaleString()
-        }
-
-        if (information[0].priceCredit !== undefined) { 
-            document.getElementById("tankInfo_miscPriceCredits").innerText = "Credits Price: " + Number(information[0].priceCredit).toLocaleString()
-        }
-
     }
     
     function BarChartCustomTooltip({ payload, label, active }) {
@@ -738,23 +747,29 @@ function GetVehicleData({id, realm, source, totalBattles}) {
 
             <div id="individualTankInfoContainer">
                 <div id="individualTankInfoBlur" onClick={HideTankStats}></div>
+
                 <div id="individualTankInfoActual">
                     <button id="closeTankInfoActual" onClick={HideTankStats}>X</button>
                     
                     <div id="tankInfo_history">
-                        <h4 id="tankInfo_title">Title</h4>
+                        <h4 className="tankInfo_title">Title</h4>
                         <img id="tankInfo_image" src="" alt="missing_tank_image"></img>
                         <h4 id="tankInfo_subTitle">Type</h4>
                         <p id="tankInfo_description">Description</p>
                     </div>
 
+                    <div id="tankInfo_nation">
+                        <h4 className="tankInfo_title">Nation</h4>
+                        <img id="tankInfo_nationFlag" src="" alt="missing_flag" draggable="false"></img>
+                    </div>
+
                     <div id="tankInfo_crew">
-                        <h4 id="tankInfo_title2">Crew Layout</h4>
+                        <h4 className="tankInfo_title">Crew Layout</h4>
                         <p id="tankInfo_crewLayout"></p>
                     </div>
 
-                    <div id="tankInfo_profile">
-                        <h4 id="tankInfo_title3">Stock Configuration</h4>
+                    {/* <div id="tankInfo_profile">
+                        <h4 className="tankInfo_title">Stock Configuration</h4>
 
                         <div className="tankInfo_armorTile">
                             <p id="tankInfo_stockArmorTurretValues"></p>
@@ -775,10 +790,10 @@ function GetVehicleData({id, realm, source, totalBattles}) {
                             <p id="tankInfo_mobilityRapid"></p>
                             <span>Rapid (km/h)</span>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div id="tankInfo_misc">
-                        <h4 id="tankInfo_title4">Prices (excl. Bonds)</h4>
+                        <h4 className="tankInfo_title">Prices (excl. Bonds)</h4>
                         <p id="tankInfo_miscPriceXP"></p>
                         <p id="tankInfo_miscPriceGold"></p>
                         <p id="tankInfo_miscPriceCredits"></p>

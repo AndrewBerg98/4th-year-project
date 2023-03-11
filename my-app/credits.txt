@@ -59,3 +59,4 @@ How to fix div disppearing due to positioning: https://stackoverflow.com/questio
 How to move inline-block divs to top: https://stackoverflow.com/questions/9273016/why-is-this-inline-block-element-pushed-downward
 How to display images: https://stackoverflow.com/questions/42580130/display-images-in-react-using-jsx-without-import
 Add images in ReactJS/JS: https://stackoverflow.com/questions/2735881/adding-images-to-an-html-document-with-javascript, https://stackoverflow.com/questions/5865790/adding-image-using-javascript
+Prevent image dragging: https://stackoverflow.com/questions/7439042/css-js-to-prevent-dragging-of-ghost-image
