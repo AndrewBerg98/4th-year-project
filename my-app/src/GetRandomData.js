@@ -1,5 +1,11 @@
 import "./styles/GetRandomData.css"
 
+/*
+
+    NOT IN USE ANYMORE!!!
+
+*/
+
 function GetRandomData({personalData, id}) {
     function toggleRandomDetails() {
         if (document.getElementById("damagedealings").style.display === "none") {
