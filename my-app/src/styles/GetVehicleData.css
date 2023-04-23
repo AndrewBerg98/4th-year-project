@@ -224,7 +224,7 @@
 }
 
 .custom-tooltip {
-    background-color: rgba(62, 62, 62, 0.5);
+    background-color: rgba(62, 62, 62, 0.8);
     padding: 8px 16px 8px 16px;
     font-family: "Arial";
     font-size: small;
